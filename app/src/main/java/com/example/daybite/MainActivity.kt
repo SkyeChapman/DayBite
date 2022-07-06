@@ -1,5 +1,5 @@
 package com.example.daybite
-
+//Account Setup Page
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
