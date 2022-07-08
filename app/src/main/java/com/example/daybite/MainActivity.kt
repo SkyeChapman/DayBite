@@ -9,4 +9,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
     }
+
+
+    var useNameInput : String = "" //username
+    var passwordInput : String = "" //password
+    var dateOfBirthMonth : Int = 0 //user dob month
+    var dateOfBirthDay : Int = 0 //user dob day
+    var dateOfBirthYear : Int = 0 // user dob year
+
 }
