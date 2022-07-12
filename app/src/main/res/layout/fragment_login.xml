@@ -3,12 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".LoginFragment"
     android:background="@drawable/login_background">
  <RelativeLayout
      android:layout_width="match_parent"
      android:layout_height="wrap_content">
 
+//app name
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -18,28 +20,8 @@
         android:textStyle="bold"
         android:layout_marginTop="70dp"
         android:gravity="center_horizontal"/>
-     <com.google.android.material.textfield.TextInputLayout
-         android:layout_width="match_parent"
-         android:layout_height="wrap_content"
-         android:id="@+id/user"
-         android:hint="@string/username"
-         android:layout_below="@+id/Login"
-         android:layout_marginTop="55dp"
-         android:layout_marginLeft="25dp"
-         android:layout_marginRight="25dp"
 
-
-         >
-
-         <com.google.android.material.textfield.TextInputEditText
-             android:layout_width="match_parent"
-             android:layout_height="wrap_content"
-
-             >
-
-         </com.google.android.material.textfield.TextInputEditText>
-     </com.google.android.material.textfield.TextInputLayout>
-
+//Logo
     <ImageView
         android:layout_width="60dp"
         android:layout_height="60dp"
@@ -47,6 +29,84 @@
         android:layout_marginLeft="38dp"
         android:adjustViewBounds="true"
         android:src="@drawable/logo" />
+
+//Username bar
+     <EditText
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:id="@+id/username"
+         android:hint="@string/username"
+         android:textStyle="italic"
+         android:textColor="@color/white"
+         android:textColorHint="@color/white"
+         android:drawableLeft="@drawable/ic_baseline_account_circle_24"
+         android:background="#30ffffff"
+         android:drawablePadding="3dp"
+         android:layout_below="@+id/Login"
+         android:layout_marginTop="80dp"
+         android:layout_marginLeft="30dp"
+         android:layout_marginRight="30dp"
+         android:padding="15dp"
+         />
+
+//Password bar
+     <EditText
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:id="@+id/password"
+         android:hint="@string/password"
+         android:textStyle="italic"
+         android:textColor="@color/white"
+         android:textColorHint="@color/white"
+         android:drawableLeft="@drawable/ic_baseline_verified_user_24"
+         android:inputType="textPassword"
+         android:background="#30ffffff"
+         android:drawablePadding="3dp"
+         android:layout_below="@+id/username"
+         android:layout_marginTop="35dp"
+         android:layout_marginLeft="30dp"
+         android:layout_marginRight="30dp"
+         android:padding="15dp"
+         />
+
+//Login Button
+     <com.google.android.material.button.MaterialButton
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:id="@+id/loginBTN"
+         android:layout_below="@+id/password"
+         android:text="LOGIN"
+         android:backgroundTint="#BB8FCE"
+         android:layout_centerHorizontal="true"
+         android:layout_marginTop="45dp"
+         />
+
+//Forgot password
+     <com.google.android.material.button.MaterialButton
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:id="@+id/passForgot"
+         android:layout_below="@+id/loginBTN"
+         android:text="Forgot Password"
+         android:textSize="12sp"
+         android:backgroundTint="@color/material_on_surface_stroke"
+         android:layout_marginTop="45dp"
+         android:layout_marginLeft="20dp"
+         />
+
+//Create Acct
+     <com.google.android.material.button.MaterialButton
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:id="@+id/createAcct"
+         android:layout_below="@+id/loginBTN"
+         android:text="Register"
+         android:textSize="12sp"
+         android:backgroundTint="@color/material_on_surface_stroke"
+         android:layout_marginTop="45dp"
+         android:layout_marginLeft="265dp"
+         />
+
 
 
 </RelativeLayout>
