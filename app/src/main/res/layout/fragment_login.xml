@@ -70,16 +70,16 @@
          />
 
 //Login Button
+
      <com.google.android.material.button.MaterialButton
+         android:id="@+id/loginBTN"
          android:layout_width="wrap_content"
          android:layout_height="wrap_content"
-         android:id="@+id/loginBTN"
          android:layout_below="@+id/password"
-         android:text="LOGIN"
-         android:backgroundTint="#BB8FCE"
          android:layout_centerHorizontal="true"
          android:layout_marginTop="45dp"
-         />
+         android:backgroundTint="#BB8FCE"
+         android:text="LOGIN" />
 
 //Forgot password
      <com.google.android.material.button.MaterialButton

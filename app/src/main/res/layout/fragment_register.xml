@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".LoginFragment"
+    android:background="@drawable/reg_background">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        //app name
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/Login"
+            android:text="DayBite"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal"/>
+
+        //Logo
+        <ImageView
+            android:layout_width="41dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="115dp"
+            android:layout_marginTop="10dp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/logo" />
+
+        //Firstname bar
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/firstName"
+            android:hint="First Name"
+            android:textStyle="italic"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:background="#ABB2B9"
+            android:layout_below="@+id/Login"
+            android:inputType="textPersonName"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:padding="15dp"
+            />
+
+        //LastName bar
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/lastName"
+            android:hint="Last Name"
+            android:textStyle="italic"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:inputType="textPersonName"
+            android:background="#ABB2B9"
+            android:layout_below="@+id/firstName"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:padding="15dp"
+            />
+
+//age input
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/age"
+            android:hint="@string/age"
+            android:textStyle="italic"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:inputType="number"
+            android:background="#ABB2B9"
+            android:layout_below="@+id/lastName"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:padding="15dp"
+            />
+//email input
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/email"
+            android:hint="@string/email"
+            android:textStyle="italic"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:inputType="textEmailAddress"
+            android:background="#ABB2B9"
+            android:layout_below="@+id/age"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:padding="15dp"
+            />
+
+//password set
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/passwordSet"
+            android:hint="Confirm Password"
+            android:textStyle="italic"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:inputType="textPassword"
+            android:background="#ABB2B9"
+            android:layout_below="@+id/email"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:padding="15dp"
+            />
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/continueBTN"
+            android:layout_below="@+id/passwordSet"
+            android:text="Register"
+            android:backgroundTint="#3498DB"
+            android:layout_marginLeft="260dp"
+            android:layout_marginTop="45dp"
+            />
+
+        //Cancel
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/cancel_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/passwordSet"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="45dp"
+            android:backgroundTint="@color/material_on_surface_stroke"
+            android:text="Cancel" />
+
+    </RelativeLayout>
+
+
+</ScrollView>

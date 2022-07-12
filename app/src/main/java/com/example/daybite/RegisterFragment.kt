@@ -10,18 +10,19 @@ import android.widget.Button
 /**
  * A simple [Fragment] subclass.
  */
-class LoginFragment : Fragment() {
+class RegisterFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        var register =  inflater.inflate(R.layout.fragment_login, container, false)
-        register.findViewById<Button>(R.id.createAcct).setOnClickListener {
+        var cancel =  inflater.inflate(R.layout.fragment_register, container, false)
+
+        cancel.findViewById<Button>(R.id.cancel_button).setOnClickListener {
             var navCreate = activity as Navigation
-            navCreate.navigationfrag(RegisterFragment(), false)
+            navCreate.navigationfrag(LoginFragment(), false)
         }
-        return register
+        return cancel
     }
 }
