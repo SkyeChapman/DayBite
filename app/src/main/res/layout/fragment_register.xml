@@ -44,7 +44,7 @@
             android:background="#ABB2B9"
             android:layout_below="@+id/Login"
             android:inputType="textPersonName"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="15dp"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
             android:padding="15dp"
@@ -62,7 +62,7 @@
             android:inputType="textPersonName"
             android:background="#ABB2B9"
             android:layout_below="@+id/firstName"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="15dp"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
             android:padding="15dp"
@@ -79,7 +79,7 @@
             android:textColorHint="@color/black"
             android:background="#ABB2B9"
             android:layout_below="@+id/lastName"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="15dp"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
             android:padding="15dp"
@@ -97,7 +97,7 @@
             android:inputType="number"
             android:background="#ABB2B9"
             android:layout_below="@+id/reg_userName"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="15dp"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
             android:padding="15dp"
@@ -114,7 +114,7 @@
             android:inputType="textEmailAddress"
             android:background="#ABB2B9"
             android:layout_below="@+id/age"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="15dp"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
             android:padding="15dp"
@@ -122,38 +122,55 @@
 
 //password set
         <EditText
+            android:id="@+id/passwordSet"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/passwordSet"
+            android:layout_below="@+id/email"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="30dp"
+            android:background="#ABB2B9"
             android:hint="Create Password"
-            android:textStyle="italic"
+            android:inputType="textPassword"
+            android:padding="15dp"
             android:textColor="@color/black"
             android:textColorHint="@color/black"
-            android:inputType="textPassword"
-            android:background="#ABB2B9"
-            android:layout_below="@+id/email"
-            android:layout_marginTop="30dp"
+            android:textStyle="italic" />
+
+        //confirm pass
+        <EditText
+            android:id="@+id/passConfirm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/passwordSet"
             android:layout_marginLeft="30dp"
+            android:layout_marginTop="15dp"
             android:layout_marginRight="30dp"
+            android:background="#ABB2B9"
+            android:hint="Confirm Password"
+            android:inputType="textPassword"
             android:padding="15dp"
-            />
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:textStyle="italic" />
+
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/reg_BTN"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/reg_BTN"
-            android:layout_below="@+id/passwordSet"
-            android:text="Register"
-            android:backgroundTint="#3498DB"
+            android:layout_below="@+id/passConfirm"
             android:layout_marginLeft="260dp"
             android:layout_marginTop="45dp"
-            />
+            android:backgroundTint="#3498DB"
+            android:text="Register" />
 
         //Cancel
+
         <com.google.android.material.button.MaterialButton
             android:id="@+id/cancel_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/passwordSet"
+            android:layout_below="@+id/passConfirm"
             android:layout_marginLeft="50dp"
             android:layout_marginTop="45dp"
             android:backgroundTint="@color/material_on_surface_stroke"

@@ -95,17 +95,17 @@
          />
 
 //Create Acct
+
      <com.google.android.material.button.MaterialButton
+         android:id="@+id/createAcct"
          android:layout_width="wrap_content"
          android:layout_height="wrap_content"
-         android:id="@+id/createAcct"
          android:layout_below="@+id/loginBTN"
-         android:text="Register"
-         android:textSize="12sp"
-         android:backgroundTint="@color/material_on_surface_stroke"
-         android:layout_marginTop="45dp"
          android:layout_marginLeft="265dp"
-         />
+         android:layout_marginTop="45dp"
+         android:backgroundTint="@color/material_on_surface_stroke"
+         android:text="Register"
+         android:textSize="12sp" />
 
 
 

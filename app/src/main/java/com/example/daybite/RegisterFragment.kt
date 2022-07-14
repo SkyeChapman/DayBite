@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import androidx.appcompat.content.res.AppCompatResources
 
 /**
@@ -18,9 +19,8 @@ class RegisterFragment : Fragment() {
     private lateinit var fName: EditText
     private lateinit var lName: EditText
     private lateinit var reguserName: EditText
-    private lateinit var regAge: EditText
     private lateinit var regEmail: EditText
-    private lateinit var passWord: EditText
+    private lateinit var regPassword: EditText
     private lateinit var cnfPassword: EditText
 
     override fun onCreateView(
@@ -28,24 +28,24 @@ class RegisterFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        var reg =  inflater.inflate(R.layout.fragment_register, container, false)
-        fName = reg.findViewById(R.id.firstName)
-        lName = reg.findViewById(R.id.lastName)
-        reguserName = reg.findViewById(R.id.reg_userName)
-        regEmail = reg.findViewById(R.id.email)
-        passWord = reg.findViewById(R.id.password)
-        cnfPassword = reg.findViewById(R.id.passwordSet)
+        var view =  inflater.inflate(R.layout.fragment_register, container, false)
+        fName = view.findViewById(R.id.firstName)
+        lName = view.findViewById(R.id.lastName)
+        reguserName = view.findViewById(R.id.reg_userName)
+        regEmail = view.findViewById(R.id.email)
+        regPassword = view.findViewById(R.id.passwordSet)
+       cnfPassword = view.findViewById(R.id.passConfirm)
 
 
-        reg.findViewById<Button>(R.id.cancel_button).setOnClickListener {
+        view.findViewById<Button>(R.id.cancel_button).setOnClickListener {
             var navCreate = activity as Navigation
             navCreate.navigationfrag(LoginFragment(), false)
         }
 
-        reg.findViewById<Button>(R.id.reg_BTN).setOnClickListener {
+        view.findViewById<Button>(R.id.reg_BTN).setOnClickListener {
             validateEmptyForm()
         }
-        return reg
+        return view
     }
     private fun validateEmptyForm()
     {
@@ -54,23 +54,57 @@ class RegisterFragment : Fragment() {
 
         when
         {
-            TextUtils.isEmpty(fName.text.toString().trim())->{
+            TextUtils.isEmpty(fName.text.toString().trim())->
+            {
                 fName.setError("Please enter First Name",warning)
             }
-            TextUtils.isEmpty(lName.text.toString().trim())->{
+            TextUtils.isEmpty(lName.text.toString().trim())->
+            {
                 lName.setError("Please enter Last Name",warning)
             }
-            TextUtils.isEmpty(reguserName.text.toString().trim())->{
+            TextUtils.isEmpty(reguserName.text.toString().trim())->
+            {
                 reguserName.setError("Please enter a Username",warning)
             }
-            TextUtils.isEmpty(regEmail.text.toString().trim())->{
+            TextUtils.isEmpty(regEmail.text.toString().trim())->
+            {
                 regEmail.setError("Please enter a valid email address",warning)
             }
-            TextUtils.isEmpty(passWord.text.toString().trim())->{
-                passWord.setError("Must enter password",warning)
+            TextUtils.isEmpty(regPassword.text.toString().trim())->
+            {
+                regPassword.setError("Must enter password",warning)
             }
-            TextUtils.isEmpty(cnfPassword.text.toString().trim())->{
+            TextUtils.isEmpty(cnfPassword.text.toString().trim())->
+            {
                 cnfPassword.setError("Must enter password",warning)
+            }
+
+                    regEmail.text.toString().isNotEmpty()&&
+                    regPassword.text.toString().isNotEmpty()&&
+                    cnfPassword.text.toString().isNotEmpty()->
+            {
+                if(regEmail.text.toString().matches(Regex("[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+")))
+                {
+                    if(regPassword.text.toString().length>=6)
+                    {
+                        if(regPassword.text.toString() == cnfPassword.text.toString())
+                        {
+                            Toast.makeText(context,"Register Successful", Toast.LENGTH_SHORT).show()
+                        }
+                        else
+                        {
+                            cnfPassword.setError("Passwords do not match", warning)
+                        }
+                    }
+                    else
+                    {
+                        regPassword.setError("Password most be at LEAST 6 characters",warning)
+                    }
+                }
+                else
+                {
+                    regEmail.setError("Please enter a valid Email", warning)
+                }
             }
         }
     }
