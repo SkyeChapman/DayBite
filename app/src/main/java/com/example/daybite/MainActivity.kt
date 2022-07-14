@@ -11,10 +11,10 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    var useNameInput : String = "" //username
+    var userNameInput : String = "" //username
+    var userEmailInput : String = "" // email
     var passwordInput : String = "" //password
-    var dateOfBirthMonth : Int = 0 //user dob month
-    var dateOfBirthDay : Int = 0 //user dob day
-    var dateOfBirthYear : Int = 0 // user dob year
+    var dateOfBirth : Int = 0 //user dob
+
 
 }
