@@ -19,7 +19,8 @@
             android:textSize="25sp"
             android:textStyle="bold"
             android:layout_marginTop="10dp"
-            android:gravity="center_horizontal"/>
+            android:gravity="center_horizontal"
+            />
 
         //Logo
         <ImageView
@@ -28,7 +29,8 @@
             android:layout_marginLeft="115dp"
             android:layout_marginTop="10dp"
             android:adjustViewBounds="true"
-            android:src="@drawable/logo" />
+            android:src="@drawable/logo"
+            />
 
         //Firstname bar
         <EditText
@@ -66,6 +68,23 @@
             android:padding="15dp"
             />
 
+        //UserName bar
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/reg_userName"
+            android:hint="Username"
+            android:textStyle="italic"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:background="#ABB2B9"
+            android:layout_below="@+id/lastName"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:padding="15dp"
+            />
+
 //age input
         <EditText
             android:layout_width="match_parent"
@@ -77,7 +96,7 @@
             android:textColorHint="@color/black"
             android:inputType="number"
             android:background="#ABB2B9"
-            android:layout_below="@+id/lastName"
+            android:layout_below="@+id/reg_userName"
             android:layout_marginTop="30dp"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
@@ -106,7 +125,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/passwordSet"
-            android:hint="Confirm Password"
+            android:hint="Create Password"
             android:textStyle="italic"
             android:textColor="@color/black"
             android:textColorHint="@color/black"
@@ -121,7 +140,7 @@
         <com.google.android.material.button.MaterialButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/continueBTN"
+            android:id="@+id/reg_BTN"
             android:layout_below="@+id/passwordSet"
             android:text="Register"
             android:backgroundTint="#3498DB"
@@ -130,7 +149,6 @@
             />
 
         //Cancel
-
         <com.google.android.material.button.MaterialButton
             android:id="@+id/cancel_button"
             android:layout_width="wrap_content"
