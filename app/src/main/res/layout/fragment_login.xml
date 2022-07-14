@@ -31,23 +31,23 @@
         android:src="@drawable/logo" />
 
 //Username bar
+
      <EditText
+         android:id="@+id/username"
          android:layout_width="match_parent"
          android:layout_height="wrap_content"
-         android:id="@+id/username"
+         android:layout_below="@+id/Login"
+         android:layout_marginLeft="30dp"
+         android:layout_marginTop="80dp"
+         android:layout_marginRight="30dp"
+         android:background="#30ffffff"
+         android:drawableLeft="@drawable/ic_baseline_account_circle_24"
+         android:drawablePadding="3dp"
          android:hint="@string/username"
-         android:textStyle="italic"
+         android:padding="15dp"
          android:textColor="@color/white"
          android:textColorHint="@color/white"
-         android:drawableLeft="@drawable/ic_baseline_account_circle_24"
-         android:background="#30ffffff"
-         android:drawablePadding="3dp"
-         android:layout_below="@+id/Login"
-         android:layout_marginTop="80dp"
-         android:layout_marginLeft="30dp"
-         android:layout_marginRight="30dp"
-         android:padding="15dp"
-         />
+         android:textStyle="italic" />
 
 //Password bar
      <EditText

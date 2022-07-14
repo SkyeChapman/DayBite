@@ -18,7 +18,6 @@ class RegisterFragment : Fragment() {
 
     private lateinit var fName: EditText
     private lateinit var lName: EditText
-    private lateinit var reguserName: EditText
     private lateinit var regEmail: EditText
     private lateinit var regPassword: EditText
     private lateinit var cnfPassword: EditText
@@ -31,7 +30,6 @@ class RegisterFragment : Fragment() {
         var view =  inflater.inflate(R.layout.fragment_register, container, false)
         fName = view.findViewById(R.id.firstName)
         lName = view.findViewById(R.id.lastName)
-        reguserName = view.findViewById(R.id.reg_userName)
         regEmail = view.findViewById(R.id.email)
         regPassword = view.findViewById(R.id.passwordSet)
        cnfPassword = view.findViewById(R.id.passConfirm)
@@ -61,10 +59,6 @@ class RegisterFragment : Fragment() {
             TextUtils.isEmpty(lName.text.toString().trim())->
             {
                 lName.setError("Please enter Last Name",warning)
-            }
-            TextUtils.isEmpty(reguserName.text.toString().trim())->
-            {
-                reguserName.setError("Please enter a Username",warning)
             }
             TextUtils.isEmpty(regEmail.text.toString().trim())->
             {

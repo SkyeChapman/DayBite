@@ -68,23 +68,6 @@
             android:padding="15dp"
             />
 
-        //UserName bar
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/reg_userName"
-            android:hint="Username"
-            android:textStyle="italic"
-            android:textColor="@color/black"
-            android:textColorHint="@color/black"
-            android:background="#ABB2B9"
-            android:layout_below="@+id/lastName"
-            android:layout_marginTop="15dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:padding="15dp"
-            />
-
 //age input
         <EditText
             android:layout_width="match_parent"
@@ -96,29 +79,29 @@
             android:textColorHint="@color/black"
             android:inputType="number"
             android:background="#ABB2B9"
-            android:layout_below="@+id/reg_userName"
+            android:layout_below="@+id/lastName"
             android:layout_marginTop="15dp"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
             android:padding="15dp"
             />
 //email input
+
         <EditText
+            android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/email"
+            android:layout_below="@+id/age"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="30dp"
+            android:background="#ABB2B9"
             android:hint="@string/email"
-            android:textStyle="italic"
+            android:inputType="textEmailAddress"
+            android:padding="15dp"
             android:textColor="@color/black"
             android:textColorHint="@color/black"
-            android:inputType="textEmailAddress"
-            android:background="#ABB2B9"
-            android:layout_below="@+id/age"
-            android:layout_marginTop="15dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:padding="15dp"
-            />
+            android:textStyle="italic" />
 
 //password set
         <EditText
@@ -164,8 +147,7 @@
             android:backgroundTint="#3498DB"
             android:text="Register" />
 
-        //Cancel
-
+        //Back
         <com.google.android.material.button.MaterialButton
             android:id="@+id/cancel_button"
             android:layout_width="wrap_content"
@@ -174,7 +156,7 @@
             android:layout_marginLeft="50dp"
             android:layout_marginTop="45dp"
             android:backgroundTint="@color/material_on_surface_stroke"
-            android:text="Cancel" />
+            android:text="Back" />
 
     </RelativeLayout>
 
