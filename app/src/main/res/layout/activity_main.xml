@@ -27,7 +27,7 @@
         app:srcCompat="@android:mipmap/sym_def_app_icon" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/userName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="103dp"
@@ -49,7 +49,7 @@
         tools:ignore="MissingConstraints" />
 
     <Switch
-        android:id="@+id/switch2"
+        android:id="@+id/notificationsSwitch"
         android:layout_width="210dp"
         android:layout_height="48dp"
         android:layout_marginStart="106dp"
@@ -68,7 +68,7 @@
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/emailAddress"
+        android:id="@+id/userEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="103dp"
@@ -90,7 +90,7 @@
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/editTextTextPassword"
+        android:id="@+id/userPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="103dp"
@@ -112,7 +112,7 @@
         tools:ignore="MissingConstraints" />
 
     <Switch
-        android:id="@+id/switch1"
+        android:id="@+id/darkModeSwitch"
         android:layout_width="210dp"
         android:layout_height="25dp"
         android:layout_marginStart="106dp"
@@ -131,7 +131,7 @@
         tools:ignore="MissingConstraints,TouchTargetSizeCheck" />
 
     <EditText
-        android:id="@+id/editTextDate"
+        android:id="@+id/userDateOfBirth"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="103dp"
@@ -153,7 +153,7 @@
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/NextButton"
+        android:id="@+id/nextButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
@@ -163,11 +163,11 @@
         android:text="Next"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/BackButton"
-        app:layout_constraintTop_toBottomOf="@+id/switch2" />
+        app:layout_constraintStart_toEndOf="@+id/backButton"
+        app:layout_constraintTop_toBottomOf="@+id/notificationsSwitch" />
 
     <Button
-        android:id="@+id/BackButton"
+        android:id="@+id/backButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="106dp"
@@ -176,9 +176,9 @@
         android:layout_marginBottom="175dp"
         android:text="Back"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/NextButton"
+        app:layout_constraintEnd_toStartOf="@+id/nextButton"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/switch2"
+        app:layout_constraintTop_toBottomOf="@+id/notificationsSwitch"
         app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
