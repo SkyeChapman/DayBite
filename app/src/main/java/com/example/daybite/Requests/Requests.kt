@@ -29,6 +29,7 @@ class Requests
                 val root: JsonNode = mapper.readTree(responseStream)
                 println(root.path("fact").asText())
                 //Your code goes here
+                val factCard = Card(root)
             } catch (e: Exception)
             {
                 e.printStackTrace()

@@ -1,7 +1,10 @@
 package com.example.daybite.ui
 
-class Card (val header:String,val factBody:String){
-    init {
+import com.fasterxml.jackson.databind.JsonNode
+import org.json.JSONObject
 
+class Card (val factJSON: JsonNode){
+    init {
+        println(factJSON.path("Interest").asText())
     }
 }
