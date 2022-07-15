@@ -1,9 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/kwing/AndroidStudioProjects/DayBite/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2985" />
+        <entry key="..\:/Users/kwing/AndroidStudioProjects/DayBite/app/src/main/res/drawable/ic_baseline_account_circle_24.xml" value="0.2985" />
+        <entry key="..\:/Users/kwing/AndroidStudioProjects/DayBite/app/src/main/res/drawable/ic_baseline_blue_grade_24.xml" value="0.2985" />
+        <entry key="..\:/Users/kwing/AndroidStudioProjects/DayBite/app/src/main/res/drawable/ic_baseline_grade_24.xml" value="0.1935" />
+        <entry key="..\:/Users/kwing/AndroidStudioProjects/DayBite/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.1935" />
+        <entry key="..\:/Users/kwing/AndroidStudioProjects/DayBite/app/src/main/res/drawable/ic_baseline_list_24.xml" value="0.2985" />
+        <entry key="..\:/Users/kwing/AndroidStudioProjects/DayBite/app/src/main/res/drawable/ic_baseline_shadow_grade_24.xml" value="0.2985" />
+        <entry key="..\:/Users/kwing/AndroidStudioProjects/DayBite/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/kwing/AndroidStudioProjects/DayBite/app/src/main/res/layout/blurb_item.xml" value="0.19" />
+        <entry key="..\:/Users/kwing/AndroidStudioProjects/DayBite/app/src/main/res/layout/fragment_account.xml" value="0.3020833333333333" />
+        <entry key="..\:/Users/kwing/AndroidStudioProjects/DayBite/app/src/main/res/layout/fragment_favorite.xml" value="0.3020833333333333" />
+        <entry key="..\:/Users/kwing/AndroidStudioProjects/DayBite/app/src/main/res/layout/fragment_favorites.xml" value="0.3020833333333333" />
+        <entry key="..\:/Users/kwing/AndroidStudioProjects/DayBite/app/src/main/res/layout/fragment_feed.xml" value="0.3020833333333333" />
+        <entry key="..\:/Users/kwing/AndroidStudioProjects/DayBite/app/src/main/res/layout/fragment_home.xml" value="0.3020833333333333" />
+        <entry key="..\:/Users/kwing/AndroidStudioProjects/DayBite/app/src/main/res/layout/fragment_interest.xml" value="0.3020833333333333" />
+        <entry key="..\:/Users/kwing/AndroidStudioProjects/DayBite/app/src/main/res/layout/fragment_interests.xml" value="0.3020833333333333" />
+        <entry key="..\:/Users/kwing/AndroidStudioProjects/DayBite/app/src/main/res/menu/bnav_menu.xml" value="0.3614583333333333" />
+        <entry key="..\:/Users/kwing/AndroidStudioProjects/DayBite/app/src/main/res/menu/bottom_nav_menu.xml" value="0.3614583333333333" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.33" />
+      </ProjectState>
+    </option>
   </component>
 </project>
