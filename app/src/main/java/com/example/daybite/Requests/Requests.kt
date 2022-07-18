@@ -1,18 +1,18 @@
 package com.example.daybite.Requests
 
-import com.example.daybite.ui.Card
 import com.fasterxml.jackson.databind.JsonNode
 import com.fasterxml.jackson.databind.ObjectMapper
-import org.json.JSONObject
-import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
+import java.io.InputStream
+import java.net.HttpURLConnection
+import java.net.URL
 
 
 class Requests
 {
-    public fun GetCardFact( interest : String)
-    {
+    fun GetCardFact( interest : String) : JsonNode? {
+        // initialize return node to null
+        var J: JsonNode? = null
+        //thread to access Internet on new thread
         val thread = Thread{
             try
             {
@@ -27,9 +27,9 @@ class Requests
                 val responseStream: InputStream = connection.getInputStream()
                 val mapper = ObjectMapper()
                 val root: JsonNode = mapper.readTree(responseStream)
-                println(root.path("fact").asText())
+                println(root.path(interest).asText())
                 //Your code goes here
-                val factCard = Card(root)
+                J = root
             } catch (e: Exception)
             {
                 e.printStackTrace()
@@ -37,9 +37,6 @@ class Requests
         }
 
         thread.start()
-
-    }
-    fun ConvertFactJSON(json:JSONObject) {
-
+        return J
     }
 }
