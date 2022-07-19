@@ -11,6 +11,6 @@ class Card (){
 
     init {
         val requests = Requests()
-        requests.GetCardFact("interest")
+        mBody = requests.GetCardFact("interest")!!.asText()
     }
 }
