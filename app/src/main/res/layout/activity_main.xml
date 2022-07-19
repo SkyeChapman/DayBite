@@ -6,25 +6,10 @@
     android:layout_height="match_parent"
     android:background="#AEF1F1"
     android:clickable="false"
+    android:textAlignment="center"
+    android:visibility="visible"
     tools:context=".MainActivity">
 
-
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="129dp"
-        android:layout_height="128dp"
-        android:layout_marginStart="141dp"
-        android:layout_marginTop="47dp"
-        android:layout_marginEnd="141dp"
-        android:layout_marginBottom="716dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@android:mipmap/sym_def_app_icon" />
 
     <EditText
         android:id="@+id/userName"
@@ -53,7 +38,6 @@
         android:layout_width="210dp"
         android:layout_height="48dp"
         android:layout_marginStart="106dp"
-        android:layout_marginTop="534dp"
         android:layout_marginEnd="95dp"
         android:layout_marginBottom="309dp"
         android:enabled="true"
@@ -63,8 +47,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
         tools:ignore="MissingConstraints" />
 
     <EditText
@@ -179,6 +161,24 @@
         app:layout_constraintEnd_toStartOf="@+id/nextButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/notificationsSwitch"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/createAccountHeader"
+        android:layout_width="285dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="106dp"
+        android:layout_marginTop="85dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="738dp"
+        android:shadowColor="#070505"
+        android:text="Create Account"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
