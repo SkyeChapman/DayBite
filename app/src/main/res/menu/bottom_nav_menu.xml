@@ -6,7 +6,7 @@
         android:icon="@drawable/ic_baseline_home_24"
         android:id="@+id/feed"/>
     <item android:title="Favorites"
-        android:icon="@drawable/ic_baseline_blue_grade_24"
+        android:icon="@drawable/ic_baseline_grade_24"
         android:id="@+id/favorites"/>
     <item android:title="Interests"
         android:icon="@drawable/ic_baseline_list_24"

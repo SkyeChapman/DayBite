@@ -49,6 +49,18 @@
 
         </LinearLayout>
 
+
+            <ToggleButton
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:textOn=""
+                android:textOff=""
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:background="@drawable/favorite_toggle_selector">
+
+            </ToggleButton>
+
     </RelativeLayout>
 
 </LinearLayout>
