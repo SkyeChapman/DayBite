@@ -2,6 +2,7 @@ package com.example.daybite
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.CheckBox
 import android.widget.TextView
 
 //Select Your Interests
@@ -25,26 +26,72 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    val musicBox = findViewById<TextView>(R.id.musicCheckBox)
-    var musicCheckBox = musicBox.isActivated.equals(null)
-    val foodBox = findViewById<TextView>(R.id.foodCheckBox)
-    var foodCheckBox = foodBox.isActivated.equals(null)
-    val techBox = findViewById<TextView>(R.id.techCheckBox)
-    var techCheckBox = techBox.isActivated.equals(null)
-    val historyBox = findViewById<TextView>(R.id.historyCheckBox)
-    var historyCheckBox = historyBox.isActivated.equals(null)
-    val animalsBox = findViewById<TextView>(R.id.animalsCheckBox)
-    var animalsCheckBox = animalsBox.isActivated.equals(null)
-    val spaceBox = findViewById<TextView>(R.id.spaceCheckBox)
-    var spaceCheckBox = spaceBox.isActivated.equals(null)
-    val aquaticBox = findViewById<TextView>(R.id.aquaticCheckBox)
-    val aquaticCheckBox = aquaticBox.isActivated.equals(null)
-    val filmsBox = findViewById<TextView>(R.id.filmsCheckBox)
-    val filmsCheckBox = filmsBox.isActivated.equals(null)
-    val economicsBox = findViewById<TextView>(R.id.economicsCheckBox)
-    val economicsCheckBox = economicsBox.isActivated.equals(null)
-    val sportsBox = findViewById<TextView>(R.id.sportsCheckBox)
-    val sportsCheckBox = sportsBox.isActivated.equals(null)
+    val musicBox = findViewById<CheckBox>(R.id.musicCheckBox)
+    var musicCheckBox = musicBox.isChecked.equals(null)
+    val foodBox = findViewById<CheckBox>(R.id.foodCheckBox)
+    var foodCheckBox = foodBox.isChecked.equals(null)
+    val techBox = findViewById<CheckBox>(R.id.techCheckBox)
+    var techCheckBox = techBox.isChecked.equals(null)
+    val historyBox = findViewById<CheckBox>(R.id.historyCheckBox)
+    var historyCheckBox = historyBox.isChecked.equals(null)
+    val animalsBox = findViewById<CheckBox>(R.id.animalsCheckBox)
+    var animalsCheckBox = animalsBox.isChecked.equals(null)
+    val spaceBox = findViewById<CheckBox>(R.id.spaceCheckBox)
+    var spaceCheckBox = spaceBox.isChecked.equals(null)
+    val aquaticBox = findViewById<CheckBox>(R.id.aquaticCheckBox)
+    val aquaticCheckBox = aquaticBox.isChecked.equals(null)
+    val filmsBox = findViewById<CheckBox>(R.id.filmsCheckBox)
+    var filmsCheckBox = filmsBox.isChecked.equals(null)
+    val economicsBox = findViewById<CheckBox>(R.id.economicsCheckBox)
+    var economicsCheckBox = economicsBox.isChecked.equals(null)
+    val sportsBox = findViewById<CheckBox>(R.id.sportsCheckBox)
+    val sportsCheckBox = sportsBox.isChecked.equals(null)
+
+
+    var userCategories : ArrayList<Boolean> ?= null
+
+    fun createAccount(categoryArray : ArrayList<Boolean>) {
+        if (musicBox.isActivated) {
+            userCategories?.add(musicCheckBox)
+
+        } else {
+
+        }
+        if (foodBox.isActivated) {
+            userCategories?.add(foodCheckBox)
+        } else {
+
+        }
+        if (techBox.isActivated) {
+            userCategories?.add(techCheckBox)
+        } else {
+
+        }
+        if (historyBox.isActivated) {
+            userCategories?.add(historyCheckBox)
+        } else {
+
+        }
+        if (animalsBox.isActivated) {
+            userCategories?.add(animalsCheckBox)
+        } else {
+
+        }
+        if (spaceBox.isActivated) {
+            userCategories?.add(spaceCheckBox)
+        } else {
+
+        }
+        if (aquaticBox.isActivated) {
+            userCategories?.add(aquaticCheckBox)
+        } else {
+
+        }
+        if (filmsBox.isActivated) {
+
+        }
+    }
+
 
 
 
