@@ -51,43 +51,65 @@ class MainActivity : AppCompatActivity() {
     var userCategories : ArrayList<Boolean> ?= null
 
     fun createAccount(categoryArray : ArrayList<Boolean>) {
-        if (musicBox.isActivated) {
+        if (musicBox.isChecked) {
             userCategories?.add(musicCheckBox)
 
         } else {
+            //continue
 
         }
-        if (foodBox.isActivated) {
+        if (foodBox.isChecked) {
             userCategories?.add(foodCheckBox)
         } else {
+            //do nothing
 
         }
-        if (techBox.isActivated) {
+        if (techBox.isChecked) {
             userCategories?.add(techCheckBox)
         } else {
+            //continue
 
         }
-        if (historyBox.isActivated) {
+        if (historyBox.isChecked) {
             userCategories?.add(historyCheckBox)
         } else {
+            //what is the code for continue
 
         }
-        if (animalsBox.isActivated) {
+        if (animalsBox.isChecked) {
             userCategories?.add(animalsCheckBox)
         } else {
+            //i'll find it soon, do nothing
 
         }
-        if (spaceBox.isActivated) {
+        if (spaceBox.isChecked) {
             userCategories?.add(spaceCheckBox)
         } else {
+            //or else!
 
         }
-        if (aquaticBox.isActivated) {
+        if (aquaticBox.isChecked) {
             userCategories?.add(aquaticCheckBox)
         } else {
+            //just ignore please
 
         }
-        if (filmsBox.isActivated) {
+        if (filmsBox.isChecked) {
+            userCategories?.add(filmsCheckBox)
+        } else {
+            //if it's not added, who cares!
+
+        }
+        if (economicsBox.isChecked) {
+            userCategories?.add(economicsCheckBox)
+        } else {
+            //do nothing, i'm kinda hungry
+
+        }
+        if (sportsBox.isChecked) {
+            userCategories?.add(sportsCheckBox)
+        } else {
+            //leave me alone
 
         }
     }
