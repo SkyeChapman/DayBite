@@ -12,6 +12,17 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val backButton = findViewById<TextView>(R.id.backButton)
+        backButton.setOnClickListener() {
+            onBackPressed()
+
+        }
+
+        val createButton = findViewById<TextView>(R.id.createButton)
+        createButton.setOnClickListener() {
+
+        }
     }
 
     val musicBox = findViewById<TextView>(R.id.musicCheckBox)
@@ -34,5 +45,7 @@ class MainActivity : AppCompatActivity() {
     val economicsCheckBox = economicsBox.isActivated.equals(null)
     val sportsBox = findViewById<TextView>(R.id.sportsCheckBox)
     val sportsCheckBox = sportsBox.isActivated.equals(null)
+
+
 
 }
