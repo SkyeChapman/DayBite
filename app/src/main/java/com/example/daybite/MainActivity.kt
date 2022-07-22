@@ -23,96 +23,100 @@ class MainActivity : AppCompatActivity() {
         val createButton = findViewById<TextView>(R.id.createButton)
         createButton.setOnClickListener() {
 
+
+            val musicBox = findViewById<CheckBox>(R.id.musicCheckBox)
+            var musicCheckBox = musicBox.isChecked
+            val foodBox = findViewById<CheckBox>(R.id.foodCheckBox)
+            var foodCheckBox = foodBox.isChecked
+            val techBox = findViewById<CheckBox>(R.id.techCheckBox)
+            var techCheckBox = techBox.isChecked
+            val historyBox = findViewById<CheckBox>(R.id.historyCheckBox)
+            var historyCheckBox = historyBox.isChecked
+            val animalsBox = findViewById<CheckBox>(R.id.animalsCheckBox)
+            var animalsCheckBox = animalsBox.isChecked
+            val spaceBox = findViewById<CheckBox>(R.id.spaceCheckBox)
+            var spaceCheckBox = spaceBox.isChecked
+            val aquaticBox = findViewById<CheckBox>(R.id.aquaticCheckBox)
+            val aquaticCheckBox = aquaticBox.isChecked
+            val filmsBox = findViewById<CheckBox>(R.id.filmsCheckBox)
+            var filmsCheckBox = filmsBox.isChecked
+            val economicsBox = findViewById<CheckBox>(R.id.economicsCheckBox)
+            var economicsCheckBox = economicsBox.isChecked
+            val sportsBox = findViewById<CheckBox>(R.id.sportsCheckBox)
+            val sportsCheckBox = sportsBox.isChecked
+
+
+
+            fun createAccount(userCategories : ArrayList<Boolean>) {
+
+                if (musicBox.isChecked) {
+                    userCategories.add(musicCheckBox)
+
+                } else {
+                    //continue
+
+                }
+                if (foodBox.isChecked) {
+                    userCategories.add(foodCheckBox)
+                } else {
+                    //do nothing
+
+                }
+                if (techBox.isChecked) {
+                    userCategories.add(techCheckBox)
+                } else {
+                    //continue
+
+                }
+                if (historyBox.isChecked) {
+                    userCategories.add(historyCheckBox)
+                } else {
+                    //what is the code for continue
+
+                }
+                if (animalsBox.isChecked) {
+                    userCategories.add(animalsCheckBox)
+                } else {
+                    //i'll find it soon, do nothing
+
+                }
+                if (spaceBox.isChecked) {
+                    userCategories.add(spaceCheckBox)
+                } else {
+                    //or else!
+
+                }
+                if (aquaticBox.isChecked) {
+                    userCategories.add(aquaticCheckBox)
+                } else {
+                    //just ignore please
+
+                }
+                if (filmsBox.isChecked) {
+                    userCategories.add(filmsCheckBox)
+                } else {
+                    //if it's not added, who cares!
+
+                }
+                if (economicsBox.isChecked) {
+                    userCategories.add(economicsCheckBox)
+                } else {
+                    //do nothing, i'm kinda hungry
+
+                }
+                if (sportsBox.isChecked) {
+                    userCategories.add(sportsCheckBox)
+                } else {
+                    //leave me alone
+
+                }
+
+                var newCreateAccount = User(userCategories)
+            }
         }
     }
 
-    val musicBox = findViewById<CheckBox>(R.id.musicCheckBox)
-    var musicCheckBox = musicBox.isChecked.equals(null)
-    val foodBox = findViewById<CheckBox>(R.id.foodCheckBox)
-    var foodCheckBox = foodBox.isChecked.equals(null)
-    val techBox = findViewById<CheckBox>(R.id.techCheckBox)
-    var techCheckBox = techBox.isChecked.equals(null)
-    val historyBox = findViewById<CheckBox>(R.id.historyCheckBox)
-    var historyCheckBox = historyBox.isChecked.equals(null)
-    val animalsBox = findViewById<CheckBox>(R.id.animalsCheckBox)
-    var animalsCheckBox = animalsBox.isChecked.equals(null)
-    val spaceBox = findViewById<CheckBox>(R.id.spaceCheckBox)
-    var spaceCheckBox = spaceBox.isChecked.equals(null)
-    val aquaticBox = findViewById<CheckBox>(R.id.aquaticCheckBox)
-    val aquaticCheckBox = aquaticBox.isChecked.equals(null)
-    val filmsBox = findViewById<CheckBox>(R.id.filmsCheckBox)
-    var filmsCheckBox = filmsBox.isChecked.equals(null)
-    val economicsBox = findViewById<CheckBox>(R.id.economicsCheckBox)
-    var economicsCheckBox = economicsBox.isChecked.equals(null)
-    val sportsBox = findViewById<CheckBox>(R.id.sportsCheckBox)
-    val sportsCheckBox = sportsBox.isChecked.equals(null)
 
-
-    var userCategories : ArrayList<Boolean> ?= null
-
-    fun createAccount(categoryArray : ArrayList<Boolean>) {
-        if (musicBox.isChecked) {
-            userCategories?.add(musicCheckBox)
-
-        } else {
-            //continue
-
-        }
-        if (foodBox.isChecked) {
-            userCategories?.add(foodCheckBox)
-        } else {
-            //do nothing
-
-        }
-        if (techBox.isChecked) {
-            userCategories?.add(techCheckBox)
-        } else {
-            //continue
-
-        }
-        if (historyBox.isChecked) {
-            userCategories?.add(historyCheckBox)
-        } else {
-            //what is the code for continue
-
-        }
-        if (animalsBox.isChecked) {
-            userCategories?.add(animalsCheckBox)
-        } else {
-            //i'll find it soon, do nothing
-
-        }
-        if (spaceBox.isChecked) {
-            userCategories?.add(spaceCheckBox)
-        } else {
-            //or else!
-
-        }
-        if (aquaticBox.isChecked) {
-            userCategories?.add(aquaticCheckBox)
-        } else {
-            //just ignore please
-
-        }
-        if (filmsBox.isChecked) {
-            userCategories?.add(filmsCheckBox)
-        } else {
-            //if it's not added, who cares!
-
-        }
-        if (economicsBox.isChecked) {
-            userCategories?.add(economicsCheckBox)
-        } else {
-            //do nothing, i'm kinda hungry
-
-        }
-        if (sportsBox.isChecked) {
-            userCategories?.add(sportsCheckBox)
-        } else {
-            //leave me alone
-
-        }
-    }
 
 
 
