@@ -1,18 +1,18 @@
 package com.example.daybite
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.widget.ImageView
-import android.widget.PopupMenu
-import android.widget.Toast
+import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.example.daybite.ui.Blurb
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import java.lang.Exception
+
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var bottomNav: BottomNavigationView
+    private lateinit var bottomNav: BottomNavigationView
+    private var blurbBody:TextView = findViewById(R.id.blurb_body) as TextView
+    private var blurbHeader:TextView = findViewById(R.id.blurb_title) as TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,6 +37,10 @@ class MainActivity : AppCompatActivity() {
             }
             true
         }
+
+        val blurb = Blurb()
+        blurbBody.text = blurb.GetFactBody()
+        blurbHeader.text = blurb.GetFactInterest()
     }
 
 
