@@ -19,9 +19,6 @@ class BlurbAdapter (private val blurbs:MutableList<Blurb>) :RecyclerView.Adapter
     {
         val currBlurb = blurbs[position]
         holder.itemView.apply { TODO()}
-        holder.itemView.apply {
-            TODO()
-        }
     }
 
     override fun getItemCount(): Int
