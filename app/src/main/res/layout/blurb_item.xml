@@ -6,6 +6,7 @@
 
 
     <RelativeLayout
+        android:id="@+id/blurbLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp">
@@ -30,8 +31,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/blurb_title"
-                        android:text="@string/texttitle"
+                        android:id="@+id/mBlurbTitle"
+                        android:text="@string/tvblurbtitle"
                         android:textColor="@color/black"
                         android:textSize="36sp"
                         android:textStyle="bold" />
@@ -39,8 +40,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/blurb_body"
-                        android:text="@string/textbody"
+                        android:id="@+id/mBlurbBody"
+                        android:text="@string/tvblurbbody"
                         android:textColor="@color/black"
                         android:layout_marginTop="10dp"
                         android:textSize="26dp"

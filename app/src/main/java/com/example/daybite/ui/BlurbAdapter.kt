@@ -6,19 +6,22 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.daybite.R
 
-class BlurbAdapter (private val blurbs:MutableList<Blurb>) :RecyclerView.Adapter<BlurbAdapter.BlurbHolder>()
+class BlurbAdapter (private val blurbs:MutableList<Blurb>) :RecyclerView.Adapter<BlurbAdapter.BlurbViewHolder>()
 {
-    class BlurbHolder(blurbView:View) : RecyclerView.ViewHolder(blurbView)
+    class BlurbViewHolder(blurbView:View) : RecyclerView.ViewHolder(blurbView)
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BlurbHolder
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BlurbViewHolder
     {
-        return BlurbHolder(LayoutInflater.from(parent.context).inflate(R.layout.fragment_feed,parent,false))
+        return BlurbViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.fragment_feed,parent,false))
     }
 
-    override fun onBindViewHolder(holder: BlurbHolder, position: Int)
+    override fun onBindViewHolder(holder: BlurbViewHolder, position: Int)
     {
         val currBlurb = blurbs[position]
         holder.itemView.apply { TODO()}
+        holder.itemView.apply {
+            TODO()
+        }
     }
 
     override fun getItemCount(): Int

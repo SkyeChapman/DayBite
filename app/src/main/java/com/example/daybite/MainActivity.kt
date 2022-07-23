@@ -11,8 +11,8 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 class MainActivity : AppCompatActivity() {
 
     private lateinit var bottomNav: BottomNavigationView
-    private var blurbBody:TextView = findViewById(R.id.blurb_body) as TextView
-    private var blurbHeader:TextView = findViewById(R.id.blurb_title) as TextView
+    private var blurbBody:TextView = findViewById(R.id.mBlurbBody) as TextView
+    private var blurbHeader:TextView = findViewById(R.id.mBlurbTitle) as TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
