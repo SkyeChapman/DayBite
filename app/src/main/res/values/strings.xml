@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">DayBite</string>
-    <string name="texttitle">textTitle</string>
     <string name="textbody">textBody</string>
+    <string name="texttitle">textTitle</string>
 </resources>

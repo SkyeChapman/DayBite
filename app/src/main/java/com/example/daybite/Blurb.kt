@@ -24,5 +24,6 @@ class Blurb (){
     init {
         val requests = Requests()
         this.SetFactBody(requests.GetCardFact("interest")!!.asText())
+        this.SetFactInterest("Temporary Stand-in Interest")
     }
 }
