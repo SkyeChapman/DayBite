@@ -4,6 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#AEF1F1"
+    android:outlineProvider="bounds"
+    android:visibility="visible"
+    app:layout_insetEdge="top"
     tools:context=".MainActivity">
 
     <FrameLayout
@@ -14,6 +18,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
 
     </FrameLayout>
 
