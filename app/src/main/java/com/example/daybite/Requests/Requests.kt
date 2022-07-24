@@ -6,7 +6,7 @@ import java.io.InputStream
 import java.net.HttpURLConnection
 import java.net.URL
 
-
+//code by tom
 class Requests
 {
     fun GetCardFact( interest : String) : JsonNode? {

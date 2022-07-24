@@ -11,16 +11,23 @@ import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
     private lateinit var bottomNav: BottomNavigationView
-    private var blurbBody:TextView = findViewById(R.id.mBlurbBody) as TextView
-    private var blurbHeader:TextView = findViewById(R.id.mBlurbTitle) as TextView
+    //textviews to set API data to show in textviews
+    private var blurbBody:TextView = findViewById(R.id.mBlurbBody) as TextView //code by tom
+    private var blurbHeader:TextView = findViewById(R.id.mBlurbTitle) as TextView//code by tom
 
     //private lateinit var binding: // figure out the binding for this
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        //code by tom
+        //create blurb object
+        val blurb = Blurb()
+        //set blurd text to data from Blurb.kt
+        blurbBody.text = blurb.GetFactBody()
+        blurbHeader.text = blurb.GetFactInterest()
 
-
+        //code by kris
         loadFragment(FeedFragment())
         bottomNav = findViewById(R.id.bottomNavigationView2) as BottomNavigationView
         bottomNav.setOnNavigationItemSelectedListener { item ->
@@ -41,10 +48,7 @@ class MainActivity : AppCompatActivity() {
             true
         }
 
-        val blurb = Blurb()
-        blurbBody.text = blurb.GetFactBody()
-        blurbHeader.text = blurb.GetFactInterest()
-
+        //code by skye
         val backButton = findViewById<TextView>(R.id.backButton)
         backButton.setOnClickListener {
             onBackPressed()
@@ -77,9 +81,6 @@ class MainActivity : AppCompatActivity() {
 
 
             fun createAccount(userCategories : ArrayList<Boolean>) {
-
-
-
                 if (musicBox.isChecked) {
                     userCategories.add(musicCheckBox)
                 } else {
