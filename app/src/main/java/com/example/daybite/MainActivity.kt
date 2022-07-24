@@ -13,6 +13,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var bottomNav: BottomNavigationView
     private var blurbBody:TextView = findViewById(R.id.mBlurbBody) as TextView
     private var blurbHeader:TextView = findViewById(R.id.mBlurbTitle) as TextView
+
     //private lateinit var binding: // figure out the binding for this
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -81,74 +82,60 @@ class MainActivity : AppCompatActivity() {
 
                 if (musicBox.isChecked) {
                     userCategories.add(musicCheckBox)
-
                 } else {
                     //continue
-
                 }
                 if (foodBox.isChecked) {
                     userCategories.add(foodCheckBox)
                 } else {
                     //do nothing
-
                 }
                 if (techBox.isChecked) {
                     userCategories.add(techCheckBox)
                 } else {
                     //continue
-
                 }
                 if (historyBox.isChecked) {
                     userCategories.add(historyCheckBox)
                 } else {
                     //what is the code for continue
-
                 }
                 if (animalsBox.isChecked) {
                     userCategories.add(animalsCheckBox)
                 } else {
                     //i'll find it soon, do nothing
-
                 }
                 if (spaceBox.isChecked) {
                     userCategories.add(spaceCheckBox)
                 } else {
                     //or else!
-
                 }
                 if (aquaticBox.isChecked) {
                     userCategories.add(aquaticCheckBox)
                 } else {
                     //just ignore please
-
                 }
                 if (filmsBox.isChecked) {
                     userCategories.add(filmsCheckBox)
                 } else {
                     //if it's not added, who cares!
-
                 }
                 if (economicsBox.isChecked) {
                     userCategories.add(economicsCheckBox)
                 } else {
                     //do nothing, i'm kinda hungry
-
                 }
                 if (sportsBox.isChecked) {
                     userCategories.add(sportsCheckBox)
                 } else {
                     //leave me alone
-
                 }
 
                 val newCreateAccount = User(categoryChoiceArray = userCategories)
                 newCreateAccount.categoryChoiceArray.contains(true).toString()
             }
-
-
         }
     }
-
 
     private fun loadFragment(fragment: Fragment) {
         val transaction = supportFragmentManager.beginTransaction()
