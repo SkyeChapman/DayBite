@@ -1,5 +1,5 @@
 
-package com.example.daybite.ui
+package com.example.daybite.Blurbs
 //code by tom
 import android.provider.Settings.Global.getString
 import android.widget.TextView

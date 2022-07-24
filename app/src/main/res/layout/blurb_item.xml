@@ -32,7 +32,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/mBlurbTitle"
-                        android:text="@string/tvblurbtitle"
+                        android:text="tvBlurbTitle"
                         android:textColor="@color/black"
                         android:textSize="36sp"
                         android:textStyle="bold" />
@@ -41,7 +41,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/mBlurbBody"
-                        android:text="@string/tvblurbbody"
+                        android:text="tvBlurbBody"
                         android:textColor="@color/black"
                         android:layout_marginTop="10dp"
                         android:textSize="26dp"

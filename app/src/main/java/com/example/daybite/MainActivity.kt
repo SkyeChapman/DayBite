@@ -3,7 +3,7 @@ package com.example.daybite
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.example.daybite.ui.Blurb
+import com.example.daybite.Blurbs.Blurb
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import android.widget.CheckBox
 import android.widget.TextView
@@ -12,20 +12,20 @@ import android.widget.TextView
 class MainActivity : AppCompatActivity() {
     private lateinit var bottomNav: BottomNavigationView
     //textviews to set API data to show in textviews
-    private var blurbBody:TextView = findViewById(R.id.mBlurbBody) as TextView //code by tom
-    private var blurbHeader:TextView = findViewById(R.id.mBlurbTitle) as TextView//code by tom
+    //private var blurbBody:TextView = findViewById(R.id.mBlurbBody) as TextView //code by tom
+    //private var blurbHeader:TextView = findViewById(R.id.mBlurbTitle) as TextView//code by tom
 
     //private lateinit var binding: // figure out the binding for this
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.fragment_feed)
         //code by tom
         //create blurb object
-        val blurb = Blurb()
-        //set blurd text to data from Blurb.kt
-        blurbBody.text = blurb.GetFactBody()
-        blurbHeader.text = blurb.GetFactInterest()
+        //val blurb = Blurb()
+        //set blurb text to data from Blurb.kt
+        //blurbBody.text = blurb.GetFactBody()
+        //blurbHeader.text = blurb.GetFactInterest()
 
         //code by kris
         loadFragment(FeedFragment())
