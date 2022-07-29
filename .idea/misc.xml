@@ -1,5 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/perry/DayBite/app/src/main/res/drawable/ic_baseline_account_circle_24.xml" value="0.279" />
+        <entry key="..\:/Users/perry/DayBite/app/src/main/res/drawable/ic_baseline_grade_24.xml" value="0.1295" />
+        <entry key="..\:/Users/perry/DayBite/app/src/main/res/drawable/ic_baseline_verified_user_24.xml" value="0.279" />
+        <entry key="..\:/Users/perry/DayBite/app/src/main/res/drawable/ic_baseline_warning_24.xml" value="0.279" />
+        <entry key="..\:/Users/perry/DayBite/app/src/main/res/layout/activity_main.xml" value="0.38615023474178406" />
+        <entry key="..\:/Users/perry/DayBite/app/src/main/res/layout/fragment_dash_board.xml" value="0.33" />
+        <entry key="..\:/Users/perry/DayBite/app/src/main/res/layout/fragment_login.xml" value="0.22" />
+        <entry key="..\:/Users/perry/DayBite/app/src/main/res/layout/fragment_register.xml" value="0.3625" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>

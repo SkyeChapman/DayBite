@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "474296220348",
+    "project_id": "daybiteapp",
+    "storage_bucket": "daybiteapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:474296220348:android:670f0dd6b2344bcdb96eb9",
+        "android_client_info": {
+          "package_name": "com.example.daybite"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "474296220348-et4oehgr9k4vku1k3lvvr5fhnunqr482.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.daybite",
+            "certificate_hash": "8be46f63dc4b491d94f0efad39f23d728c65f4e5"
+          }
+        },
+        {
+          "client_id": "474296220348-ncmlsrctg2nb6ph230b5voc7oj6cmskm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCbrUYUV5Pzujspf6otVGPjY5aOeY4w8s4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "474296220348-ncmlsrctg2nb6ph230b5voc7oj6cmskm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

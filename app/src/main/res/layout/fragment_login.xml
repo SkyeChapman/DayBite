@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginFragment"
+    android:background="@drawable/login_background">
+
+    //App Name
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/appName"
+        android:text="DayBite"
+        android:textSize="55sp"
+        android:textStyle="bold"
+        android:layout_marginTop="70dp"
+        android:gravity="center_horizontal"
+        />
+    //Logo Placement
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="38dp"
+        android:layout_marginLeft="38dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/logo"
+        />
+    //Username Space
+
+    <EditText
+        android:id="@+id/logNUSER"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/appName"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginRight="30dp"
+        android:background="#30ffffff"
+        android:drawableLeft="@drawable/ic_baseline_account_circle_24"
+        android:drawablePadding="3dp"
+        android:hint="Username"
+        android:padding="15dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textStyle="italic" />
+    //Password Space
+    <EditText
+        android:id="@+id/logNPass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/logNUSER"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginRight="30dp"
+        android:background="#30ffffff"
+        android:drawableLeft="@drawable/ic_baseline_verified_user_24"
+        android:drawablePadding="3dp"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:padding="15dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textStyle="italic"
+        />
+    //Login Button
+    <Button
+        android:id="@+id/loginBTN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/logNPass"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="45dp"
+        android:backgroundTint="#BB8FCE"
+        android:text="LOGIN"
+        />
+    //Forgot Password Button
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/forgotBTN"
+        android:layout_below="@+id/loginBTN"
+        android:text="Forgot Password"
+        android:textSize="12sp"
+        android:backgroundTint="@color/material_on_surface_stroke"
+        android:layout_marginTop="45dp"
+        android:layout_marginLeft="20dp"
+        />
+    //Create Account Button
+
+    <Button
+        android:id="@+id/regBTN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/loginBTN"
+        android:layout_marginLeft="265dp"
+        android:layout_marginTop="45dp"
+        android:backgroundTint="@color/material_on_surface_stroke"
+        android:text="Register"
+        android:textSize="12sp" />
+
+</RelativeLayout>
