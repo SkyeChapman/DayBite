@@ -8,6 +8,8 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 /**
  * A simple [Fragment] subclass.
@@ -23,7 +25,8 @@ class DashBoardFragment : Fragment() {
 
 
         view.findViewById<Button>(R.id.logOUT).setOnClickListener {
-            firebaseAuth.signOut()
+            //Sign user out of account
+            Firebase.auth.signOut()
 
             //Switch back to Login screen
             val navReg = activity as Navigator

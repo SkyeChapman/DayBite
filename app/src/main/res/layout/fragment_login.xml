@@ -26,8 +26,8 @@
         android:adjustViewBounds="true"
         android:src="@drawable/logo"
         />
-    //Username Space
 
+    //Username Space
     <EditText
         android:id="@+id/logNUSER"
         android:layout_width="match_parent"
@@ -75,17 +75,17 @@
         android:text="LOGIN"
         />
     //Forgot Password Button
+
     <Button
+        android:id="@+id/forgotBTN"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/forgotBTN"
         android:layout_below="@+id/loginBTN"
-        android:text="Forgot Password"
-        android:textSize="12sp"
-        android:backgroundTint="@color/material_on_surface_stroke"
-        android:layout_marginTop="45dp"
         android:layout_marginLeft="20dp"
-        />
+        android:layout_marginTop="45dp"
+        android:backgroundTint="@color/material_on_surface_stroke"
+        android:text="Forgot Password"
+        android:textSize="12sp" />
     //Create Account Button
 
     <Button

@@ -4,11 +4,13 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/perry/DayBite/app/src/main/res/drawable/ic_baseline_account_circle_24.xml" value="0.279" />
+        <entry key="..\:/Users/perry/DayBite/app/src/main/res/drawable/ic_baseline_account_circle_24black.xml" value="0.2405" />
         <entry key="..\:/Users/perry/DayBite/app/src/main/res/drawable/ic_baseline_grade_24.xml" value="0.1295" />
         <entry key="..\:/Users/perry/DayBite/app/src/main/res/drawable/ic_baseline_verified_user_24.xml" value="0.279" />
         <entry key="..\:/Users/perry/DayBite/app/src/main/res/drawable/ic_baseline_warning_24.xml" value="0.279" />
         <entry key="..\:/Users/perry/DayBite/app/src/main/res/layout/activity_main.xml" value="0.38615023474178406" />
         <entry key="..\:/Users/perry/DayBite/app/src/main/res/layout/fragment_dash_board.xml" value="0.33" />
+        <entry key="..\:/Users/perry/DayBite/app/src/main/res/layout/fragment_forgot_password.xml" value="0.3203592814371258" />
         <entry key="..\:/Users/perry/DayBite/app/src/main/res/layout/fragment_login.xml" value="0.22" />
         <entry key="..\:/Users/perry/DayBite/app/src/main/res/layout/fragment_register.xml" value="0.3625" />
       </map>

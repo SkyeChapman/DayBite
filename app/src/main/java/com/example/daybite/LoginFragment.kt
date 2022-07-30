@@ -31,13 +31,17 @@ class LoginFragment : Fragment() {
         log_pass = view.findViewById(R.id.logNPass)
 
         view.findViewById<Button>(R.id.regBTN).setOnClickListener {
-            val navReg = activity as Navigator
-            navReg.fragNavigation(RegisterFragment(), false)
+            val navy = activity as Navigator
+            navy.fragNavigation(RegisterFragment(), false)
         }
         view.findViewById<Button>(R.id.loginBTN).setOnClickListener {
             validateEmptyForm()
-
         }
+        view.findViewById<Button>(R.id.forgotBTN).setOnClickListener {
+            val navy = activity as Navigator
+            navy.fragNavigation(ForgotPasswordFragment(), false)
+        }
+
         return view
     }
 

@@ -8,6 +8,12 @@
     tools:context=".MainLoginActivity" >
 
     <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/forgotPassword"
+        android:name="com.example.daybite.ForgotPasswordFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <androidx.fragment.app.FragmentContainerView
         android:id="@+id/dashBoard"
         android:name="com.example.daybite.DashBoardFragment"
         android:layout_width="wrap_content"
