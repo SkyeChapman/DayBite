@@ -75,7 +75,7 @@ class ForgotPasswordFragment : Fragment() {
                     }
                     else
                     {
-                        Toast.makeText(context,"Please use email format..[johndoe@email.Com",Toast.LENGTH_LONG).show()
+                        forgotEmail.setError("Please use email format", warning )
                     }
                 }
 
