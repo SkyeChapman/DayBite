@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.content.res.AppCompatResources
 import com.google.firebase.auth.FirebaseAuth
@@ -19,7 +20,7 @@ import com.google.firebase.auth.FirebaseAuth
 class ForgotPasswordFragment : Fragment() {
 
     private lateinit var forgotEmail: EditText
-
+    private lateinit var back:TextView
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -29,6 +30,11 @@ class ForgotPasswordFragment : Fragment() {
 
         //Read in edit text
         forgotEmail = view.findViewById(R.id.forgotEmail)
+
+        view.findViewById<Button>(R.id.cancelForgot).setOnClickListener {
+            val navy = activity as Navigator
+            navy.fragNavigation(LoginFragment(), false)
+        }
 
         view.findViewById<Button>(R.id.passwordLinkBTN).setOnClickListener {
             validateEntry()
@@ -57,10 +63,15 @@ class ForgotPasswordFragment : Fragment() {
                                 if(task.isSuccessful)
                                 {
                                     Toast.makeText(context, "Email sent successfully to reset password", Toast.LENGTH_LONG).show()
+                                    //Switch back to Login Screen
+                                    navy.fragNavigation(LoginFragment(), false)
+                                }
+                                else
+                                {
+                                    Toast.makeText(context,task.exception!!.toString(), Toast.LENGTH_LONG).show()
                                 }
                             }
-                        //Switch back to Login Screen
-                        navy.fragNavigation(LoginFragment(), false)
+
                     }
                     else
                     {
