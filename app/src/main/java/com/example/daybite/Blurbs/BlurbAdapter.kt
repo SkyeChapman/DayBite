@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.daybite.R
+import kotlinx.android.synthetic.main.blurb_item.view.*
 
 
 class BlurbAdapter (private val blurbs:MutableList<Blurb>) :RecyclerView.Adapter<BlurbAdapter.BlurbViewHolder>()
@@ -21,10 +22,9 @@ class BlurbAdapter (private val blurbs:MutableList<Blurb>) :RecyclerView.Adapter
     {
         val currBlurb = blurbs[position]
         holder.itemView.apply {
-            val title:TextView = findViewById<TextView>(R.id.mBlurbTitle)
-            val body:TextView = findViewById<TextView>(R.id.mBlurbBody)
-            title.text = currBlurb.mHeader
-            body.text = currBlurb.mBody}
+            mBlurbTitle.text = currBlurb.mHeader
+            mBlurbBody.text = currBlurb.mBody
+        }
     }
 
     override fun getItemCount(): Int
