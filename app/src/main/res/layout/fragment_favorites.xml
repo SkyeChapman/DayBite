@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FavoritesFragment">
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/list_view"
+        tools:listitem="@layout/blurb_item"/>
+
+
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:id="@+id/interests_scroll">
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_1"
+                android:layout_width="130dp"
+                android:layout_height="60dp"
+                android:text="Interest 1"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:gravity="center" />
+
+            <Button
+                android:id="@+id/btn_2"
+                android:layout_width="130dp"
+                android:layout_height="60dp"
+                android:text="Interest 2"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:gravity="center" />
+
+            <Button
+                android:id="@+id/btn_3"
+                android:layout_width="130dp"
+                android:layout_height="60dp"
+                android:text="Interest 3"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:gravity="center" />
+
+            <Button
+                android:id="@+id/btn_4"
+                android:layout_width="130dp"
+                android:layout_height="60dp"
+                android:text="Interest 4"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:gravity="center" />
+
+            <Button
+                android:id="@+id/btn_5"
+                android:layout_width="130dp"
+                android:layout_height="60dp"
+                android:text="Interest 5"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:gravity="center" />
+
+            <Button
+                android:id="@+id/btn_6"
+                android:layout_width="130dp"
+                android:layout_height="60dp"
+                android:text="Interest 6"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:gravity="center" />
+
+            <Button
+                android:id="@+id/btn_7"
+                android:layout_width="130dp"
+                android:layout_height="60dp"
+                android:text="Interest 7"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:gravity="center" />
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+
+</FrameLayout>

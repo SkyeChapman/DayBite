@@ -1,0 +1,149 @@
+package com.example.daybite
+
+import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import com.example.daybite.Blurbs.Blurb
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import android.widget.CheckBox
+import android.widget.TextView
+//Select Your Interests
+
+class MainActivity : AppCompatActivity() {
+    private lateinit var bottomNav: BottomNavigationView
+    //textviews to set API data to show in textviews
+    //private var blurbBody:TextView = findViewById(R.id.mBlurbBody) as TextView //code by tom
+    //private var blurbHeader:TextView = findViewById(R.id.mBlurbTitle) as TextView//code by tom
+
+    //private lateinit var binding: // figure out the binding for this
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.fragment_feed)
+        //code by tom
+        //create blurb object
+        //val blurb = Blurb()
+        //set blurb text to data from Blurb.kt
+        //blurbBody.text = blurb.GetFactBody()
+        //blurbHeader.text = blurb.GetFactInterest()
+
+        //code by kris
+        loadFragment(FeedFragment())
+        bottomNav = findViewById(R.id.bottomNavigationView2) as BottomNavigationView
+        bottomNav.setOnNavigationItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.feed -> {
+                    loadFragment(FeedFragment())
+                }
+                R.id.favorites -> {
+                    loadFragment(FavoritesFragment())
+                }
+                R.id.interests -> {
+                    loadFragment(InterestFragment())
+                }
+                R.id.account -> {
+                    loadFragment(AccountFragment())
+                }
+            }
+            true
+        }
+
+        //code by skye
+        val backButton = findViewById<TextView>(R.id.backButton)
+        backButton.setOnClickListener {
+            onBackPressed()
+        }
+
+        val createButton = findViewById<TextView>(R.id.createButton)
+        createButton.setOnClickListener {
+
+            val musicBox = findViewById<CheckBox>(R.id.musicCheckBox)
+            val musicCheckBox = musicBox.isChecked
+            val foodBox = findViewById<CheckBox>(R.id.foodCheckBox)
+            val foodCheckBox = foodBox.isChecked
+            val techBox = findViewById<CheckBox>(R.id.techCheckBox)
+            val techCheckBox = techBox.isChecked
+            val historyBox = findViewById<CheckBox>(R.id.historyCheckBox)
+            val historyCheckBox = historyBox.isChecked
+            val animalsBox = findViewById<CheckBox>(R.id.animalsCheckBox)
+            val animalsCheckBox = animalsBox.isChecked
+            val spaceBox = findViewById<CheckBox>(R.id.spaceCheckBox)
+            val spaceCheckBox = spaceBox.isChecked
+            val aquaticBox = findViewById<CheckBox>(R.id.aquaticCheckBox)
+            val aquaticCheckBox = aquaticBox.isChecked
+            val filmsBox = findViewById<CheckBox>(R.id.filmsCheckBox)
+            val filmsCheckBox = filmsBox.isChecked
+            val economicsBox = findViewById<CheckBox>(R.id.economicsCheckBox)
+            val economicsCheckBox = economicsBox.isChecked
+            val sportsBox = findViewById<CheckBox>(R.id.sportsCheckBox)
+            val sportsCheckBox = sportsBox.isChecked
+
+
+
+            fun createAccount(userCategories : ArrayList<Boolean>) {
+                if (musicBox.isChecked) {
+                    userCategories.add(musicCheckBox)
+                } else {
+                    //continue
+                }
+                if (foodBox.isChecked) {
+                    userCategories.add(foodCheckBox)
+                } else {
+                    //do nothing
+                }
+                if (techBox.isChecked) {
+                    userCategories.add(techCheckBox)
+                } else {
+                    //continue
+                }
+                if (historyBox.isChecked) {
+                    userCategories.add(historyCheckBox)
+                } else {
+                    //what is the code for continue
+                }
+                if (animalsBox.isChecked) {
+                    userCategories.add(animalsCheckBox)
+                } else {
+                    //i'll find it soon, do nothing
+                }
+                if (spaceBox.isChecked) {
+                    userCategories.add(spaceCheckBox)
+                } else {
+                    //or else!
+                }
+                if (aquaticBox.isChecked) {
+                    userCategories.add(aquaticCheckBox)
+                } else {
+                    //just ignore please
+                }
+                if (filmsBox.isChecked) {
+                    userCategories.add(filmsCheckBox)
+                } else {
+                    //if it's not added, who cares!
+                }
+                if (economicsBox.isChecked) {
+                    userCategories.add(economicsCheckBox)
+                } else {
+                    //do nothing, i'm kinda hungry
+                }
+                if (sportsBox.isChecked) {
+                    userCategories.add(sportsCheckBox)
+                } else {
+                    //leave me alone
+                }
+
+                val newCreateAccount = User(categoryChoiceArray = userCategories)
+                newCreateAccount.categoryChoiceArray.contains(true).toString()
+            }
+        }
+    }
+
+    private fun loadFragment(fragment: Fragment) {
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.replace(R.id.frame_layout, fragment)
+        transaction.addToBackStack(null)
+        transaction.commit()
+    }
+}
+
+
