@@ -21,18 +21,19 @@ class ForgotPasswordFragment : Fragment() {
 
     private lateinit var forgotEmail: EditText
     private lateinit var back:TextView
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_forgot_password, container, false)
+        val navy = activity as Navigator
 
         //Read in edit text
         forgotEmail = view.findViewById(R.id.forgotEmail)
 
         view.findViewById<Button>(R.id.cancelForgot).setOnClickListener {
-            val navy = activity as Navigator
             navy.fragNavigation(LoginFragment(), false)
         }
 

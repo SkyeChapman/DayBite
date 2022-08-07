@@ -31,6 +31,7 @@ class RegisterFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment - Switch Screens!
         val view = inflater.inflate(R.layout.fragment_register, container, false)
+        val navReg = activity as Navigator
 
         //Read in Edit text from ID
         fName = view.findViewById(R.id.firstName)
@@ -43,10 +44,8 @@ class RegisterFragment : Fragment() {
             validateEmptyForm()
         }
         view.findViewById<Button>(R.id.cancel_button).setOnClickListener {
-            val navReg = activity as Navigator
             navReg.fragNavigation(LoginFragment(), false)
         }
-
         return view
     }
     private fun validateEmptyForm()
@@ -111,8 +110,5 @@ class RegisterFragment : Fragment() {
                 }
             }
         }
-
-
     }
-
 }

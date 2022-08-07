@@ -7,10 +7,18 @@ import com.example.daybite.Blurbs.Blurb
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import android.widget.CheckBox
 import android.widget.TextView
+import com.example.daybite.databinding.ActivityFeedBinding
+import com.example.daybite.databinding.FragmentFeedBinding
+import kotlinx.android.synthetic.main.activity_feed.*
+
 //Select Your Interests
 
-class MainActivity : AppCompatActivity() {
+class FeedActivity : AppCompatActivity(){
     private lateinit var bottomNav: BottomNavigationView
+    private lateinit var currFrag: Fragment
+    private lateinit var binding: ActivityFeedBinding
+
+
     //textviews to set API data to show in textviews
     //private var blurbBody:TextView = findViewById(R.id.mBlurbBody) as TextView //code by tom
     //private var blurbHeader:TextView = findViewById(R.id.mBlurbTitle) as TextView//code by tom
@@ -19,7 +27,8 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.fragment_feed)
+        binding = ActivityFeedBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         //code by tom
         //create blurb object
         //val blurb = Blurb()
@@ -27,31 +36,37 @@ class MainActivity : AppCompatActivity() {
         //blurbBody.text = blurb.GetFactBody()
         //blurbHeader.text = blurb.GetFactInterest()
 
-        //code by kris
-        loadFragment(FeedFragment())
-        bottomNav = findViewById(R.id.bottomNavigationView2) as BottomNavigationView
-        bottomNav.setOnNavigationItemSelectedListener { item ->
-            when (item.itemId) {
-                R.id.feed -> {
-                    loadFragment(FeedFragment())
-                }
-                R.id.favorites -> {
-                    loadFragment(FavoritesFragment())
-                }
-                R.id.interests -> {
-                    loadFragment(InterestFragment())
-                }
-                R.id.account -> {
-                    loadFragment(AccountFragment())
-                }
-            }
-            true
-        }
+        //code by kris & Ap
+        supportFragmentManager.beginTransaction().replace(R.id.frame_layout, FeedFragment())
+            .commit()
+        bottomNav = findViewById(R.id.bottomNavigationView2)
+        bottomNav.setOnItemSelectedListener(navListener)
+    }
+    val navListener = BottomNavigationView.OnNavigationItemSelectedListener {
 
-        //code by skye
-        val backButton = findViewById<TextView>(R.id.backButton)
-        backButton.setOnClickListener {
-            onBackPressed()
+        when (it.itemId) {
+            R.id.feed -> {
+                currFrag = FeedFragment()
+            }
+            R.id.favorites -> {
+                currFrag = FavoritesFragment()
+            }
+            R.id.interests -> {
+                currFrag = InterestFragment()
+            }
+            R.id.account -> {
+                currFrag = AccountFragment()
+            }
+        }
+        supportFragmentManager.beginTransaction().replace(R.id.frame_layout, currFrag)
+        true
+    }
+
+
+    //code by skye
+    /*val backButton = findViewById<TextView>(R.id.backButton)
+       backButton.setOnClickListener {
+           // onBackPressed()
         }
 
         val createButton = findViewById<TextView>(R.id.createButton)
@@ -135,15 +150,16 @@ class MainActivity : AppCompatActivity() {
                 val newCreateAccount = User(categoryChoiceArray = userCategories)
                 newCreateAccount.categoryChoiceArray.contains(true).toString()
             }
-        }
-    }
-
-    private fun loadFragment(fragment: Fragment) {
-        val transaction = supportFragmentManager.beginTransaction()
-        transaction.replace(R.id.frame_layout, fragment)
-        transaction.addToBackStack(null)
-        transaction.commit()
-    }
+        }*/
 }
+
+
+
+
+
+
+
+
+
 
 

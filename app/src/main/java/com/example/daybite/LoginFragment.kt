@@ -1,5 +1,6 @@
 package com.example.daybite
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
 import androidx.fragment.app.Fragment
@@ -30,21 +31,20 @@ class LoginFragment : Fragment() {
         log_user = view.findViewById(R.id.logNUSER)
         log_pass = view.findViewById(R.id.logNPass)
 
+        //switch between fragments
+        val navy = activity as Navigator
         view.findViewById<Button>(R.id.regBTN).setOnClickListener {
-            val navy = activity as Navigator
+
             navy.fragNavigation(RegisterFragment(), false)
         }
         view.findViewById<Button>(R.id.loginBTN).setOnClickListener {
             validateEmptyForm()
         }
         view.findViewById<Button>(R.id.forgotBTN).setOnClickListener {
-            val navy = activity as Navigator
             navy.fragNavigation(ForgotPasswordFragment(), false)
         }
-
         return view
     }
-
 
     private fun validateEmptyForm()
     {
@@ -80,7 +80,11 @@ class LoginFragment : Fragment() {
                                     Toast.makeText(context,"Login Successful",
                                         Toast.LENGTH_SHORT)
                                         .show()
-                                    navy.fragNavigation(DashBoardFragment(), false)
+
+                                    //switch to New Activity
+                                    val intent = Intent(this@LoginFragment.requireContext(),FeedActivity::class.java)
+                                    startActivity(intent)
+
                                 }
                                 else //Login Failure
                                 {

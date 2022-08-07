@@ -2,12 +2,19 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:title="Feed"
+        android:id="@+id/feed"
+        android:actionLayout="@layout/fragment_feed"
+        android:enabled="true"
         android:icon="@drawable/ic_baseline_home_24"
-        android:id="@+id/feed"/>
-    <item android:title="Favorites"
+        android:title="Feed"
+        android:visible="true" />
+    <item
+        android:id="@+id/favorites"
+        android:actionLayout="@layout/fragment_favorites"
+        android:enabled="true"
         android:icon="@drawable/ic_baseline_grade_24"
-        android:id="@+id/favorites"/>
+        android:title="Favorites"
+        android:visible="true" />
     <item android:title="Interests"
         android:icon="@drawable/ic_baseline_list_24"
         android:id="@+id/interests"/>
