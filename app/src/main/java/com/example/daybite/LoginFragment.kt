@@ -76,7 +76,7 @@ class LoginFragment : Fragment() {
                         FirebaseAuth.getInstance().signInWithEmailAndPassword(email,password)
                             .addOnCompleteListener { task ->
                                 if (task.isSuccessful) {
-                                    val firbaseUser: FirebaseUser = task.result!!.user!!
+                                    val firebaseUser: FirebaseUser = task.result!!.user!!
                                     Toast.makeText(context,"Login Successful",
                                         Toast.LENGTH_SHORT)
                                         .show()
