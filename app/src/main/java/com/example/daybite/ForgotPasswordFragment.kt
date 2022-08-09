@@ -1,5 +1,6 @@
 package com.example.daybite
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
 import androidx.fragment.app.Fragment
@@ -12,6 +13,8 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.content.res.AppCompatResources
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 
 /**
@@ -34,7 +37,8 @@ class ForgotPasswordFragment : Fragment() {
         forgotEmail = view.findViewById(R.id.forgotEmail)
 
         view.findViewById<Button>(R.id.cancelForgot).setOnClickListener {
-            navy.fragNavigation(LoginFragment(), false)
+            val intent = Intent(this@ForgotPasswordFragment.requireContext(),MainLoginActivity::class.java)
+            startActivity(intent)
         }
 
         view.findViewById<Button>(R.id.passwordLinkBTN).setOnClickListener {
@@ -65,7 +69,14 @@ class ForgotPasswordFragment : Fragment() {
                                 {
                                     Toast.makeText(context, "Email sent successfully to reset password", Toast.LENGTH_LONG).show()
                                     //Switch back to Login Screen
-                                    navy.fragNavigation(LoginFragment(), false)
+                                    //Sign user out of account
+                                    Firebase.auth.signOut()
+
+                                    //Switch back to Login screen
+                                    val intent = Intent(this@ForgotPasswordFragment.requireContext(),MainLoginActivity::class.java)
+                                    startActivity(intent)
+                                    Toast.makeText(context, "Email Sent Successful",Toast.LENGTH_SHORT).show()
+
                                 }
                                 else
                                 {

@@ -24,7 +24,6 @@
         android:layout_marginTop="54dp"
         android:gravity="center"
         android:text="DayBite"
-
         android:textColor="@color/white"
         android:textSize="45sp"
         android:textStyle="italic"

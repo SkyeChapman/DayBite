@@ -1,5 +1,6 @@
 package com.example.daybite
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
 import androidx.fragment.app.Fragment
@@ -44,7 +45,8 @@ class RegisterFragment : Fragment() {
             validateEmptyForm()
         }
         view.findViewById<Button>(R.id.cancel_button).setOnClickListener {
-            navReg.fragNavigation(LoginFragment(), false)
+            val intent = Intent(this@RegisterFragment.requireContext(),MainLoginActivity::class.java)
+            startActivity(intent)
         }
         return view
     }
@@ -90,7 +92,8 @@ class RegisterFragment : Fragment() {
                                         Toast.makeText(context,"Register Successful",
                                             Toast.LENGTH_SHORT)
                                             .show()
-                                        navy.fragNavigation(LoginFragment(), false)
+                                        val intent = Intent(this@RegisterFragment.requireContext(),MainLoginActivity::class.java)
+                                        startActivity(intent)
                                     }
                                 }
                         }

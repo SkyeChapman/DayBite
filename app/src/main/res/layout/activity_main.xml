@@ -2,65 +2,101 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainLoginActivity">
+    android:background="@drawable/login_background"
+    tools:context=".MainLoginActivity"
+    android:id="@+id/dayBite"
+    >
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNavigationView2"
+    <FrameLayout
+        android:id="@+id/frame_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:scrollIndicators="left"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="match_parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/bottom_nav_menu"
-        tools:visibility="gone" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/forgotPassword"
-        android:name="com.example.daybite.ForgotPasswordFragment"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/appName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="115dp"
+            android:layout_marginTop="78dp"
+            android:text="DayBite"
+            android:textSize="55sp"
+            android:textStyle="bold" />
 
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/dashBoard"
-        android:name="com.example.daybite.FeedFragment"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <ImageView
+            android:id="@+id/logoIcon"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="56dp"
+            android:layout_marginTop="48dp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/logo" />
 
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/register"
-        android:name="com.example.daybite.RegisterFragment"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout="@layout/fragment_register" />
+        <EditText
+            android:id="@+id/logNUSER"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/appName"
+            android:layout_marginTop="248dp"
+            android:background="#30ffffff"
+            android:drawableLeft="@drawable/ic_baseline_account_circle_24"
+            android:drawablePadding="3dp"
+            android:hint="Username"
+            android:padding="15dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textStyle="italic" />
 
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/logIn"
-        android:name="com.example.daybite.LoginFragment"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout="@layout/fragment_login" />
+        <EditText
+            android:id="@+id/logNPass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="320dp"
+            android:background="#30ffffff"
+            android:drawableLeft="@drawable/ic_baseline_verified_user_24"
+            android:drawablePadding="3dp"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:padding="15dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textStyle="italic" />
+
+        <Button
+            android:id="@+id/loginBTN"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="155dp"
+            android:layout_marginTop="440dp"
+            android:backgroundTint="#BB8FCE"
+            android:text="LOGIN" />
+
+        <Button
+            android:id="@+id/forgotBTN"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="535dp"
+            android:backgroundTint="@color/material_on_surface_stroke"
+            android:text="Forgot Password"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/regBTN"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/loginBTN"
+            android:layout_marginLeft="275dp"
+            android:layout_marginTop="535dp"
+            android:backgroundTint="@color/material_on_surface_stroke"
+            android:text="Register"
+            android:textSize="12sp" />
+    </FrameLayout>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

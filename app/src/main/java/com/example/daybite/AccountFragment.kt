@@ -1,10 +1,16 @@
 package com.example.daybite
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.ImageButton
+import android.widget.Toast
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 
 class AccountFragment : Fragment() {
@@ -20,6 +26,22 @@ class AccountFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_account, container, false)
+       val view =  inflater.inflate(R.layout.fragment_account, container, false)
+
+        view. findViewById<ImageButton>(R.id.logoutBtn).setOnClickListener {
+            //Sign user out of account
+            Firebase.auth.signOut()
+
+            //Switch back to Login screen
+            val intent = Intent(this@AccountFragment.requireContext(),MainLoginActivity::class.java)
+            startActivity(intent)
+            Toast.makeText(context, "LogOut Successful",Toast.LENGTH_SHORT).show()
+        }
+
+        view.findViewById<Button>(R.id.saveEdit).setOnClickListener {
+
+            TODO()//add save function
+        }
+        return view
     }
 }
