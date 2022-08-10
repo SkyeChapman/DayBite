@@ -8,6 +8,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.example.daybite.Blurbs.BlurbAdapter
 import com.example.daybite.databinding.ActivityFeedBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.ktx.auth
@@ -19,23 +20,19 @@ class FeedActivity : AppCompatActivity(){
     private lateinit var bottomNav: BottomNavigationView
     private lateinit var currFrag: Fragment
     private lateinit var binding: ActivityFeedBinding
-    //textviews to set API data to show in textviews
-    //private var blurbBody:TextView = findViewById(R.id.mBlurbBody) as TextView //code by tom
-    //private var blurbHeader:TextView = findViewById(R.id.mBlurbTitle) as TextView//code by tom
-
     //private lateinit var binding: // figure out the binding for this
-
+    private lateinit var blurbAdapter: BlurbAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityFeedBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        //code by tom
-        //create blurb object
-        //val blurb = Blurb()
-        //set blurb text to data from Blurb.kt
-        //blurbBody.text = blurb.GetFactBody()
-        //blurbHeader.text = blurb.GetFactInterest()
+        //generate adapter for blurbs
+        blurbAdapter = BlurbAdapter(mutableListOf())
+        //generate list of blurbs
+        blurbAdapter.GenerateBlurbs()
+
+
 
         //code by kris & Ap
         supportFragmentManager.beginTransaction().replace(R.id.frame_layout, FeedFragment())
