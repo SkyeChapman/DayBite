@@ -7,6 +7,8 @@ import com.example.daybite.Blurbs.Blurb
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import android.widget.CheckBox
 import android.widget.TextView
+import com.example.daybite.Blurbs.BlurbAdapter
+
 //Select Your Interests
 
 class MainActivity : AppCompatActivity() {
@@ -16,16 +18,15 @@ class MainActivity : AppCompatActivity() {
     //private var blurbHeader:TextView = findViewById(R.id.mBlurbTitle) as TextView//code by tom
 
     //private lateinit var binding: // figure out the binding for this
-
+    private lateinit var blurbAdapter: BlurbAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.fragment_feed)
-        //code by tom
-        //create blurb object
-        //val blurb = Blurb()
-        //set blurb text to data from Blurb.kt
-        //blurbBody.text = blurb.GetFactBody()
-        //blurbHeader.text = blurb.GetFactInterest()
+        //generate adapter for blurbs
+        blurbAdapter = BlurbAdapter(mutableListOf())
+        //generate list of blurbs
+        blurbAdapter.GenerateBlurbs()
+
 
         //code by kris
         loadFragment(FeedFragment())
