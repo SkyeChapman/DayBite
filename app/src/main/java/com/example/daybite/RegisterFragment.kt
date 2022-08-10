@@ -11,8 +11,13 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.content.res.AppCompatResources
+import com.example.daybite.databinding.FragmentRegisterBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.storage.StorageReference
+ 
 
 
 /**
@@ -25,6 +30,10 @@ class RegisterFragment : Fragment() {
     private lateinit var regEmail: EditText
     private lateinit var regPass: EditText
     private lateinit var cfnPass: EditText
+    private lateinit var regAge : EditText
+    private lateinit var auth: FirebaseAuth
+    private lateinit var databaseRef : DatabaseReference
+    private lateinit var storageRef : StorageReference
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,25 +41,30 @@ class RegisterFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment - Switch Screens!
         val view = inflater.inflate(R.layout.fragment_register, container, false)
-        val navReg = activity as Navigator
+
+
 
         //Read in Edit text from ID
         fName = view.findViewById(R.id.firstName)
         lName = view.findViewById(R.id.lastName)
         regEmail = view.findViewById(R.id.regEmail)
         regPass = view.findViewById(R.id.setPassword)
+        regAge = view.findViewById(R.id.age)
         cfnPass = view.findViewById(R.id.confirmPass)
+        auth = FirebaseAuth.getInstance()
 
         view.findViewById<Button>(R.id.submitBTN).setOnClickListener {
-            validateEmptyForm()
+            emptyFormRegister()
+
         }
+
         view.findViewById<Button>(R.id.cancel_button).setOnClickListener {
             val intent = Intent(this@RegisterFragment.requireContext(),MainLoginActivity::class.java)
             startActivity(intent)
         }
         return view
     }
-    private fun validateEmptyForm()
+    private fun emptyFormRegister()
     {
         val warning = AppCompatResources.getDrawable(requireContext(), R.drawable.ic_baseline_warning_24)
         warning?.setBounds(0,0,warning.intrinsicWidth, warning.intrinsicHeight)
@@ -84,14 +98,26 @@ class RegisterFragment : Fragment() {
                         {
                             val email: String = regEmail.text.toString().trim(){it <= ' '}
                             val password: String = regPass.text.toString().trim(){it <= ' '}
-                            val navy = activity as Navigator
+
                             FirebaseAuth.getInstance().createUserWithEmailAndPassword(email,password)
                                 .addOnCompleteListener { task ->
                                     if (task.isSuccessful) {
+                                        val firstName = fName.text.toString()
+                                        val lastName = lName.text.toString()
+                                        val _email = regEmail.text.toString()
+                                        val _age = regAge.text.length
+                                        val _password = regPass.text.toString()
+                                        databaseRef = FirebaseDatabase.getInstance().getReference("Users")
+                                        val user = UserProfile(firstName,lastName,_email,_password,_age)
+                                        databaseRef.child(firstName).setValue(user).addOnCompleteListener {
+
+                                            Toast.makeText(context,"Register Successful", Toast.LENGTH_SHORT).show()
+                                        }.addOnFailureListener {
+
+                                            Toast.makeText(context,"Failed Registration", Toast.LENGTH_SHORT).show()
+                                        }
+
                                         val firbaseUser: FirebaseUser = task.result!!.user!!
-                                        Toast.makeText(context,"Register Successful",
-                                            Toast.LENGTH_SHORT)
-                                            .show()
                                         val intent = Intent(this@RegisterFragment.requireContext(),MainLoginActivity::class.java)
                                         startActivity(intent)
                                     }
