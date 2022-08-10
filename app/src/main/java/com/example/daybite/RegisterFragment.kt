@@ -42,8 +42,6 @@ class RegisterFragment : Fragment() {
         // Inflate the layout for this fragment - Switch Screens!
         val view = inflater.inflate(R.layout.fragment_register, container, false)
 
-
-
         //Read in Edit text from ID
         fName = view.findViewById(R.id.firstName)
         lName = view.findViewById(R.id.lastName)

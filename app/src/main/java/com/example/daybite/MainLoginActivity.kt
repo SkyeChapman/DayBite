@@ -36,32 +36,6 @@ class MainLoginActivity() : AppCompatActivity(), Navigator {
         bindFrag = FragmentRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        auth = FirebaseAuth.getInstance()
-        bindFrag.submitBTN.setOnClickListener {
-
-            //get user info
-            val fName = bindFrag.firstName.text.toString()
-            val lName = bindFrag.lastName.text.toString()
-            val _email = bindFrag.regEmail.text.toString()
-            val _age = bindFrag.age.text.length
-            val _password = bindFrag.setPassword.text.toString()
-
-            databaseRef = FirebaseDatabase.getInstance().getReference("Users")
-            val user = UserProfile(fName,lName,_email,_password,_age)
-            databaseRef.child(fName).setValue(user).addOnSuccessListener {
-
-                bindFrag.firstName.text.clear()
-                bindFrag.lastName.text.clear()
-                bindFrag.regEmail.text.clear()
-                bindFrag.setPassword.text.clear()
-                bindFrag.age.text.clear()
-
-                val intent = Intent(this, MainLoginActivity::class.java)
-                startActivity(intent)
-            }
-
-        }
-
         //Validate user on button click
         binding.loginBTN.setOnClickListener {
             validateEmptyForm()
