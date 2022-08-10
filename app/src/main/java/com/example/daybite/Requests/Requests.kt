@@ -9,9 +9,9 @@ import java.net.URL
 //code by tom
 class Requests
 {
-    fun GetCardFact( interest : String) : JsonNode? {
+    fun GenerateBlurbFact(interest : String) : String {
         // initialize return node to null
-        var J: JsonNode? = null
+        var blurbJson = String()
         //thread to access Internet on new thread
         val thread = Thread{
             try
@@ -27,9 +27,9 @@ class Requests
                 val responseStream: InputStream = connection.getInputStream()
                 val mapper = ObjectMapper()
                 val root: JsonNode = mapper.readTree(responseStream)
-                println(root.path(interest).asText())
+                //println(root.path(interest).asText())
                 //Your code goes here
-                J = root
+                blurbJson = root.findValue(interest).textValue()
             } catch (e: Exception)
             {
                 e.printStackTrace()
@@ -37,6 +37,7 @@ class Requests
         }
 
         thread.start()
-        return J
+        thread.join()
+        return blurbJson
     }
 }
