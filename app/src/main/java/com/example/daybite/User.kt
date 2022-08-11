@@ -1,3 +1,3 @@
 package com.example.daybite
 
-data class User(var categoryChoiceArray: String)
+data class User(var categoryChoiceArray: ArrayList<Boolean>)
