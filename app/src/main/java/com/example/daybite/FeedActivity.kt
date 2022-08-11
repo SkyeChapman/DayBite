@@ -8,11 +8,13 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.daybite.Blurbs.BlurbAdapter
 import com.example.daybite.databinding.ActivityFeedBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import kotlinx.android.synthetic.main.fragment_feed.*
 
 //Select Your Interests
 
@@ -31,9 +33,9 @@ class FeedActivity : AppCompatActivity(){
         blurbAdapter = BlurbAdapter(mutableListOf())
         //generate list of blurbs
         blurbAdapter.GenerateBlurbs()
-
-
-
+        rvMainfeed.adapter = blurbAdapter
+        rvMainfeed.layoutManager = LinearLayoutManager(this)
+        println()
         //code by kris & Ap
         supportFragmentManager.beginTransaction().replace(R.id.frame_layout, FeedFragment())
             .commit()

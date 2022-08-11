@@ -37,6 +37,7 @@ class BlurbAdapter (private val blurbs:MutableList<Blurb>) :RecyclerView.Adapter
        {
            val newBlurb = Blurb()
            blurbs.add(newBlurb)
+           notifyItemInserted(blurbs.size-1)
        }
     }
 }
