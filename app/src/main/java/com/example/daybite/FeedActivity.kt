@@ -35,7 +35,6 @@ class FeedActivity : AppCompatActivity(){
         blurbAdapter.GenerateBlurbs()
         rvMainfeed.adapter = blurbAdapter
         rvMainfeed.layoutManager = LinearLayoutManager(this)
-        println()
         //code by kris & Ap
         supportFragmentManager.beginTransaction().replace(R.id.frame_layout, FeedFragment())
             .commit()
