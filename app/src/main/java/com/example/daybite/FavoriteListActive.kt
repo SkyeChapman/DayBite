@@ -1,4 +1,3 @@
 package com.example.daybite
 
-class FavoriteListActive {
-}
+data class FavoriteListActive(var userFavoriteList: ArrayList<String>)

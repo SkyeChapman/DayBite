@@ -84,7 +84,14 @@
         android:id="@+id/list_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:listitem="@layout/blurb_item" />
+        tools:listitem="@layout/blurb_item" >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/searchBar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Search" />
+    </ListView>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout"
@@ -99,11 +106,6 @@
         app:layout_constraintStart_toEndOf="@+id/searchClick"
         app:layout_constraintTop_toTopOf="parent">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/searchBar"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:hint="Search" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <SearchView
@@ -113,7 +115,7 @@
         android:layout_marginTop="526dp"
         android:layout_marginBottom="16dp"
         android:background="#E1E1E1"
-        android:clickable="true"
+        android:clickable="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/textInputLayout"
         app:layout_constraintStart_toStartOf="parent"
