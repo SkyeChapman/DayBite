@@ -46,7 +46,6 @@ android {
 }
 
 dependencies {
-
     testImplementation 'junit:junit:4.13.2'
 
     //Needed android libraries
@@ -76,8 +75,6 @@ dependencies {
 
     //Progress dialog library
     implementation('com.jpardogo.googleprogressbar:library:1.2.0')
-
-
 
     //Needed Firebase libraries
     implementation 'com.google.firebase:firebase-common-ktx:20.1.1'

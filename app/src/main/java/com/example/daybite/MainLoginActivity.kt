@@ -1,10 +1,12 @@
 package com.example.daybite
 
+import android.app.Dialog
 import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
+import android.view.Window
 import android.widget.Toast
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.fragment.app.Fragment
@@ -29,6 +31,7 @@ class MainLoginActivity() : AppCompatActivity(), Navigator {
     private lateinit var databaseRef : DatabaseReference
     private lateinit var storageRef : StorageReference
     private lateinit var profilePic : Uri
+    private lateinit var dialog : Dialog
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,6 +41,7 @@ class MainLoginActivity() : AppCompatActivity(), Navigator {
 
         //Validate user on button click
         binding.loginBTN.setOnClickListener {
+            progressBar()
             validateEmptyForm()
         }
         //Switch to forgot password frag on button click
@@ -60,6 +64,7 @@ class MainLoginActivity() : AppCompatActivity(), Navigator {
         }
         transaction.commit()
     }
+
  //method for validation thru firebase
     private fun validateEmptyForm()
     {
@@ -91,6 +96,9 @@ class MainLoginActivity() : AppCompatActivity(), Navigator {
                         FirebaseAuth.getInstance().signInWithEmailAndPassword(email,password)
                             .addOnCompleteListener { task ->
                                 if (task.isSuccessful) {
+                                    //dismiss progress bar
+                                    hideProgressBar()
+
                                     val firebaseUser: FirebaseUser = task.result!!.user!!
                                     Toast.makeText(this,"Login Successful",
                                         Toast.LENGTH_SHORT)
@@ -122,7 +130,7 @@ class MainLoginActivity() : AppCompatActivity(), Navigator {
             }
         }
     }
-//method ofr uploading and changing profile pictures
+//method for uploading and changing profile pictures
     private fun uploadPic(){
 
         profilePic = Uri.parse("android.resource://$packageName/${R.drawable.profile_pic}")
@@ -138,69 +146,19 @@ class MainLoginActivity() : AppCompatActivity(), Navigator {
         }
 
     }
-    private fun emptyFormRegister()
-    {
-        val warning = AppCompatResources.getDrawable(this, R.drawable.ic_baseline_warning_24)
-        warning?.setBounds(0,0,warning.intrinsicWidth, warning.intrinsicHeight)
 
-        //Check if field is empty
-        when {
-            TextUtils.isEmpty(firstName.text.toString().trim()) -> {
-                firstName.setError("Please enter First Name", warning)
-            }
-            TextUtils.isEmpty(lastName.text.toString().trim()) -> {
-                lastName.setError("Please enter Last Name", warning)
-            }
-            TextUtils.isEmpty(regEmail.text.toString().trim()) -> {
-                regEmail.setError("Please enter a valid email address", warning)
-            }
-            TextUtils.isEmpty(setPassword.text.toString().trim()) -> {
-                setPassword.setError("Must enter password", warning)
-            }
-            TextUtils.isEmpty(confirmPass.text.toString().trim()) -> {
-                confirmPass.setError("Must enter password", warning)
-            }
-            regEmail.text.toString().isNotEmpty()&&
-                    setPassword.text.toString().isNotEmpty()&&
-                    confirmPass.text.toString().isNotEmpty()->
-            {
-                if(regEmail.text.toString().matches(Regex("[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+")))
-                {
-                    if(setPassword.text.toString().length>=6)
-                    {
-                        if(setPassword.text.toString() == confirmPass.text.toString())
-                        {
-
-                            val email: String = regEmail.text.toString().trim(){it <= ' '}
-                            val password: String = setPassword.text.toString().trim(){it <= ' '}
-                            FirebaseAuth.getInstance().createUserWithEmailAndPassword(email,password)
-                                .addOnCompleteListener { task ->
-                                    if (task.isSuccessful) {
-                                        val firbaseUser: FirebaseUser = task.result!!.user!!
-                                        Toast.makeText(this,"Register Successful",
-                                            Toast.LENGTH_SHORT)
-                                            .show()
-                                        val intent = Intent(this,MainLoginActivity::class.java)
-                                        startActivity(intent)
-                                    }
-                                }
-                        }
-                        else
-                        {
-                            confirmPass.setError("Passwords do not match", warning)
-                        }
-                    }
-                    else
-                    {
-                        setPassword.setError("Must be at least 6 Character's",warning)
-                    }
-                }
-                else
-                {
-                    regEmail.setError("Please enter a Valid email address", warning)
-                }
-
-            }
-        }
+//show progress bar
+    private fun progressBar(){
+        dialog = Dialog(this)
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        dialog.setContentView(R.layout.progress_dialog)
+        dialog.setCanceledOnTouchOutside(false)
+        dialog.show()
     }
+
+    //method to hide progress bar
+    private fun hideProgressBar(){
+        dialog.dismiss()
+    }
+
 }
