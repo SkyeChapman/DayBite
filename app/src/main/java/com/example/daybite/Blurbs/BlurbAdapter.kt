@@ -15,7 +15,7 @@ class BlurbAdapter (private val blurbs:MutableList<Blurb>) :RecyclerView.Adapter
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BlurbViewHolder
     {
-        return BlurbViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.fragment_feed,parent,false))
+        return BlurbViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.blurb_item,parent,false))
     }
 
     override fun onBindViewHolder(holder: BlurbViewHolder, position: Int)

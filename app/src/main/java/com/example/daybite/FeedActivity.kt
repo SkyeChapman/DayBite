@@ -22,7 +22,6 @@ class FeedActivity : AppCompatActivity(){
     private lateinit var bottomNav: BottomNavigationView
     private lateinit var currFrag: Fragment
     private lateinit var binding: ActivityFeedBinding
-    //private lateinit var binding: // figure out the binding for this
     private lateinit var blurbAdapter: BlurbAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

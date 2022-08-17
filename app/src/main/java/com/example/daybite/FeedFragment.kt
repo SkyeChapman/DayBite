@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.Toast
+import com.example.daybite.Blurbs.BlurbAdapter
 import com.example.daybite.databinding.ActivityFeedBinding
 import com.example.daybite.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -25,7 +26,7 @@ class FeedFragment : Fragment() {
     private lateinit var firebaseAuth: FirebaseAuth
     private lateinit var bottomNav : BottomNavigationView
     private lateinit var binding: ActivityMainBinding
-
+    private lateinit var blurbAdapter: BlurbAdapter
 
 
     override fun onCreateView(
@@ -47,4 +48,9 @@ class FeedFragment : Fragment() {
         return view
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+
+    }
 }
