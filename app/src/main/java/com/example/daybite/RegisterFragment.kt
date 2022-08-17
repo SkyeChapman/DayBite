@@ -14,10 +14,11 @@ import androidx.appcompat.content.res.AppCompatResources
 import com.example.daybite.databinding.FragmentRegisterBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.auth.ktx.userProfileChangeRequest
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.StorageReference
- 
+import kotlinx.android.synthetic.main.fragment_account.*
 
 
 /**
@@ -115,11 +116,17 @@ class RegisterFragment : Fragment() {
                                             Toast.makeText(context,"Failed Registration", Toast.LENGTH_SHORT).show()
                                         }
 
-                                        val firbaseUser: FirebaseUser = task.result!!.user!!
+                                        val firebaseUser: FirebaseUser = task.result!!.user!!
                                         val intent = Intent(this@RegisterFragment.requireContext(),MainLoginActivity::class.java)
                                         startActivity(intent)
                                     }
                                 }
+                            var currentuser = FirebaseAuth.getInstance().currentUser;
+                            val profileSetUp = userProfileChangeRequest{
+                                displayName = firstName.toString()
+
+                            }
+
                         }
                         else
                         {
