@@ -51,9 +51,8 @@ class RegisterFragment : Fragment() {
         cfnPass = view.findViewById(R.id.confirmPass)
         auth = FirebaseAuth.getInstance()
 
-        view.findViewById<Button>(R.id.submitBTN).setOnClickListener {
+        view.findViewById<Button>(R.id.nextBTN).setOnClickListener {
             emptyFormRegister()
-
         }
 
         view.findViewById<Button>(R.id.cancel_button).setOnClickListener {
@@ -103,21 +102,16 @@ class RegisterFragment : Fragment() {
                                         val firstName = fName.text.toString()
                                         val lastName = lName.text.toString()
                                         val _email = regEmail.text.toString()
-                                        val _age = regAge.text.length
+                                        val _age = regAge.text.toString().toInt()
                                         val _password = regPass.text.toString()
                                         databaseRef = FirebaseDatabase.getInstance().getReference("Users")
                                         val user = UserProfile(firstName,lastName,_email,_password,_age)
                                         databaseRef.child(firstName).setValue(user).addOnCompleteListener {
-
-                                            Toast.makeText(context,"Register Successful", Toast.LENGTH_SHORT).show()
-                                        }.addOnFailureListener {
-
-                                            Toast.makeText(context,"Failed Registration", Toast.LENGTH_SHORT).show()
                                         }
 
                                         val firbaseUser: FirebaseUser = task.result!!.user!!
-                                        val intent = Intent(this@RegisterFragment.requireContext(),MainLoginActivity::class.java)
-                                        startActivity(intent)
+                                      val navReg = activity as Navigator
+                                        navReg.fragNavigation(RegInterestFragment(),false)
                                     }
                                 }
                         }

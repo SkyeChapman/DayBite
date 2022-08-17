@@ -12,16 +12,19 @@
     //background added temporary
 
     //code by tom
+
+    //Logout button by AP
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvMainfeed"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="196dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    //Logout button by AP
     <ImageButton
         android:id="@+id/logoutBtn"
         android:layout_width="wrap_content"

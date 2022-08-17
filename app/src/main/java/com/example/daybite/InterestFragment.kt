@@ -28,16 +28,16 @@ class InterestFragment : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_interest, container, false)
 
-        view.findViewById<ImageButton>(R.id.logoutBtn).setOnClickListener {
-            //Sign user out of account
-            Firebase.auth.signOut()
 
-            //Switch back to Login screen
-            val intent = Intent(this@InterestFragment.requireContext(),MainLoginActivity::class.java)
+        view.findViewById<Button>(R.id.createButton).setOnClickListener {
+
+            TODO()//devins saving code
+
+            //switch to main feed populated with seleted interest
+            val intent = Intent(this@InterestFragment.requireContext(), FeedActivity::class.java)
             startActivity(intent)
-            Toast.makeText(context, "LogOut Successful", Toast.LENGTH_SHORT).show()
-        }
 
+        }
         return view
     }
 

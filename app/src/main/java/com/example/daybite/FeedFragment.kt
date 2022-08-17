@@ -2,20 +2,18 @@ package com.example.daybite
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.ImageButton
 import android.widget.Toast
-import com.example.daybite.databinding.ActivityFeedBinding
 import com.example.daybite.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import kotlinx.android.synthetic.main.fragment_feed.*
 
 /**
  * A simple [Fragment] subclass.
@@ -34,7 +32,8 @@ class FeedFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_feed, container, false)
-        
+
+
         view.findViewById<ImageButton>(R.id.logoutBtn).setOnClickListener {
             //Sign user out of account
             Firebase.auth.signOut()

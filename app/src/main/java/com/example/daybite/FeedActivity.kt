@@ -20,7 +20,6 @@ import kotlinx.android.synthetic.main.fragment_feed.*
 
 class FeedActivity : AppCompatActivity(){
     private lateinit var bottomNav: BottomNavigationView
-    private lateinit var currFrag: Fragment
     private lateinit var binding: ActivityFeedBinding
     //private lateinit var binding: // figure out the binding for this
     private lateinit var blurbAdapter: BlurbAdapter
@@ -35,6 +34,7 @@ class FeedActivity : AppCompatActivity(){
         blurbAdapter.GenerateBlurbs()
         rvMainfeed.adapter = blurbAdapter
         rvMainfeed.layoutManager = LinearLayoutManager(this)
+
         //code by kris & Ap
         supportFragmentManager.beginTransaction().replace(R.id.frame_layout, FeedFragment())
             .commit()

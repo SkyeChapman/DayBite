@@ -19,7 +19,6 @@ import com.google.firebase.storage.StorageReference
 
 
 class AccountFragment : Fragment() {
-
     private lateinit var etfName: EditText
     private lateinit var etlName: EditText
     private lateinit var etEmail: EditText
@@ -27,6 +26,7 @@ class AccountFragment : Fragment() {
     private lateinit var auth: FirebaseAuth
     private lateinit var databaseFetch : DatabaseReference
     private lateinit var storageRef : StorageReference
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -39,10 +39,10 @@ class AccountFragment : Fragment() {
         // Inflate the layout for this fragment
        val view =  inflater.inflate(R.layout.fragment_account, container, false)
 
-        etfName = view.findViewById(R.id.firstName)
-        etlName = view.findViewById(R.id.lastName)
-        etEmail = view.findViewById(R.id.regEmail)
-        etPass = view.findViewById(R.id.setPassword)
+        //etfName = view.findViewById(R.id.firstName)
+       // etlName = view.findViewById(R.id.lastName)
+       // etEmail = view.findViewById(R.id.regEmail)
+       // etPass = view.findViewById(R.id.setPassword)
 
 
         auth = FirebaseAuth.getInstance()
