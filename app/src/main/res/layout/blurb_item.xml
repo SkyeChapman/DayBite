@@ -6,10 +6,12 @@
 
 
     <RelativeLayout
-        android:id="@+id/blurbLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp">
+        android:layout_marginTop="16dp"
+        android:elevation="10dp"
+        android:padding="15dp"
+        android:background="@drawable/shadow">
 
         <LinearLayout
             android:layout_width= "wrap_content"
@@ -17,44 +19,42 @@
             android:layout_marginVertical="10dp"
             android:orientation="horizontal">
 
-            // Implement image
 
 
 
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:orientation="vertical">
 
-                <LinearLayout
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:orientation="vertical">
+                    android:id="@+id/blurb_title"
+                    android:text="Title"
+                    android:textColor="@color/black"
+                    android:textSize="36sp"
+                    android:textStyle="bold" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/mBlurbTitle"
-                        android:text="tvBlurbTitle"
-                        android:textColor="@color/black"
-                        android:textSize="36sp"
-                        android:textStyle="bold" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/blurb_des"
+                    android:text="Description"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="10dp"
+                    android:textSize="26dp"
+                    android:textStyle="bold" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/mBlurbBody"
-                        android:text="tvBlurbBody"
-                        android:textColor="@color/black"
-                        android:layout_marginTop="10dp"
-                        android:textSize="26dp"
-                        android:textStyle="bold" />
-
-                </LinearLayout>
+            </LinearLayout>
 
         </LinearLayout>
 
 
         <ToggleButton
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_alignParentRight="true"
             android:layout_centerInParent="true"
             android:background="@drawable/favorite_toggle_selector"
@@ -62,6 +62,16 @@
             android:textOn="">
 
         </ToggleButton>
+
+        <Button
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="1dp"
+            android:background="@drawable/ic_baseline_more_vert_24">
+
+        </Button>
+
 
     </RelativeLayout>
 
