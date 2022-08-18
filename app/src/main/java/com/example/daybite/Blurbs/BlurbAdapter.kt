@@ -32,7 +32,7 @@ class BlurbAdapter (private val blurbs:MutableList<Blurb>) :RecyclerView.Adapter
     }
     fun GenerateBlurbs()
     {
-       for (blurb in 0 until 100)
+       for (blurb in 0 until 30)
        {
            val newBlurb = Blurb()
            blurbs.add(newBlurb)
