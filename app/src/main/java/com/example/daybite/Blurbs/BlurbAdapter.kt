@@ -26,14 +26,13 @@ class BlurbAdapter (private val blurbs:MutableList<Blurb>) :RecyclerView.Adapter
             mBlurbBody.text = currBlurb.mBody
         }
     }
-
     override fun getItemCount(): Int
     {
         return blurbs.size
     }
     fun GenerateBlurbs()
     {
-       for (blurb in 0 until 28)
+       for (blurb in 0 until 100)
        {
            val newBlurb = Blurb()
            blurbs.add(newBlurb)

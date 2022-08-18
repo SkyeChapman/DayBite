@@ -47,6 +47,9 @@ class FeedActivity : AppCompatActivity(){
             R.id.feed -> {
                 loadFragment(FeedFragment())
             }
+            R.id.explore -> {
+                loadFragment(ExploreFragment())
+            }
             R.id.favorites -> {
                 loadFragment(FavoritesFragment())
 

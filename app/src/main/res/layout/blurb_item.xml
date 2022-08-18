@@ -31,7 +31,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/blurb_title"
+                    android:id="@+id/mBlurbTitle"
                     android:text="Title"
                     android:textColor="@color/black"
                     android:textSize="36sp"
@@ -40,7 +40,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/blurb_des"
+                    android:id="@+id/mBlurbBody"
                     android:text="Description"
                     android:textColor="@color/black"
                     android:layout_marginTop="10dp"
@@ -53,11 +53,13 @@
 
 
         <ToggleButton
+            android:id="@+id/tbFavoriteButton"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_alignParentRight="true"
             android:layout_centerInParent="true"
             android:background="@drawable/favorite_toggle_selector"
+            android:clickable="true"
             android:textOff=""
             android:textOn="">
 
