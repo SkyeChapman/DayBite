@@ -108,8 +108,12 @@ class RegisterFragment : Fragment() {
                                         databaseRef = FirebaseDatabase.getInstance().getReference("Users")
                                         val user = UserProfile(firstName,lastName,_email,_password,_age)
                                         databaseRef.child(firstName).setValue(user).addOnCompleteListener {
+                                            Toast.makeText(context,"Register Successful", Toast.LENGTH_SHORT).show()
+                                        }.addOnFailureListener {
+
+                                            Toast.makeText(context,"Failed Registration", Toast.LENGTH_SHORT).show()
                                         }
-                                        val firbaseUser: FirebaseUser = task.result!!.user!!
+
                                       val navReg = activity as Navigator
                                         navReg.fragNavigation(RegInterestFragment(),false)
                                         val firebaseUser: FirebaseUser = task.result!!.user!!
