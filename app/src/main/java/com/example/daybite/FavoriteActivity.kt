@@ -14,21 +14,30 @@ import kotlinx.android.synthetic.main.fragment_favorite_search.view.*
 
 class FavoriteActivity : AppCompatActivity() {
 
-    lateinit var searchView: SearchView
-    lateinit var listView: ListView
+    lateinit var searchClickGo: SearchView
+    lateinit var searchBarGo: ListView
     lateinit var adapter: ArrayAdapter<*>
+    lateinit var favoriteList: ArrayList<String>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.fragment_favorite_search)
 
-        val searchClickGo = findViewById<TextView>(R.id.searchClick) // SearchView item
-        val searchBarGo = findViewById<TextView>(R.id.searchBar) //Listview item
+
 
         fun userFavoriteList(userFavoriteList: ArrayList<String>) {
+            favoriteList = userFavoriteList // ?
+
+            //val searchClickGo = findViewById<TextView>(R.id.searchClick) // SearchView item
+           // val searchBarGo = findViewById<TextView>(R.id.searchBar) //Listview item
+            searchClickGo = findViewById(R.id.searchClick)
+            searchBarGo = findViewById(R.id.searchBar)
+            adapter = ArrayAdapter<String> (this, android.R.layout.simple_list_item_1, favoriteList) //maybe?
+            searchBarGo.adapter = adapter
 
             searchClick.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
                 override fun onQueryTextSubmit(query: String): Boolean {
+
 
                     if (userFavoriteList.contains(query))
                     {
@@ -41,8 +50,9 @@ class FavoriteActivity : AppCompatActivity() {
                     return false
                 }
 
-                override fun onQueryTextChange(newText: String?): Boolean {
-                    TODO("Not yet implemented")
+                override fun onQueryTextChange(newText: String): Boolean {
+                    adapter.filter.filter(newText)
+                    return false
                 }
             })
         }
