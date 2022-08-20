@@ -29,12 +29,12 @@
 
         <ImageView
             android:id="@+id/logoIcon"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="77dp"
+            android:layout_height="78dp"
             android:layout_marginLeft="56dp"
             android:layout_marginTop="48dp"
             android:adjustViewBounds="true"
-            android:src="@drawable/logo" />
+            android:src="@drawable/daybite" />
 
         <EditText
             android:id="@+id/logNUSER"

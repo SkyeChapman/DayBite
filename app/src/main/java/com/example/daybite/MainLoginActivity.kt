@@ -9,6 +9,7 @@ import android.text.TextUtils
 import android.view.Window
 import android.widget.Toast
 import androidx.appcompat.content.res.AppCompatResources
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.fragment.app.Fragment
 import com.example.daybite.databinding.*
 import com.google.firebase.auth.FirebaseAuth
@@ -18,10 +19,7 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.fragment_account.*
-import kotlinx.android.synthetic.main.fragment_account.firstName
-import kotlinx.android.synthetic.main.fragment_account.lastName
-import kotlinx.android.synthetic.main.fragment_register.*
+
 
 class MainLoginActivity() : AppCompatActivity(), Navigator {
 
@@ -35,6 +33,7 @@ class MainLoginActivity() : AppCompatActivity(), Navigator {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         bindFrag = FragmentRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)

@@ -18,6 +18,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageView
+        android:layout_width="279dp"
+        android:layout_height="78dp"
+        android:layout_marginStart="66dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="66dp"
+        android:src="@drawable/daybite"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/selectYourInterestHeader"
         android:layout_width="wrap_content"
@@ -100,12 +111,13 @@
         android:id="@+id/sportsCheckBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="184dp"
+        android:layout_marginStart="250dp"
+        android:layout_marginTop="499dp"
+        android:layout_marginEnd="87dp"
         android:text="Sports"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.741"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <CheckBox
         android:id="@+id/filmsCheckBox"
@@ -133,26 +145,26 @@
         android:id="@+id/economicsCheckBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="184dp"
+        android:layout_marginStart="106dp"
+        android:layout_marginTop="499dp"
+        android:layout_marginEnd="204dp"
         android:text="Economics"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.341"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/submitBTN"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Submit"
+        android:layout_marginStart="253dp"
 
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="591dp"
+        android:layout_marginEnd="67dp"
+        android:text="Submit"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.79"
-        app:layout_constraintStart_toEndOf="@+id/backBTN"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.865" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/backBTN"
