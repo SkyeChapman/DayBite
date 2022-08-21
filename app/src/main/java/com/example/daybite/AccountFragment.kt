@@ -98,11 +98,8 @@ class AccountFragment : Fragment() {
                         {
                             Toast.makeText(context,"Password Must Be at Least 6 Characters",Toast.LENGTH_LONG).show()
                         }
-            }
-
-            }
-
-
+                     }
+                }
             }
         }
 
