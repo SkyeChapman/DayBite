@@ -204,7 +204,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <CheckBox
-            android:id="@+id/musicCheckBox"
+            android:id="@+id/Miscellaneous"
             android:layout_width="70dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="100dp"
@@ -214,82 +214,82 @@
             android:text="Music" />
 
         <CheckBox
-            android:id="@+id/foodCheckBox"
+            android:id="@+id/cbAssorted"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="200dp"
             android:layout_marginBottom="21dp"
             android:text="Food"
-            app:layout_constraintBottom_toTopOf="@+id/historyCheckBox"
-            app:layout_constraintStart_toStartOf="@+id/historyCheckBox" />
+            app:layout_constraintBottom_toTopOf="@+id/cbUnSorted"
+            app:layout_constraintStart_toStartOf="@+id/cbUnSorted" />
 
         <CheckBox
-            android:id="@+id/techCheckBox"
+            android:id="@+id/cbRandom"
             android:layout_width="93dp"
             android:layout_height="48dp"
             android:layout_marginStart="200dp"
             android:layout_marginTop="50dp"
             android:text="Tech"
-            app:layout_constraintBottom_toBottomOf="@+id/animalsCheckBox"
-            app:layout_constraintStart_toStartOf="@+id/musicCheckBox"
-            app:layout_constraintTop_toTopOf="@+id/musicCheckBox" />
+            app:layout_constraintBottom_toBottomOf="@+id/cbVaried"
+            app:layout_constraintStart_toStartOf="@+id/Miscellaneous"
+            app:layout_constraintTop_toTopOf="@+id/Miscellaneous" />
 
         <CheckBox
-            android:id="@+id/historyCheckBox"
+            android:id="@+id/cbUnSorted"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="100dp"
             android:text="History"
-            app:layout_constraintStart_toEndOf="@+id/techCheckBox"
-            app:layout_constraintTop_toTopOf="@+id/techCheckBox" />
+            app:layout_constraintStart_toEndOf="@+id/cbRandom"
+            app:layout_constraintTop_toTopOf="@+id/cbRandom" />
 
         <CheckBox
-            android:id="@+id/animalsCheckBox"
+            android:id="@+id/cbVaried"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
             android:layout_marginBottom="1dp"
             android:text="Animals"
-            app:layout_constraintBottom_toTopOf="@+id/aquaticCheckBox"
-            app:layout_constraintEnd_toEndOf="@+id/techCheckBox" />
+            app:layout_constraintBottom_toTopOf="@+id/cbConglomerate"
+            app:layout_constraintEnd_toEndOf="@+id/cbRandom" />
 
         <CheckBox
-            android:id="@+id/spaceCheckBox"
+            android:id="@+id/cbDisordered"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="300dp"
             android:layout_marginTop="100dp"
             android:text="Space"
-            app:layout_constraintStart_toStartOf="@+id/historyCheckBox"
-            app:layout_constraintTop_toBottomOf="@+id/historyCheckBox" />
+            app:layout_constraintStart_toStartOf="@+id/cbUnSorted"
+            app:layout_constraintTop_toBottomOf="@+id/cbUnSorted" />
 
         <CheckBox
-            android:id="@+id/aquaticCheckBox"
+            android:id="@+id/cbConglomerate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="100dp"
             android:text="Aquatic" />
 
         <CheckBox
-            android:id="@+id/filmsCheckBox"
+            android:id="@+id/cbDifferent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="22dp"
             android:text="Films"
-            app:layout_constraintBottom_toTopOf="@+id/sportsCheckBox"
-            app:layout_constraintStart_toStartOf="@+id/sportsCheckBox" />
+            app:layout_constraintBottom_toTopOf="@+id/cbScrambled"
+            app:layout_constraintStart_toStartOf="@+id/cbScrambled" />
 
         <CheckBox
-            android:id="@+id/economicsCheckBox"
+            android:id="@+id/cbDiverse"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="300dp"
             android:text="Economics"
-            app:layout_constraintBaseline_toBaselineOf="@+id/sportsCheckBox"
-            app:layout_constraintStart_toStartOf="@+id/aquaticCheckBox" />
+            app:layout_constraintBaseline_toBaselineOf="@+id/cbScrambled"
+            app:layout_constraintStart_toStartOf="@+id/cbConglomerate" />
 
         <CheckBox
-            android:id="@+id/sportsCheckBox"
+            android:id="@+id/cbScrambled"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="300dp"

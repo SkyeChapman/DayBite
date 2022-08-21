@@ -1,42 +1,33 @@
 {
   "project_info": {
-    "project_number": "474296220348",
-    "firebase_url": "https://daybiteapp-default-rtdb.firebaseio.com",
-    "project_id": "daybiteapp",
-    "storage_bucket": "daybiteapp.appspot.com"
+    "project_number": "48773510214",
+    "project_id": "daybite-22d05",
+    "storage_bucket": "daybite-22d05.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:474296220348:android:670f0dd6b2344bcdb96eb9",
+        "mobilesdk_app_id": "1:48773510214:android:d0b93822dcd58ae9d80647",
         "android_client_info": {
           "package_name": "com.example.daybite"
         }
       },
       "oauth_client": [
         {
-          "client_id": "474296220348-et4oehgr9k4vku1k3lvvr5fhnunqr482.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.daybite",
-            "certificate_hash": "8be46f63dc4b491d94f0efad39f23d728c65f4e5"
-          }
-        },
-        {
-          "client_id": "474296220348-ncmlsrctg2nb6ph230b5voc7oj6cmskm.apps.googleusercontent.com",
+          "client_id": "48773510214-4hfnpl3hkv6cpj620drhiuv93mbrbo6l.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCbrUYUV5Pzujspf6otVGPjY5aOeY4w8s4"
+          "current_key": "AIzaSyAcT27bzQpJoEXlrr2OGCnTaPMYGtngWcM"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "474296220348-ncmlsrctg2nb6ph230b5voc7oj6cmskm.apps.googleusercontent.com",
+              "client_id": "48773510214-4hfnpl3hkv6cpj620drhiuv93mbrbo6l.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

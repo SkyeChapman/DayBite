@@ -2,7 +2,22 @@
 package com.example.daybite.Blurbs
 //code by tom
 import com.example.daybite.Requests.Requests
+import kotlin.random.Random
+import kotlin.random.nextUInt
+import kotlin.time.measureTimedValue
 
+enum class Interests(){
+    Miscellaneous,
+    Assorted,
+    Random,
+    UnSorted,
+    Varied,
+    Disordered,
+    Scrambled,
+    Different,
+    Conglomerate,
+    Diverse
+}
 class Blurb (){
     //members of class
     var mHeader = String()
@@ -25,6 +40,17 @@ class Blurb (){
     {
         mIsFavorited = checkBoxState
     }
+    fun GetRandomInterest():String
+    {
+        var retVal = String()
+        val randomInterest = Random.nextInt(11)
+        for (int in Interests.values())
+        {
+             retVal = Interests.values()[randomInterest].name
+        }
+        println(retVal)
+        return retVal
+    }
     //initializer
     init {
         //create API request
@@ -32,6 +58,6 @@ class Blurb (){
         //set API fact to Blurb body text
         this.SetFactBody(requests.GenerateBlurbFact("fact"))
         //set topic of blurb
-        this.SetFactInterest("Temporary Stand-in Interest")
+        this.SetFactInterest(GetRandomInterest())
     }
 }

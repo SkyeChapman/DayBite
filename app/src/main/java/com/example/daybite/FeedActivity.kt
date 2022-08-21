@@ -79,75 +79,75 @@ class FeedActivity : AppCompatActivity(){
     }
     val createButton = findViewById<TextView>(R.id.createButton).setOnClickListener {
 
-        val musicBox = findViewById<CheckBox>(R.id.musicCheckBox)
-        val musicCheckBox = musicBox.isChecked
-        val foodBox = findViewById<CheckBox>(R.id.foodCheckBox)
-        val foodCheckBox = foodBox.isChecked
-        val techBox = findViewById<CheckBox>(R.id.techCheckBox)
-        val techCheckBox = techBox.isChecked
-        val historyBox = findViewById<CheckBox>(R.id.historyCheckBox)
-        val historyCheckBox = historyBox.isChecked
-        val animalsBox = findViewById<CheckBox>(R.id.animalsCheckBox)
-        val animalsCheckBox = animalsBox.isChecked
-        val spaceBox = findViewById<CheckBox>(R.id.spaceCheckBox)
-        val spaceCheckBox = spaceBox.isChecked
-        val aquaticBox = findViewById<CheckBox>(R.id.aquaticCheckBox)
-        val aquaticCheckBox = aquaticBox.isChecked
-        val filmsBox = findViewById<CheckBox>(R.id.filmsCheckBox)
-        val filmsCheckBox = filmsBox.isChecked
-        val economicsBox = findViewById<CheckBox>(R.id.economicsCheckBox)
-        val economicsCheckBox = economicsBox.isChecked
-        val sportsBox = findViewById<CheckBox>(R.id.sportsCheckBox)
-        val sportsCheckBox = sportsBox.isChecked
+        val musicBox = findViewById<CheckBox>(R.id.Miscellaneous)
+        val Miscellaneous = musicBox.isChecked
+        val foodBox = findViewById<CheckBox>(R.id.cbAssorted)
+        val cbAssorted = foodBox.isChecked
+        val techBox = findViewById<CheckBox>(R.id.cbRandom)
+        val cbRandom = techBox.isChecked
+        val historyBox = findViewById<CheckBox>(R.id.cbUnSorted)
+        val cbUnSorted = historyBox.isChecked
+        val animalsBox = findViewById<CheckBox>(R.id.cbVaried)
+        val cbVaried = animalsBox.isChecked
+        val spaceBox = findViewById<CheckBox>(R.id.cbDisordered)
+        val cbDisordered = spaceBox.isChecked
+        val aquaticBox = findViewById<CheckBox>(R.id.cbConglomerate)
+        val cbConglomerate = aquaticBox.isChecked
+        val filmsBox = findViewById<CheckBox>(R.id.cbDifferent)
+        val cbDifferent = filmsBox.isChecked
+        val economicsBox = findViewById<CheckBox>(R.id.cbDiverse)
+        val cbDiverse = economicsBox.isChecked
+        val sportsBox = findViewById<CheckBox>(R.id.cbScrambled)
+        val cbScrambled = sportsBox.isChecked
 
         fun createAccount(userCategories : ArrayList<Boolean>) {
             if (musicBox.isChecked) {
-                userCategories.add(musicCheckBox)
+                userCategories.add(Miscellaneous)
             } else {
                 //continue
             }
             if (foodBox.isChecked) {
-                userCategories.add(foodCheckBox)
+                userCategories.add(cbAssorted)
             } else {
                 //do nothing
             }
             if (techBox.isChecked) {
-                userCategories.add(techCheckBox)
+                userCategories.add(cbRandom)
             } else {
                 //continue
             }
             if (historyBox.isChecked) {
-                userCategories.add(historyCheckBox)
+                userCategories.add(cbUnSorted)
             } else {
                 //what is the code for continue
             }
             if (animalsBox.isChecked) {
-                userCategories.add(animalsCheckBox)
+                userCategories.add(cbVaried)
             } else {
                 //i'll find it soon, do nothing
             }
             if (spaceBox.isChecked) {
-                userCategories.add(spaceCheckBox)
+                userCategories.add(cbDisordered)
             } else {
                 //or else!
             }
             if (aquaticBox.isChecked) {
-                userCategories.add(aquaticCheckBox)
+                userCategories.add(cbConglomerate)
             } else {
                 //just ignore please
             }
             if (filmsBox.isChecked) {
-                userCategories.add(filmsCheckBox)
+                userCategories.add(cbDifferent)
             } else {
                 //if it's not added, who cares!
             }
             if (economicsBox.isChecked) {
-                userCategories.add(economicsCheckBox)
+                userCategories.add(cbDiverse)
             } else {
                 //do nothing, i'm kinda hungry
             }
             if (sportsBox.isChecked) {
-                userCategories.add(sportsCheckBox)
+                userCategories.add(cbScrambled)
             } else {
                 //leave me alone
             }
