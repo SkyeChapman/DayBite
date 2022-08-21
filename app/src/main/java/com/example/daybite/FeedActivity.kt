@@ -14,26 +14,21 @@ import com.example.daybite.databinding.ActivityFeedBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import kotlinx.android.synthetic.main.activity_feed.*
 import kotlinx.android.synthetic.main.fragment_feed.*
+import kotlinx.android.synthetic.main.fragment_feed.rvMainfeed
 
 //Select Your Interests
 
 class FeedActivity : AppCompatActivity(){
     private lateinit var bottomNav: BottomNavigationView
     private lateinit var binding: ActivityFeedBinding
-    //private lateinit var binding: // figure out the binding for this
-    private lateinit var blurbAdapter: BlurbAdapter
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityFeedBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        //generate adapter for blurbs
-        blurbAdapter = BlurbAdapter(mutableListOf())
-        //generate list of blurbs
-        blurbAdapter.GenerateBlurbs()
-        rvMainfeed.adapter = blurbAdapter
-        rvMainfeed.layoutManager = LinearLayoutManager(this)
 
         //code by kris & Ap
         supportFragmentManager.beginTransaction().replace(R.id.frame_layout, FeedFragment())
