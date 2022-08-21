@@ -9,7 +9,6 @@ import android.text.TextUtils
 import android.view.Window
 import android.widget.Toast
 import androidx.appcompat.content.res.AppCompatResources
-import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.fragment.app.Fragment
 import com.example.daybite.databinding.*
 import com.google.firebase.auth.FirebaseAuth
@@ -96,12 +95,14 @@ class MainLoginActivity() : AppCompatActivity(), Navigator {
                             .addOnCompleteListener { task ->
                                 if (task.isSuccessful) {
                                     //dismiss progress bar
-                                    hideProgressBar()
+
 
                                     val firebaseUser: FirebaseUser = task.result!!.user!!
                                     Toast.makeText(this,"Login Successful",
                                         Toast.LENGTH_SHORT)
                                         .show()
+
+                                    hideProgressBar()
 
                                     //switch to New Activity
                                     val intent = Intent(this,FeedActivity::class.java)
@@ -120,11 +121,13 @@ class MainLoginActivity() : AppCompatActivity(), Navigator {
                             }
                     }
                     else{
+                        hideProgressBar()
                         logNPass.setError("Reminder:: Passwords are at least 6 characters", warning)
                     }
                 }
                 else
                 {
+                    hideProgressBar()
                     logNUSER.setError("Please enter a valid email address", warning)
                 }
             }

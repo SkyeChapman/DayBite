@@ -16,7 +16,6 @@ import com.google.firebase.database.*
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
-import kotlinx.android.synthetic.main.fragment_account.*
 
 
 class AccountFragment : Fragment() {
@@ -29,10 +28,7 @@ class AccountFragment : Fragment() {
     private lateinit var imageURI: Uri
     private lateinit var uid : String
     private lateinit var bind : FragmentAccountBinding
-    private lateinit var et_Fname:EditText
-    private lateinit var et_Lname:EditText
-    private lateinit var et_Email:EditText
-    private lateinit var et_Password:EditText
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,7 +44,7 @@ class AccountFragment : Fragment() {
        val view =  inflater.inflate(R.layout.fragment_account, container, false)
         bind = view?.let { FragmentAccountBinding.bind(it) }!!
 
-        //find and edit
+
 
 //initializations
         user = FirebaseAuth.getInstance().currentUser!!
@@ -60,7 +56,10 @@ class AccountFragment : Fragment() {
         getUserProfile()
 
         view.findViewById<Button>(R.id.cancelEditBTN).setOnClickListener {
+            //get orignal information back
+            getUserProfile()
 
+            Toast.makeText(context,"No changes were saved",Toast.LENGTH_SHORT).show()
         }
 
         view. findViewById<ImageButton>(R.id.logoutBtn).setOnClickListener {
@@ -73,8 +72,38 @@ class AccountFragment : Fragment() {
             Toast.makeText(context, "LogOut Successful",Toast.LENGTH_SHORT).show()
         }
 
-        view.findViewById<Button>(R.id.saveEditBTN).setOnClickListener {
-            editUserProfile()
+        bind.saveEditBTN.setOnClickListener {
+            //find and edit
+            val fName = bind.acctFname.text.toString()
+            val lName = bind.acctLname.text.toString()
+            val _email = bind.acctEmail.text.toString()
+            val _pass = bind.acctPass.text.toString()
+
+            val user = Firebase.auth.currentUser
+
+            editUserProfile(fName,lName,_email,_pass)
+
+            if (user != null) {
+
+                Firebase.auth.updateCurrentUser(user)
+                if(_email.isNotEmpty()){
+                    user!!.updateEmail(_email)
+
+                    if(_pass.isNotEmpty()){
+                        if(_pass.length >= 6){
+
+                            user!!.updatePassword(_pass)
+                        }
+                        else
+                        {
+                            Toast.makeText(context,"Password Must Be at Least 6 Characters",Toast.LENGTH_LONG).show()
+                        }
+            }
+
+            }
+
+
+            }
         }
 
         view.findViewById<RadioButton>(R.id.deactivateBTN).setOnClickListener {
@@ -82,7 +111,24 @@ class AccountFragment : Fragment() {
         }
         return view
     }
-//disable account method
+    private fun editUserProfile(fName: String, lName: String, _email: String, _pass: String) {
+
+        databaseFetch = FirebaseDatabase.getInstance().getReference("Users")
+        val user = mapOf<String,String>(
+            "firstName" to fName,
+            "lastName" to lName,
+            "userEmail" to _email,
+            "userPassword" to _pass
+        )
+        databaseFetch.child(uid).updateChildren(user).addOnSuccessListener {
+            Toast.makeText(context,"Successfully Updated!!",Toast.LENGTH_SHORT).show()
+
+        }.addOnFailureListener {
+            Toast.makeText(context,"Failed To Save",Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    //disable account method
     private fun deactivateUser() {
 
     val user = Firebase.auth.currentUser!!
@@ -108,8 +154,6 @@ class AccountFragment : Fragment() {
                 }
             }
 
-
-
     private fun uploadUserPic(){
         imageURI = Uri.parse("android.resource://${R.drawable.profile_pic}")
         storageRef = FirebaseStorage.getInstance().getReference("Users/"+auth.currentUser?.uid)
@@ -133,23 +177,23 @@ class AccountFragment : Fragment() {
                     bind.acctPass.setText(userProfile.userPassword)
                 }
             }
-
             override fun onCancelled(error: DatabaseError) {
-                TODO("Not yet implemented")
+                Toast.makeText(context,"Error Loading User Info",Toast.LENGTH_SHORT).show()
             }
-
         })
-
     }
 
-    private fun editUserProfile(){
 
-        et_Fname = requireView().findViewById(R.id.acct_Fname)
-        et_Lname = requireView().findViewById(R.id.acct_Lname)
-        et_Email = requireView().findViewById(R.id.acct_Email)
-        et_Password = requireView().findViewById(R.id.acct_Pass)
+    /*private fun profileCamera(){
 
-    }
+        Intent(MediaStore.ACTION_IMAGE_CAPTURE).also{intent->
+            activity?.packageManager?.let{
+                intent.resolveActivity(it).also {
+
+                }
+            }
+        }
+    }*/
 
 
 }
