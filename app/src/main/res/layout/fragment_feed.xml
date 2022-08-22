@@ -2,12 +2,12 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/FeedMain"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/reg_background"
     tools:context=".FeedFragment"
-    tools:ignore="ExtraText"
-    android:id="@+id/FeedMain">
+    tools:ignore="ExtraText">
 
     //background added temporary
 
@@ -17,13 +17,13 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvMainfeed"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        tools:listitem="@layout/blurb_item"
+        android:layout_width="412dp"
+        android:layout_height="566dp"
+        android:layout_marginTop="83dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:listitem="@layout/blurb_item" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
         android:id="@+id/logoutBtn"

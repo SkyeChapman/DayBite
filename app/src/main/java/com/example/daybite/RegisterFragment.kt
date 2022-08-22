@@ -1,7 +1,11 @@
 package com.example.daybite
 
+import android.app.Activity
 import android.content.Intent
+import android.graphics.Bitmap
+import android.net.Uri
 import android.os.Bundle
+import android.provider.MediaStore
 import android.text.TextUtils
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -14,11 +18,12 @@ import androidx.appcompat.content.res.AppCompatResources
 import com.example.daybite.databinding.FragmentRegisterBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
-import com.google.firebase.auth.ktx.userProfileChangeRequest
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
-import kotlinx.android.synthetic.main.fragment_account.*
+import java.io.ByteArrayOutputStream
 
 
 /**
@@ -35,6 +40,8 @@ class RegisterFragment : Fragment() {
     private lateinit var auth: FirebaseAuth
     private lateinit var databaseRef : DatabaseReference
     private lateinit var storageRef : StorageReference
+    private lateinit var bind : FragmentRegisterBinding
+    private lateinit var imageURI : Uri
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -43,15 +50,21 @@ class RegisterFragment : Fragment() {
         // Inflate the layout for this fragment - Switch Screens!
         val view = inflater.inflate(R.layout.fragment_register, container, false)
 
-        //Read in Edit text from ID
+        //Read/find Edit text from ID
         fName = view.findViewById(R.id.firstName)
         lName = view.findViewById(R.id.lastName)
         regEmail = view.findViewById(R.id.regEmail)
         regPass = view.findViewById(R.id.setPassword)
         regAge = view.findViewById(R.id.age)
         cfnPass = view.findViewById(R.id.confirmPass)
-        auth = FirebaseAuth.getInstance()
 
+        //initialization
+        auth = FirebaseAuth.getInstance()
+        databaseRef = FirebaseDatabase.getInstance().reference
+
+
+
+        //Button click listeners
         view.findViewById<Button>(R.id.nextBTN).setOnClickListener {
             emptyFormRegister()
         }
@@ -62,6 +75,8 @@ class RegisterFragment : Fragment() {
         }
         return view
     }
+
+    //check empty form
     private fun emptyFormRegister()
     {
         val warning = AppCompatResources.getDrawable(requireContext(), R.drawable.ic_baseline_warning_24)
@@ -100,33 +115,36 @@ class RegisterFragment : Fragment() {
                             FirebaseAuth.getInstance().createUserWithEmailAndPassword(email,password)
                                 .addOnCompleteListener { task ->
                                     if (task.isSuccessful) {
+
                                         val firstName = fName.text.toString()
                                         val lastName = lName.text.toString()
                                         val _email = regEmail.text.toString()
                                         val _age = regAge.text.toString().toInt()
                                         val _password = regPass.text.toString()
+
+                                        //get auth instance and initialize
+                                        auth = FirebaseAuth.getInstance()
+                                        val uid = auth.currentUser?.uid
                                         databaseRef = FirebaseDatabase.getInstance().getReference("Users")
-                                        val user = UserProfile(firstName,lastName,_email,_password,_age)
-                                        databaseRef.child(firstName).setValue(user).addOnCompleteListener {
-                                            Toast.makeText(context,"Register Successful", Toast.LENGTH_SHORT).show()
-                                        }.addOnFailureListener {
+                                        val userProfile = UserProfile(firstName,lastName,_email,_password,_age)
+                                        if(uid != null )
+                                        {
 
-                                            Toast.makeText(context,"Failed Registration", Toast.LENGTH_SHORT).show()
+                                            databaseRef.child(uid).setValue(userProfile).addOnCompleteListener {
+                                                if(it.isSuccessful){
+                                                    val firbaseUser: FirebaseUser = task.result!!.user!!
+
+                                                    //switch to next screen
+                                                    val navReg = activity as Navigator
+                                                    navReg.fragNavigation(RegInterestFragment(),false)
+                                                }
+                                                else{
+                                                    Toast.makeText(context,"Error!!!",Toast.LENGTH_SHORT).show()
+                                                }
+                                            }
                                         }
-
-                                      val navReg = activity as Navigator
-                                        navReg.fragNavigation(RegInterestFragment(),false)
-                                        val firebaseUser: FirebaseUser = task.result!!.user!!
-                                        val intent = Intent(this@RegisterFragment.requireContext(),MainLoginActivity::class.java)
-                                        startActivity(intent)
                                     }
                                 }
-                            var currentuser = FirebaseAuth.getInstance().currentUser;
-                            val profileSetUp = userProfileChangeRequest{
-                                displayName = firstName.toString()
-
-                            }
-
                         }
                         else
                         {
