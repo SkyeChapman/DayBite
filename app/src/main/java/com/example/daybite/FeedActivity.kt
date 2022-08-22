@@ -22,18 +22,11 @@ class FeedActivity : AppCompatActivity(){
     private lateinit var bottomNav: BottomNavigationView
     private lateinit var binding: ActivityFeedBinding
     //private lateinit var binding: // figure out the binding for this
-    private lateinit var blurbAdapter: BlurbAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityFeedBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        //generate adapter for blurbs
-        blurbAdapter = BlurbAdapter(mutableListOf())
-        //generate list of blurbs
-        blurbAdapter.GenerateBlurbs()
-        rvMainfeed.adapter = blurbAdapter
-        rvMainfeed.layoutManager = LinearLayoutManager(this)
 
         //code by kris & Ap
         supportFragmentManager.beginTransaction().replace(R.id.frame_layout, FeedFragment())

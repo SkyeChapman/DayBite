@@ -8,6 +8,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.daybite.Blurbs.BlurbAdapter
 import com.example.daybite.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
@@ -23,7 +26,8 @@ class FeedFragment : Fragment() {
     private lateinit var firebaseAuth: FirebaseAuth
     private lateinit var bottomNav : BottomNavigationView
     private lateinit var binding: ActivityMainBinding
-
+    private lateinit var blurbAdapter: BlurbAdapter
+    private lateinit var recyclerView: RecyclerView
 
 
     override fun onCreateView(
@@ -33,6 +37,17 @@ class FeedFragment : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_feed, container, false)
 
+        //code by tom and ap
+        //generate blurbs for feed
+        val layoutManager = LinearLayoutManager(context)
+        recyclerView= view.findViewById(R.id.rvMainfeed)
+        recyclerView.layoutManager = layoutManager
+        recyclerView.setHasFixedSize(true)
+        //generate adapter for blurbs
+        blurbAdapter = BlurbAdapter(mutableListOf())
+        //generate list of blurbs
+        blurbAdapter.GenerateBlurbs()
+        recyclerView.adapter = blurbAdapter
 
         view.findViewById<ImageButton>(R.id.logoutBtn).setOnClickListener {
             //Sign user out of account
