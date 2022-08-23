@@ -115,7 +115,7 @@ class MainLoginActivity() : AppCompatActivity(), Navigator {
                                         .addOnFailureListener { e->
                                             Toast.makeText(this,"Login Failed!, ${e.message}",
                                                 Toast.LENGTH_SHORT).show()
-                                            hideProgressBar()
+                                                hideProgressBar()
                                         }
                                 }
                             }
