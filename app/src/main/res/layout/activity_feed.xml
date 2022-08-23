@@ -17,17 +17,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/favorites"
-            android:name="com.example.daybite.FavoritesFragment"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
 
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/Feed"
-            android:name="com.example.daybite.FeedFragment"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvMainfeed"

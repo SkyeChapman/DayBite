@@ -43,7 +43,7 @@ class Blurb (){
     fun GetRandomInterest():String
     {
         var retVal = String()
-        val randomInterest = Random.nextInt(11)
+        val randomInterest = Random.nextInt(10)
         for (int in Interests.values())
         {
              retVal = Interests.values()[randomInterest].name
