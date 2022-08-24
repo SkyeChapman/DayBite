@@ -2,19 +2,19 @@ package com.example.daybite.Interests
 
 import com.example.daybite.Blurbs.Blurb
 
-data class InterestList(var interest : String,var blurbToBeSaved : Blurb)
+data class InterestList(var interest : String)
 {
     lateinit var interestList : MutableList<Blurb>
     fun GetInterest(): String {return interest}
 
     fun AddBlurbtoList(checkBlurbInterest : Blurb)
     {
-        if (interest == blurbToBeSaved.GetFactInterest())
-            interestList.add(blurbToBeSaved)
+        if (interest == checkBlurbInterest.GetFactInterest())
+            interestList.add(checkBlurbInterest)
         else
         {
-            val tempInterest = InterestList(blurbToBeSaved.GetFactInterest(),blurbToBeSaved)
-            tempInterest.interestList.add(blurbToBeSaved)
+            val tempInterest = InterestList(checkBlurbInterest.GetFactInterest())
+            tempInterest.interestList.add(checkBlurbInterest)
         }
     }
 }
