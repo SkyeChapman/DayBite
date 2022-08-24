@@ -13,4 +13,14 @@
         android:background="@color/teal_200"
         tools:listitem="@layout/blurb_item" />
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvMainfeed2"
+        android:layout_width="412dp"
+        android:layout_height="490dp"
+        android:layout_marginTop="83dp"
+        tools:listitem="@layout/blurb_item"
+
+        />
+
+
 </FrameLayout>

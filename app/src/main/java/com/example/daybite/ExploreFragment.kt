@@ -49,7 +49,7 @@ class ExploreFragment : Fragment() {
         //code by tom and ap
         //generate blurbs for feed
         val layoutManager = LinearLayoutManager(context)
-        recyclerView= view.findViewById(R.id.rvMainfeed)
+        recyclerView= view.findViewById(R.id.rvMainfeed2)
         recyclerView.layoutManager = layoutManager
         recyclerView.setHasFixedSize(true)
         //generate adapter for blurbs
@@ -58,15 +58,7 @@ class ExploreFragment : Fragment() {
         blurbAdapter.GenerateBlurbs()
         recyclerView.adapter = blurbAdapter
 
-        view.findViewById<ImageButton>(R.id.logoutBtn).setOnClickListener {
-            //Sign user out of account
-            Firebase.auth.signOut()
 
-            //Switch back to Login screen
-            val intent = Intent(this@ExploreFragment.requireContext(),MainLoginActivity::class.java)
-            startActivity(intent)
-            Toast.makeText(context, "LogOut Successful", Toast.LENGTH_SHORT).show()
-        }
         return view
     }
 

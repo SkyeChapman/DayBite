@@ -1,7 +1,11 @@
 package com.example.daybite
 
+import android.app.Activity
 import android.content.Intent
+import android.graphics.Bitmap
+import android.net.Uri
 import android.os.Bundle
+import android.provider.MediaStore
 import android.text.TextUtils
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -11,12 +15,15 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.content.res.AppCompatResources
+import com.example.daybite.databinding.FragmentRegisterBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
-
+import java.io.ByteArrayOutputStream
 
 
 /**
@@ -33,6 +40,8 @@ class RegisterFragment : Fragment() {
     private lateinit var auth: FirebaseAuth
     private lateinit var databaseRef : DatabaseReference
     private lateinit var storageRef : StorageReference
+    private lateinit var bind : FragmentRegisterBinding
+    private lateinit var imageURI : Uri
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -49,6 +58,10 @@ class RegisterFragment : Fragment() {
         regAge = view.findViewById(R.id.age)
         cfnPass = view.findViewById(R.id.confirmPass)
 
+        //initialization
+        auth = FirebaseAuth.getInstance()
+        databaseRef = FirebaseDatabase.getInstance().reference
+
 
 
         //Button click listeners
@@ -62,6 +75,8 @@ class RegisterFragment : Fragment() {
         }
         return view
     }
+
+    //check empty form
     private fun emptyFormRegister()
     {
         val warning = AppCompatResources.getDrawable(requireContext(), R.drawable.ic_baseline_warning_24)
@@ -114,6 +129,7 @@ class RegisterFragment : Fragment() {
                                         val userProfile = UserProfile(firstName,lastName,_email,_password,_age)
                                         if(uid != null )
                                         {
+
                                             databaseRef.child(uid).setValue(userProfile).addOnCompleteListener {
                                                 if(it.isSuccessful){
                                                     val firbaseUser: FirebaseUser = task.result!!.user!!

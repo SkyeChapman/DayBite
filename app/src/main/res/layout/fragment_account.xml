@@ -30,12 +30,11 @@
 
     //profile pic
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/circleImageView2"
+        android:id="@+id/userPic"
         android:layout_width="match_parent"
         android:layout_height="93dp"
         android:layout_marginTop="80dp"
         android:foregroundGravity="center"
-        android:onClick="@drawable/profile_pic"
         android:src="@drawable/profile_pic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -79,7 +78,7 @@
         android:text="First Name:"
         android:textSize="13sp"
         app:layout_constraintEnd_toEndOf="@+id/acct_Pass"
-        app:layout_constraintStart_toStartOf="@+id/circleImageView2"
+        app:layout_constraintStart_toStartOf="@+id/userPic"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     //Info block email

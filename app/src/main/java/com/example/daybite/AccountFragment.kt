@@ -1,8 +1,12 @@
 package com.example.daybite
 
+import android.app.Activity.RESULT_OK
 import android.content.Intent
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.net.Uri
 import android.os.Bundle
+import android.provider.MediaStore
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -16,7 +20,8 @@ import com.google.firebase.database.*
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
-
+import java.io.ByteArrayOutputStream
+import java.io.File
 
 class AccountFragment : Fragment() {
     private lateinit var auth: FirebaseAuth
@@ -30,11 +35,6 @@ class AccountFragment : Fragment() {
     private lateinit var bind : FragmentAccountBinding
 
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -46,22 +46,26 @@ class AccountFragment : Fragment() {
 
 
 
-//initializations
+//initializations/ Global use
         user = FirebaseAuth.getInstance().currentUser!!
         database = FirebaseDatabase.getInstance()
         databaseFetch = FirebaseDatabase.getInstance().getReference("Users")
         auth = FirebaseAuth.getInstance()
         uid = auth.currentUser?.uid.toString()
 
+        //Populate profile with current user
         getUserProfile()
 
+        //cancel save button
         view.findViewById<Button>(R.id.cancelEditBTN).setOnClickListener {
-            //get orignal information back
-            getUserProfile()
 
+            //get original information back
+            getUserProfile()
             Toast.makeText(context,"No changes were saved",Toast.LENGTH_SHORT).show()
         }
 
+
+        //logout button
         view. findViewById<ImageButton>(R.id.logoutBtn).setOnClickListener {
             //Sign user out of account
             Firebase.auth.signOut()
@@ -72,6 +76,7 @@ class AccountFragment : Fragment() {
             Toast.makeText(context, "LogOut Successful",Toast.LENGTH_SHORT).show()
         }
 
+        //save button and function
         bind.saveEditBTN.setOnClickListener {
             //find and edit
             val fName = bind.acctFname.text.toString()
@@ -103,11 +108,43 @@ class AccountFragment : Fragment() {
             }
         }
 
+        //disable account button
         view.findViewById<RadioButton>(R.id.deactivateBTN).setOnClickListener {
+            //alert user of this action
             deactivateUser()
         }
         return view
     }
+
+    //camera access
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        bind.userPic.setOnClickListener{
+            gotoCamera()
+        }
+    }
+
+    //camera access
+    private fun gotoCamera() {
+        Intent(MediaStore.ACTION_IMAGE_CAPTURE).also { intent ->
+            activity?.packageManager?.let {
+                intent?.resolveActivity(it).also {
+                    startActivityForResult(intent, REQ_CAM)
+                }
+            }
+        }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if(resultCode == REQ_CAM || resultCode == RESULT_OK){
+
+            val imgBitmap = data?.extras?.get("data") as Bitmap
+            uploadUserPic(imgBitmap)
+        }
+    }
+
+    //edit user profile method
     private fun editUserProfile(fName: String, lName: String, _email: String, _pass: String) {
 
         databaseFetch = FirebaseDatabase.getInstance().getReference("Users")
@@ -118,6 +155,7 @@ class AccountFragment : Fragment() {
             "userPassword" to _pass
         )
         databaseFetch.child(uid).updateChildren(user).addOnSuccessListener {
+
             Toast.makeText(context,"Successfully Updated!!",Toast.LENGTH_SHORT).show()
 
         }.addOnFailureListener {
@@ -151,28 +189,59 @@ class AccountFragment : Fragment() {
                 }
             }
 
-    private fun uploadUserPic(){
-        imageURI = Uri.parse("android.resource://${R.drawable.profile_pic}")
-        storageRef = FirebaseStorage.getInstance().getReference("Users/"+auth.currentUser?.uid)
-        storageRef.putFile(imageURI).addOnSuccessListener {
-            Toast.makeText(context, "Profile Picture Updated!",Toast.LENGTH_SHORT).show()
-        }.addOnFailureListener {
+    //upload and save profile picture
+    private fun uploadUserPic(imgBitmap: Bitmap){
+        val baos = ByteArrayOutputStream()
+        storageRef = FirebaseStorage.getInstance().reference.child("img_User/${auth.currentUser?.uid}")
+        imgBitmap.compress(Bitmap.CompressFormat.JPEG,100,baos)
 
-            Toast.makeText(context, "!Upload Failed!",Toast.LENGTH_SHORT).show()
+        val img = baos.toByteArray()
+        storageRef.putBytes(img).addOnCompleteListener{
+            if(it.isSuccessful){
+                storageRef.downloadUrl.addOnCompleteListener {
+                    it.result.let { Uri->
+                        imageURI = Uri
+                        bind.userPic.setImageBitmap(imgBitmap)
+                        Toast.makeText(context,"Image Upload Successfully", Toast.LENGTH_SHORT).show()
+                    }
+                }
+            }
         }
     }
 
+    //fetch user data method
     private fun getUserProfile(){
         databaseFetch.child(uid).addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 userProfile = snapshot.getValue(UserProfile::class.java)!!
+
 
                 if(userProfile != null){
                     bind.acctFname.setText(userProfile.firstName)
                     bind.acctLname.setText(userProfile.lastName)
                     bind.acctEmail.setText(userProfile.userEmail)
                     bind.acctPass.setText(userProfile.userPassword)
+
+                    //get profile picture
+                    val localFile = File.createTempFile("temp","jpg")
+                    val bitmap = BitmapFactory.decodeFile(localFile.path)
+                    val baos = ByteArrayOutputStream()
+                    storageRef = FirebaseStorage.getInstance().reference.child("img_User/${auth.currentUser?.uid}")
+                    storageRef.getFile(localFile)
+
+                    val img = baos.toByteArray()
+                    storageRef.putBytes(img).addOnCompleteListener{
+                        if(it.isSuccessful){
+                            storageRef.downloadUrl.addOnCompleteListener {
+                                it.result.let { Uri->
+                                    imageURI = Uri
+                                    bind.userPic.setImageBitmap(bitmap)
+                                }
+                            }
+                        }
+                    }
                 }
+
             }
             override fun onCancelled(error: DatabaseError) {
                 Toast.makeText(context,"Error Loading User Info",Toast.LENGTH_SHORT).show()
@@ -180,17 +249,11 @@ class AccountFragment : Fragment() {
         })
     }
 
+    companion object{
+        const val REQ_CAM = 100
+    }
 
-    /*private fun profileCamera(){
 
-        Intent(MediaStore.ACTION_IMAGE_CAPTURE).also{intent->
-            activity?.packageManager?.let{
-                intent.resolveActivity(it).also {
-
-                }
-            }
-        }
-    }*/
 
 
 }
