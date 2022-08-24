@@ -9,6 +9,7 @@
         android:id="@+id/linearLayout"
         android:layout_width="0dp"
         android:layout_height="74dp"
+        android:foregroundTint="#2196F3"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -16,65 +17,65 @@
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout">
 
         <Button
-            android:id="@+id/btn_1"
+            android:id="@+id/MiscellaneousFav"
             android:layout_width="130dp"
             android:layout_height="60dp"
             android:gravity="center"
-            android:text="Interest 1"
+            android:text="@string/MiscellaneousFav"
             android:textSize="15dp"
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/btn_2"
+            android:id="@+id/AssortedFav"
             android:layout_width="130dp"
             android:layout_height="60dp"
             android:gravity="center"
-            android:text="Interest 2"
+            android:text="@string/AssortedFav"
             android:textSize="15dp"
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/btn_3"
+            android:id="@+id/RandomFav"
             android:layout_width="130dp"
             android:layout_height="60dp"
             android:gravity="center"
-            android:text="Interest 3"
+            android:text="@string/RandomFav"
             android:textSize="15dp"
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/btn_4"
+            android:id="@+id/UnsortedFav"
             android:layout_width="130dp"
             android:layout_height="60dp"
             android:gravity="center"
-            android:text="Interest 4"
+            android:text="@string/UnsortedFav"
             android:textSize="15dp"
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/btn_5"
+            android:id="@+id/VariedFav"
             android:layout_width="130dp"
             android:layout_height="60dp"
             android:gravity="center"
-            android:text="Interest 5"
+            android:text="@string/VariedFav"
             android:textSize="15dp"
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/btn_6"
+            android:id="@+id/DisorderedFav"
             android:layout_width="130dp"
             android:layout_height="60dp"
             android:gravity="center"
-            android:text="Interest 6"
+            android:text="@string/DisorderedFav"
             android:textSize="15dp"
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/btn_7"
+            android:id="@+id/ConglomerateFav"
             android:layout_width="130dp"
             android:layout_height="60dp"
             android:gravity="center"
-            android:text="Interest 7"
+            android:text="@string/ConglomerateFav"
             android:textSize="15dp"
             android:textStyle="bold" />
 
