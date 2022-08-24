@@ -1,6 +1,7 @@
 
 package com.example.daybite.Blurbs
 //code by tom
+import android.os.Bundle
 import com.example.daybite.Requests.Requests
 
 class Blurb (){
@@ -34,4 +35,6 @@ class Blurb (){
         //set topic of blurb
         this.SetFactInterest("Temporary Stand-in Interest")
     }
+
+
 }

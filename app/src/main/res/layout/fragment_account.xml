@@ -53,7 +53,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="26dp"
         android:text="Save"
-        app:icon="@drawable/favorite_toggle_selector"
+        app:icon="@drawable/favorite_checkbox"
         app:iconTint="#686468"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
