@@ -21,7 +21,17 @@ class FeedActivity : AppCompatActivity(){
         binding = ActivityFeedBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
+        //Favorite Button
+        /*cbFavoriteButton.setOnCheckedChangeListener { checkBox, isChecked ->
+            if(isChecked)
+            {
+                showToast( "Added to Favorites")
+            }
+            else
+            {
+                showToast( "Removed from Favorites")
+            }
+        }*/
 
         //code by kris & Ap
         supportFragmentManager.beginTransaction().replace(R.id.frame_layout, FeedFragment())
