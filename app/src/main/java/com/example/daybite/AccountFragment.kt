@@ -155,7 +155,7 @@ class AccountFragment : Fragment() {
         if(resultCode == REQ_CAM || resultCode == RESULT_OK){
 
             val imgBitmap = data?.extras?.get("data") as Bitmap
-            uploadUserPic(imgBitmap)
+            //uploadUserPic(imgBitmap)
         }
     }
 
@@ -205,7 +205,7 @@ class AccountFragment : Fragment() {
             }
 
     //upload and save profile picture
-    private fun uploadUserPic(imgBitmap: Bitmap){
+   /* private fun uploadUserPic(imgBitmap: Bitmap){
         val baos = ByteArrayOutputStream()
         storageRef = FirebaseStorage.getInstance().reference.child("img_User/${auth.currentUser?.uid}")
         imgBitmap.compress(Bitmap.CompressFormat.JPEG,100,baos)
@@ -222,7 +222,7 @@ class AccountFragment : Fragment() {
                 }
             }
         }
-    }
+    }*/
 
     //fetch user data method
     private fun getUserProfile(){
