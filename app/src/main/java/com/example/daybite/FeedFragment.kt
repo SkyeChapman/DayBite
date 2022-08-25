@@ -16,7 +16,6 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
-import kotlinx.android.synthetic.main.fragment_feed.*
 
 /**
  * A simple [Fragment] subclass.
@@ -30,6 +29,7 @@ class FeedFragment : Fragment() {
     private lateinit var recyclerView: RecyclerView
 
 
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -37,17 +37,18 @@ class FeedFragment : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_feed, container, false)
 
-        //code by tom and ap
-        //generate blurbs for feed
+        //Generate blurbs on feed fragment
         val layoutManager = LinearLayoutManager(context)
-        recyclerView= view.findViewById(R.id.rvMainfeed)
+        recyclerView = view.findViewById(R.id.rvMainfeed)
         recyclerView.layoutManager = layoutManager
         recyclerView.setHasFixedSize(true)
-        //generate adapter for blurbs
         blurbAdapter = BlurbAdapter(mutableListOf())
+
         //generate list of blurbs
         blurbAdapter.GenerateBlurbs()
         recyclerView.adapter = blurbAdapter
+
+
 
         view.findViewById<ImageButton>(R.id.logoutBtn).setOnClickListener {
             //Sign user out of account

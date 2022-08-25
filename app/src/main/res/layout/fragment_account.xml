@@ -7,309 +7,221 @@
     android:background="@color/white"
     tools:context=".AccountFragment">
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/imageView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="434dp"
-        android:src="@drawable/login_background"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="54dp"
-        android:layout_marginBottom="617dp"
-        android:gravity="center"
-        android:text="DayBite"
-        android:textColor="@color/white"
-        android:textSize="45sp"
-        android:textStyle="italic"
-        app:layout_constraintBottom_toBottomOf="parent"
+    //Top background
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="@drawable/login_background"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    //Logo placement
+    <ImageView
+        android:layout_width="202dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="181dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="28dp"
+        android:src="@drawable/daybite"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    //profile pic
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/userPic"
+        android:layout_width="match_parent"
+        android:layout_height="93dp"
+        android:layout_marginTop="80dp"
+        android:foregroundGravity="center"
+        android:src="@drawable/profile_pic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    //Title
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="211dp"
+        android:layout_marginTop="173dp"
         android:gravity="center"
         android:text="Edit Profile"
         android:textSize="35sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    //Title
+    <TextView
+        style="@style/CardView"
+        android:layout_width="match_parent"
+        android:layout_height="66dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="DayBite"
+        android:textColor="@color/white"
+        android:textSize="45sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    //Info block name
+    <EditText
+        android:id="@+id/acct_Fname"
+        android:layout_width="320dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="45dp"
+        android:text="First Name:"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="@+id/acct_Pass"
+        app:layout_constraintStart_toStartOf="@+id/userPic"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    //Info block email
+    <EditText
+        android:id="@+id/acct_Email"
+        android:layout_width="320dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="306dp"
+        android:layout_marginEnd="46dp"
+        android:text="Email:"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    //Info block name
+    <EditText
+        android:id="@+id/acct_Lname"
+        android:layout_width="320dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="263dp"
+        android:layout_marginEnd="46dp"
+        android:text="Last Name:"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    //Info block age
+    <TextView
+        android:id="@+id/acct_Age"
+        android:layout_width="320dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="349dp"
+        android:layout_marginEnd="46dp"
+        android:text=" Age:"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    //Info block password
+    <EditText
+        android:id="@+id/acct_Pass"
+        android:layout_width="320dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="368dp"
+        android:layout_marginEnd="46dp"
+
+        android:text="Password:"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    //Save edit button
     <Button
-        android:id="@+id/saveEdit"
-        style="@style/FirebaseUI.Button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="26dp"
+        android:id="@+id/saveEditBTN"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="253dp"
+        android:layout_marginTop="640dp"
+        android:layout_marginEnd="58dp"
         android:text="Save"
-        app:icon="@drawable/favorite_toggle_selector"
-        app:iconTint="#686468"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/frameLayout4" />
-
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/profilePic"
-        android:layout_width="0dp"
-        android:layout_height="105dp"
-        android:layout_marginStart="162dp"
-        android:layout_marginTop="53dp"
-        android:layout_marginEnd="44dp"
-        android:layout_marginBottom="46dp"
-        android:foregroundGravity="center"
-        app:layout_constraintBottom_toBottomOf="@+id/textView3"
-        app:layout_constraintEnd_toStartOf="@+id/notifyUser"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView2"
-        tools:src="@drawable/profile_pic" />
-
-    <EditText
-        android:id="@+id/firstName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="272dp"
-        android:background="#C5B4E3"
-        android:drawablePadding="3dp"
-        android:hint="First Name"
-        android:padding="2dp"
-        android:textColor="@color/black"
-        android:textColorHint="@color/black"
-        android:textSize="15sp"
+        android:textSize="12sp"
+        app:icon="@drawable/ic_baseline_star_border_24"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/lastName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="302dp"
-        android:background="#C5B4E3"
-        android:drawablePadding="3dp"
-        android:hint="Last Name"
-        android:padding="2dp"
-        android:textColor="@color/black"
-        android:textColorHint="@color/black"
-        android:textSize="15sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/acctEmail"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="332dp"
-        android:background="#C5B4E3"
-        android:drawablePadding="3dp"
-        android:hint="Email"
-        android:padding="2dp"
-        android:textColor="@color/black"
-        android:textColorHint="@color/black"
-        android:textSize="15sp"
+    //Cancel edit button
+    <Button
+        android:id="@+id/cancelEditBTN"
+        android:layout_width="119dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="61dp"
+        android:layout_marginTop="638dp"
+        android:layout_marginEnd="231dp"
+        android:text="Cancel"
+        android:textSize="12sp"
+        app:icon="@drawable/ic_baseline_dangerous_24"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/acctPass"
-        android:layout_width="385dp"
-        android:layout_height="21dp"
-        android:layout_marginStart="26dp"
-        android:layout_marginTop="365dp"
-        android:background="#C5B4E3"
-        android:drawablePadding="3dp"
-        android:hint="Password"
-        android:padding="2dp"
-        android:textColor="@color/black"
-        android:textColorHint="@color/black"
-        android:textSize="15sp"
+    //Delete account button
+    <RadioButton
+        android:id="@+id/deactivateBTN"
+        android:layout_width="112dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="57dp"
+        android:layout_marginEnd="241dp"
+        android:text="Disable Account"
+        android:textSize="11sp"
+        app:layout_constraintEnd_toEndOf="@+id/saveEditBTN"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/cancelEditBTN" />
 
-    <EditText
-        android:id="@+id/acctAge"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="392dp"
-        android:background="#C5B4E3"
-        android:drawablePadding="3dp"
-        android:hint="Date of Birth"
-        android:padding="2dp"
-        android:textColor="@color/black"
-        android:textColorHint="@color/black"
-        android:textSize="15sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
+    //Notifications switch
     <Switch
         android:id="@+id/notifyUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="292dp"
-        android:layout_marginTop="176dp"
+
+        android:layout_marginTop="150dp"
         android:text="Notification"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    //Night theme switch
     <Switch
         android:id="@+id/themeChange"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="284dp"
-        android:layout_marginTop="196dp"
+        android:layout_width="132dp"
+        android:layout_height="13dp"
+        android:layout_marginStart="279dp"
+        android:layout_marginTop="123dp"
         android:text="Night Theme"
+        android:textColor="@color/white"
+        android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    //Log out button
     <ImageButton
         android:id="@+id/logoutBtn"
-        android:layout_width="47dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="670dp"
-        android:src="@drawable/ic_baseline_exit_to_app_24"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginEnd="360dp"
+        android:layout_marginBottom="220dp"
+        app:layout_constraintBottom_toBottomOf="@+id/acct_Fname"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.039" />
-
-    <FrameLayout
-        android:id="@+id/frameLayout4"
-        android:layout_width="0dp"
-        android:layout_height="180dp"
-        android:layout_marginTop="433dp"
-        android:background="#D3D3D3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <CheckBox
-            android:id="@+id/Miscellaneous"
-            android:layout_width="70dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="100dp"
-            android:layout_marginTop="50dp"
-            android:backgroundTint="#EFE5E5"
-            android:checked="false"
-            android:text="Music" />
-
-        <CheckBox
-            android:id="@+id/cbAssorted"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="200dp"
-            android:layout_marginBottom="21dp"
-            android:text="Food"
-            app:layout_constraintBottom_toTopOf="@+id/cbUnSorted"
-            app:layout_constraintStart_toStartOf="@+id/cbUnSorted" />
-
-        <CheckBox
-            android:id="@+id/cbRandom"
-            android:layout_width="93dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="200dp"
-            android:layout_marginTop="50dp"
-            android:text="Tech"
-            app:layout_constraintBottom_toBottomOf="@+id/cbVaried"
-            app:layout_constraintStart_toStartOf="@+id/Miscellaneous"
-            app:layout_constraintTop_toTopOf="@+id/Miscellaneous" />
-
-        <CheckBox
-            android:id="@+id/cbUnSorted"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="100dp"
-            android:text="History"
-            app:layout_constraintStart_toEndOf="@+id/cbRandom"
-            app:layout_constraintTop_toTopOf="@+id/cbRandom" />
-
-        <CheckBox
-            android:id="@+id/cbVaried"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:layout_marginBottom="1dp"
-            android:text="Animals"
-            app:layout_constraintBottom_toTopOf="@+id/cbConglomerate"
-            app:layout_constraintEnd_toEndOf="@+id/cbRandom" />
-
-        <CheckBox
-            android:id="@+id/cbDisordered"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="300dp"
-            android:layout_marginTop="100dp"
-            android:text="Space"
-            app:layout_constraintStart_toStartOf="@+id/cbUnSorted"
-            app:layout_constraintTop_toBottomOf="@+id/cbUnSorted" />
-
-        <CheckBox
-            android:id="@+id/cbConglomerate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
-            android:text="Aquatic" />
-
-        <CheckBox
-            android:id="@+id/cbDifferent"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="22dp"
-            android:text="Films"
-            app:layout_constraintBottom_toTopOf="@+id/cbScrambled"
-            app:layout_constraintStart_toStartOf="@+id/cbScrambled" />
-
-        <CheckBox
-            android:id="@+id/cbDiverse"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="300dp"
-            android:text="Economics"
-            app:layout_constraintBaseline_toBaselineOf="@+id/cbScrambled"
-            app:layout_constraintStart_toStartOf="@+id/cbConglomerate" />
-
-        <CheckBox
-            android:id="@+id/cbScrambled"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="300dp"
-            android:layout_marginTop="50dp"
-            android:text="Sports" />
-
-
-    </FrameLayout>
-
-    <RadioButton
-        android:id="@+id/deactivateBTN"
-        android:layout_width="105dp"
-        android:layout_height="21dp"
-        android:layout_marginTop="709dp"
-        android:layout_marginEnd="306dp"
-        android:text="Disable account"
-        android:textSize="10sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:srcCompat="@drawable/ic_baseline_exit_to_app_24" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

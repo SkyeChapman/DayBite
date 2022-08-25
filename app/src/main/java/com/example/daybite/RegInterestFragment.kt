@@ -37,6 +37,7 @@ class RegInterestFragment : Fragment() {
         view.findViewById<Button>(R.id.submitBTN).setOnClickListener {
             val intent = Intent(this@RegInterestFragment.requireContext(), MainLoginActivity::class.java)
             startActivity(intent)
+            Toast.makeText(context,"Registration Successful",Toast.LENGTH_SHORT).show()
         }
 
         return view

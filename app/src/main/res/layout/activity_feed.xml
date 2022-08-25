@@ -8,6 +8,7 @@
     tools:context=".FeedActivity"
     tools:ignore="ExtraText">
 
+
     <FrameLayout
         android:id="@+id/frame_layout"
         android:layout_width="0dp"
@@ -37,8 +38,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/bottom_nav_menu">
-    </com.google.android.material.bottomnavigation.BottomNavigationView>
+        app:menu="@menu/bottom_nav_menu"></com.google.android.material.bottomnavigation.BottomNavigationView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -18,10 +18,7 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.fragment_account.*
-import kotlinx.android.synthetic.main.fragment_account.firstName
-import kotlinx.android.synthetic.main.fragment_account.lastName
-import kotlinx.android.synthetic.main.fragment_register.*
+
 
 class MainLoginActivity() : AppCompatActivity(), Navigator {
 
@@ -35,6 +32,7 @@ class MainLoginActivity() : AppCompatActivity(), Navigator {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         bindFrag = FragmentRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -97,12 +95,14 @@ class MainLoginActivity() : AppCompatActivity(), Navigator {
                             .addOnCompleteListener { task ->
                                 if (task.isSuccessful) {
                                     //dismiss progress bar
-                                    hideProgressBar()
+
 
                                     val firebaseUser: FirebaseUser = task.result!!.user!!
                                     Toast.makeText(this,"Login Successful",
                                         Toast.LENGTH_SHORT)
                                         .show()
+
+                                    hideProgressBar()
 
                                     //switch to New Activity
                                     val intent = Intent(this,FeedActivity::class.java)
@@ -121,11 +121,13 @@ class MainLoginActivity() : AppCompatActivity(), Navigator {
                             }
                     }
                     else{
+                        hideProgressBar()
                         logNPass.setError("Reminder:: Passwords are at least 6 characters", warning)
                     }
                 }
                 else
                 {
+                    hideProgressBar()
                     logNUSER.setError("Please enter a valid email address", warning)
                 }
             }

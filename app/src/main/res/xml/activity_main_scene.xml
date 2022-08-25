@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@id/start"
+        motion:duration="10000"
+        motion:autoTransition="animateToEnd"
+        >
+       <KeyFrameSet>
+       </KeyFrameSet>
+        <OnSwipe motion:springStiffness="384.12"
+            motion:maxAcceleration="0.1"
+            motion:maxVelocity="4.79"
+            motion:springStopThreshold="0.2886"
+            motion:springMass="3.7"
+            motion:springDamping="1.5269" />
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@+id/logoIcon"
+            android:scaleX="0.7"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:scaleY="0.7"
+            android:layout_width="77dp"
+            android:layout_height="78dp"
+            android:layout_marginEnd="294dp"
+            android:layout_marginStart="40dp"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="32dp"
+            android:rotationY="-41" />
+        <Constraint
+            android:id="@+id/whiteIcon"
+            android:scaleX="0"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:scaleY="0"
+            android:layout_width="77dp"
+            android:layout_height="78dp"
+            android:layout_marginEnd="294dp"
+            android:layout_marginStart="40dp"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="32dp"
+            android:rotationY="-50"
+            android:alpha="0" />
+        <Constraint
+            android:id="@+id/orangeIcon"
+            android:scaleX="0.3"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:scaleY="0.3"
+            android:layout_width="77dp"
+            android:layout_height="78dp"
+            android:layout_marginEnd="294dp"
+            android:layout_marginStart="40dp"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="32dp"
+            android:alpha="0" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@+id/logoIcon"
+            android:scaleX="1"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:scaleY="1"
+            android:layout_width="77dp"
+            android:layout_height="78dp"
+            android:layout_marginEnd="294dp"
+            android:layout_marginStart="40dp"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="32dp"
+            android:rotationY="194"
+            motion:transitionEasing="cubic(0.87,0.29,0.88,0.81)"
+            motion:pathMotionArc="startHorizontal"
+            android:alpha="0" />
+        <Constraint
+            android:scaleX="1"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:scaleY="1"
+            android:layout_width="77dp"
+            android:layout_height="78dp"
+            android:layout_marginEnd="294dp"
+            android:layout_marginStart="40dp"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="32dp"
+            android:id="@+id/whiteIcon"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="294dp"
+            android:rotationY="360"
+            motion:transitionEasing="cubic(0.75,0.04,0.8,0.8)" />
+        <Constraint
+            android:scaleX="1"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:scaleY="1"
+            android:layout_width="77dp"
+            android:layout_height="78dp"
+            android:layout_marginEnd="294dp"
+            android:layout_marginStart="40dp"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="32dp"
+            android:id="@+id/orangeIcon"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="294dp" />
+    </ConstraintSet>
+</MotionScene>
