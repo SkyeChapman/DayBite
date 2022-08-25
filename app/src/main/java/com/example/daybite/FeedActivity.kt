@@ -3,12 +3,19 @@ package com.example.daybite
 
 import android.os.Bundle
 
+import android.view.View
+import android.widget.Button
+import android.widget.CheckBox
+import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-
 import com.example.daybite.databinding.ActivityFeedBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
-
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
+import kotlinx.android.synthetic.main.blurb_item.*
+import kotlinx.android.synthetic.main.fragment_feed.*
 
 //Select Your Interests
 
@@ -27,7 +34,21 @@ class FeedActivity : AppCompatActivity(){
             .commit()
         bottomNav = findViewById(R.id.bottomNavigationView2)
         bottomNav.setOnItemSelectedListener(navListener)
+
+        //Favorite Button
+
+        tbFavoriteButton.setOnCheckedChangeListener { checkBox, isChecked ->
+            if(isChecked)
+            {
+                showToast( "Added to Favorites")
+            }
+            else
+            {
+                showToast( "Removed from Favorites")
+            }
+        }
     }
+
     val navListener = BottomNavigationView.OnNavigationItemSelectedListener {
 
         when (it.itemId) {
@@ -59,6 +80,13 @@ class FeedActivity : AppCompatActivity(){
         transaction.addToBackStack(null)
         transaction.commit()
     }
+
+    private fun showToast(str: String)
+    {
+        Toast.makeText(this, str , Toast.LENGTH_SHORT).show()
+    }
+
+
 
     //Code by Skye
     /*val backBTN = findViewById<TextView>(R.id.backButton).setOnClickListener {

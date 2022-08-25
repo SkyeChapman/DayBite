@@ -1,6 +1,7 @@
 
 package com.example.daybite.Blurbs
 //code by tom
+import android.os.Bundle
 import com.example.daybite.Requests.Requests
 import kotlin.random.Random
 import kotlin.random.nextUInt
@@ -60,4 +61,6 @@ class Blurb (){
         //set topic of blurb
         this.SetFactInterest(GetRandomInterest())
     }
+
+
 }

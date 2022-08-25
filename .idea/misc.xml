@@ -33,6 +33,20 @@
         <entry key="..\:/Users/kwing/AndroidStudioProjects/DayBite/app/src/main/res/layout/fragment_interests.xml" value="0.3020833333333333" />
         <entry key="..\:/Users/kwing/AndroidStudioProjects/DayBite/app/src/main/res/menu/bnav_menu.xml" value="0.3614583333333333" />
         <entry key="..\:/Users/kwing/AndroidStudioProjects/DayBite/app/src/main/res/menu/bottom_nav_menu.xml" value="0.3614583333333333" />
+        <entry key="..\:/Users/kwing/OneDrive/Documents/GitHub/DayBite/app/src/main/res/drawable/favorite_checkbox.xml" value="0.2985" />
+        <entry key="..\:/Users/kwing/OneDrive/Documents/GitHub/DayBite/app/src/main/res/drawable/favorite_toggle_selector.xml" value="0.2985" />
+        <entry key="..\:/Users/kwing/OneDrive/Documents/GitHub/DayBite/app/src/main/res/drawable/ic_baseline_explore_24.xml" value="0.2985" />
+        <entry key="..\:/Users/kwing/OneDrive/Documents/GitHub/DayBite/app/src/main/res/drawable/ic_baseline_more_vert_24.xml" value="0.2985" />
+        <entry key="..\:/Users/kwing/OneDrive/Documents/GitHub/DayBite/app/src/main/res/drawable/ic_baseline_star_24.xml" value="0.2985" />
+        <entry key="..\:/Users/kwing/OneDrive/Documents/GitHub/DayBite/app/src/main/res/drawable/ic_baseline_star_border_24.xml" value="0.2985" />
+        <entry key="..\:/Users/kwing/OneDrive/Documents/GitHub/DayBite/app/src/main/res/layout/activity_feed.xml" value="0.1762917933130699" />
+        <entry key="..\:/Users/kwing/OneDrive/Documents/GitHub/DayBite/app/src/main/res/layout/blurb_item.xml" value="0.24954710144927536" />
+        <entry key="..\:/Users/kwing/OneDrive/Documents/GitHub/DayBite/app/src/main/res/layout/fragment_explore.xml" value="0.3625" />
+        <entry key="..\:/Users/kwing/OneDrive/Documents/GitHub/DayBite/app/src/main/res/layout/fragment_favorite_search.xml" value="0.3625" />
+        <entry key="..\:/Users/kwing/OneDrive/Documents/GitHub/DayBite/app/src/main/res/layout/fragment_favorites.xml" value="0.24954710144927536" />
+        <entry key="..\:/Users/kwing/OneDrive/Documents/GitHub/DayBite/app/src/main/res/layout/progress_dialog.xml" value="0.3625" />
+        <entry key="..\:/Users/kwing/OneDrive/Documents/GitHub/DayBite/app/src/main/res/menu/blurb_options.xml" value="0.3625" />
+        <entry key="..\:/Users/kwing/OneDrive/Documents/GitHub/DayBite/app/src/main/res/menu/bottom_nav_menu.xml" value="0.3625" />
         <entry key="..\:/Users/perry/DayBite3/app/src/main/res/drawable/ic_baseline_account_circle_24black.xml" value="0.248" />
         <entry key="..\:/Users/perry/DayBite3/app/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.2165" />
         <entry key="..\:/Users/perry/DayBite3/app/src/main/res/drawable/ic_baseline_warning_24.xml" value="0.2165" />

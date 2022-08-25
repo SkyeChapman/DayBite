@@ -8,6 +8,7 @@
     tools:context=".AccountFragment">
 
     //Top background
+
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="150dp"
@@ -17,6 +18,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     //Logo placement
+
     <ImageView
         android:layout_width="202dp"
         android:layout_height="41dp"
@@ -29,6 +31,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     //profile pic
+
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/userPic"
         android:layout_width="match_parent"
@@ -41,6 +44,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     //Title
+
     <TextView
         android:id="@+id/textView3"
         android:layout_width="match_parent"
@@ -55,6 +59,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     //Title
+
     <TextView
         style="@style/CardView"
         android:layout_width="match_parent"
@@ -70,6 +75,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     //Info block name
+
     <EditText
         android:id="@+id/acct_Fname"
         android:layout_width="320dp"
@@ -82,6 +88,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     //Info block email
+
     <EditText
         android:id="@+id/acct_Email"
         android:layout_width="320dp"
@@ -96,6 +103,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     //Info block name
+
     <EditText
         android:id="@+id/acct_Lname"
         android:layout_width="320dp"
@@ -110,6 +118,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     //Info block age
+
     <TextView
         android:id="@+id/acct_Age"
         android:layout_width="320dp"
@@ -124,6 +133,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     //Info block password
+
     <EditText
         android:id="@+id/acct_Pass"
         android:layout_width="320dp"
@@ -139,21 +149,24 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     //Save edit button
+
     <Button
         android:id="@+id/saveEditBTN"
         android:layout_width="100dp"
         android:layout_height="40dp"
-        android:layout_marginStart="253dp"
+        android:layout_marginStart="248dp"
         android:layout_marginTop="640dp"
-        android:layout_marginEnd="58dp"
+        android:layout_marginEnd="63dp"
         android:text="Save"
         android:textSize="12sp"
         app:icon="@drawable/ic_baseline_star_border_24"
+        app:iconSize="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     //Cancel edit button
+
     <Button
         android:id="@+id/cancelEditBTN"
         android:layout_width="119dp"
@@ -169,6 +182,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     //Delete account button
+
     <RadioButton
         android:id="@+id/deactivateBTN"
         android:layout_width="112dp"
@@ -183,6 +197,7 @@
 
 
     //Notifications switch
+
     <Switch
         android:id="@+id/notifyUser"
         android:layout_width="wrap_content"
@@ -196,6 +211,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     //Night theme switch
+
     <Switch
         android:id="@+id/themeChange"
         android:layout_width="132dp"
@@ -210,6 +226,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     //Log out button
+
     <ImageButton
         android:id="@+id/logoutBtn"
         android:layout_width="wrap_content"
