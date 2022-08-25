@@ -1,6 +1,7 @@
 package com.example.daybite
 
 import android.app.Activity.RESULT_OK
+import android.app.Dialog
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
@@ -111,7 +112,21 @@ class AccountFragment : Fragment() {
         //disable account button
         view.findViewById<ImageButton>(R.id.deactivateBTN).setOnClickListener {
             //alert user of this action
-            deactivateUser()
+            val customDialogBinding = layoutInflater.inflate(R.layout.custom_dialog, null)
+            val dialog = context?.let { it1 -> Dialog(it1) }
+            dialog?.setContentView(customDialogBinding)
+            dialog?.setCancelable(true)
+            dialog?.show()
+
+            //check for input
+            val yesBTN = customDialogBinding.findViewById<Button>(R.id.proceed_BTN)
+            yesBTN.setOnClickListener {
+                deactivateUser()
+            }
+            val noBTN = customDialogBinding.findViewById<Button>(R.id.decline_BTN)
+            noBTN.setOnClickListener {
+                dialog?.dismiss()
+            }
         }
         return view
     }

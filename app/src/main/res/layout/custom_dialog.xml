@@ -6,9 +6,9 @@
     android:layout_height="match_parent">
 
     <FrameLayout
-        android:layout_width="245dp"
+        android:layout_width="225dp"
         android:layout_height="145dp"
-        android:background="@color/white"
+        android:background="@drawable/border_dialog"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -18,19 +18,31 @@
             android:id="@+id/proceed_BTN"
             android:layout_width="51dp"
             android:layout_height="29dp"
-            android:layout_marginLeft="55dp"
+            android:layout_marginLeft="45dp"
             android:layout_marginTop="95dp"
             android:text="Yes"
             android:textSize="8sp" />
+
+
 
         <Button
             android:id="@+id/decline_BTN"
             android:layout_width="50dp"
             android:layout_height="30dp"
-            android:layout_marginLeft="145dp"
+            android:layout_marginLeft="130dp"
             android:layout_marginTop="95dp"
             android:text="No"
             android:textSize="8sp" />
+
+        <TextView
+            android:layout_width="169dp"
+            android:layout_height="96dp"
+            android:text="Are you sure? Disabling Account is Permanent!!"
+            android:layout_marginTop="36dp"
+            android:textSize="16dp"
+            android:layout_marginLeft="30dp"
+
+            />
     </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
