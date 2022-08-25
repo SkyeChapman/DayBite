@@ -10,9 +10,8 @@ import com.example.daybite.databinding.ActivityFeedBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.blurb_item.*
 
-//Select Your Interests
-
 class FeedActivity : AppCompatActivity(){
+
     private lateinit var bottomNav: BottomNavigationView
     private lateinit var binding: ActivityFeedBinding
 
@@ -20,6 +19,12 @@ class FeedActivity : AppCompatActivity(){
         super.onCreate(savedInstanceState)
         binding = ActivityFeedBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        //code by kris & Ap
+        supportFragmentManager.beginTransaction().replace(R.id.frame_layout, FeedFragment())
+            .commit()
+        bottomNav = findViewById(R.id.bottomNavigationView2)
+        bottomNav.setOnItemSelectedListener(navListener)
 
         //Favorite Button
         /*cbFavoriteButton.setOnCheckedChangeListener { checkBox, isChecked ->
@@ -32,25 +37,6 @@ class FeedActivity : AppCompatActivity(){
                 showToast( "Removed from Favorites")
             }
         }*/
-
-        //code by kris & Ap
-        supportFragmentManager.beginTransaction().replace(R.id.frame_layout, FeedFragment())
-            .commit()
-        bottomNav = findViewById(R.id.bottomNavigationView2)
-        bottomNav.setOnItemSelectedListener(navListener)
-
-        //Favorite Button
-
-        cbFavoriteButton.setOnCheckedChangeListener { checkBox, isChecked ->
-            if(isChecked)
-            {
-                showToast( "Added to Favorites")
-            }
-            else
-            {
-                showToast( "Removed from Favorites")
-            }
-        }
     }
 
     val navListener = BottomNavigationView.OnNavigationItemSelectedListener {

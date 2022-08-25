@@ -109,7 +109,7 @@ class AccountFragment : Fragment() {
         }
 
         //disable account button
-        view.findViewById<RadioButton>(R.id.deactivateBTN).setOnClickListener {
+        view.findViewById<ImageButton>(R.id.deactivateBTN).setOnClickListener {
             //alert user of this action
             deactivateUser()
         }
