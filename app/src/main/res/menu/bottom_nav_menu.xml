@@ -14,7 +14,7 @@
         android:id="@+id/explore"/>
     <item
         android:id="@+id/favorites"
-        android:actionLayout="@layout/fragment_favorites"
+        android:actionLayout="@layout/fragment_favorite_search"
         android:enabled="true"
         android:icon="@drawable/ic_baseline_grade_24"
         android:title="Favorites"
