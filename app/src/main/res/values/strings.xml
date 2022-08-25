@@ -11,11 +11,4 @@
     <string name="differentInterest">Different</string>
     <string name="conglomerateInterest">Conglomerate</string>
     <string name="diverseInterest">Diverse</string>
-    <string name="MiscellaneousFav">Miscellaneous</string>
-    <string name="AssortedFav">Assorted</string>
-    <string name="RandomFav">Random</string>
-    <string name="UnsortedFav">Unsorted</string>
-    <string name="VariedFav">Varied</string>
-    <string name="DisorderedFav">Disordered</string>
-    <string name="ConglomerateFav">Conglomerate</string>
 </resources>

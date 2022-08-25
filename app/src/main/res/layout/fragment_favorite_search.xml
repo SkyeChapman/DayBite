@@ -5,87 +5,130 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
+    <FrameLayout
+        android:id="@+id/frameLayout"
         android:layout_width="0dp"
-        android:layout_height="74dp"
-        android:foregroundTint="#2196F3"
-        android:orientation="horizontal"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout">
+        app:layout_constraintTop_toTopOf="parent">
 
+        <ListView
+            android:id="@+id/list_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.487"
+            tools:listitem="@layout/blurb_item">
+
+        </ListView>
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
         <Button
             android:id="@+id/MiscellaneousFav"
-            android:layout_width="130dp"
+            android:layout_width="wrap_content"
             android:layout_height="60dp"
             android:gravity="center"
-            android:text="@string/MiscellaneousFav"
+            android:text="@string/miscellaneousInterest"
             android:textSize="15dp"
             android:textStyle="bold" />
 
         <Button
             android:id="@+id/AssortedFav"
-            android:layout_width="130dp"
+            android:layout_width="wrap_content"
             android:layout_height="60dp"
             android:gravity="center"
-            android:text="@string/AssortedFav"
+            android:text="@string/assortedInterest"
             android:textSize="15dp"
             android:textStyle="bold" />
 
         <Button
             android:id="@+id/RandomFav"
-            android:layout_width="130dp"
+            android:layout_width="wrap_content"
             android:layout_height="60dp"
             android:gravity="center"
-            android:text="@string/RandomFav"
+            android:text="@string/randomInterest"
             android:textSize="15dp"
             android:textStyle="bold" />
 
         <Button
             android:id="@+id/UnsortedFav"
-            android:layout_width="130dp"
+            android:layout_width="wrap_content"
             android:layout_height="60dp"
             android:gravity="center"
-            android:text="@string/UnsortedFav"
+            android:text="@string/unsortedInterest"
             android:textSize="15dp"
             android:textStyle="bold" />
 
         <Button
             android:id="@+id/VariedFav"
-            android:layout_width="130dp"
+            android:layout_width="wrap_content"
             android:layout_height="60dp"
             android:gravity="center"
-            android:text="@string/VariedFav"
+            android:text="@string/variedInterest"
             android:textSize="15dp"
             android:textStyle="bold" />
 
         <Button
             android:id="@+id/DisorderedFav"
-            android:layout_width="130dp"
+            android:layout_width="wrap_content"
             android:layout_height="60dp"
             android:gravity="center"
-            android:text="@string/DisorderedFav"
+            android:text="@string/disorderedInterest"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+                
+        <Button
+            android:id="@+id/ScrambledFav"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:text="@string/scrambledInterest"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/DifferentFav"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:text="@string/differentInterest"
             android:textSize="15dp"
             android:textStyle="bold" />
 
         <Button
             android:id="@+id/ConglomerateFav"
-            android:layout_width="130dp"
+            android:layout_width="wrap_content"
             android:layout_height="60dp"
             android:gravity="center"
-            android:text="@string/ConglomerateFav"
+            android:text="@string/conglomerateInterest"
             android:textSize="15dp"
             android:textStyle="bold" />
 
-    </LinearLayout>
+        <Button
+            android:id="@+id/DiverseFav"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:text="@string/diverseInterest"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+            </LinearLayout>
+        </HorizontalScrollView>
+    </FrameLayout>
 
-    <ListView
-        android:id="@+id/list_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:listitem="@layout/blurb_item" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout"
@@ -121,4 +164,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.489"
         tools:ignore="DuplicateClickableBoundsCheck" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

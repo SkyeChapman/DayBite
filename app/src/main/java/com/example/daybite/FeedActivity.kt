@@ -3,19 +3,12 @@ package com.example.daybite
 
 import android.os.Bundle
 
-import android.view.View
-import android.widget.Button
-import android.widget.CheckBox
-import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.daybite.databinding.ActivityFeedBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.blurb_item.*
-import kotlinx.android.synthetic.main.fragment_feed.*
 
 //Select Your Interests
 
@@ -37,7 +30,7 @@ class FeedActivity : AppCompatActivity(){
 
         //Favorite Button
 
-        tbFavoriteButton.setOnCheckedChangeListener { checkBox, isChecked ->
+        cbFavoriteButton.setOnCheckedChangeListener { checkBox, isChecked ->
             if(isChecked)
             {
                 showToast( "Added to Favorites")

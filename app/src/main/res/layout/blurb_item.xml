@@ -55,7 +55,7 @@
 
 
         <CheckBox
-            android:id="@+id/tbFavoriteButton"
+            android:id="@+id/cbFavoriteButton"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_alignParentEnd="true"
