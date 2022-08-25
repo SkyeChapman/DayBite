@@ -60,6 +60,70 @@
             motion:layout_constraintStart_toStartOf="parent"
             android:layout_marginTop="32dp"
             android:alpha="0" />
+        <Constraint
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="111dp"
+            android:layout_marginStart="110dp"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="69dp"
+            android:id="@+id/appName"
+            android:layout_marginLeft="110dp"
+            android:layout_marginRight="111dp" />
+        <Constraint
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="272dp"
+            android:id="@+id/logNUSER" />
+        <Constraint
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="348dp"
+            android:id="@+id/logNPass" />
+        <Constraint
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="161dp"
+            android:layout_marginStart="162dp"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="466dp"
+            android:id="@+id/loginBTN"
+            android:layout_marginLeft="162dp"
+            android:layout_marginRight="161dp" />
+        <Constraint
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="233dp"
+            android:layout_marginStart="16dp"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="602dp"
+            android:id="@+id/forgotBTN"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="233dp" />
+        <Constraint
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="48dp"
+            android:layout_marginStart="267dp"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="602dp"
+            android:id="@+id/regBTN"
+            android:layout_marginLeft="267dp"
+            android:layout_marginRight="48dp" />
     </ConstraintSet>
 
     <ConstraintSet android:id="@+id/end">

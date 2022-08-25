@@ -1,11 +1,8 @@
 package com.example.daybite
 
-import android.app.Activity
 import android.content.Intent
-import android.graphics.Bitmap
 import android.net.Uri
 import android.os.Bundle
-import android.provider.MediaStore
 import android.text.TextUtils
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -20,15 +17,8 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.ktx.Firebase
-import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
-import java.io.ByteArrayOutputStream
 
-
-/**
- * A simple [Fragment] subclass.
- */
 class RegisterFragment : Fragment() {
 
     private lateinit var fName: EditText
@@ -39,9 +29,6 @@ class RegisterFragment : Fragment() {
     private lateinit var regAge : EditText
     private lateinit var auth: FirebaseAuth
     private lateinit var databaseRef : DatabaseReference
-    private lateinit var storageRef : StorageReference
-    private lateinit var bind : FragmentRegisterBinding
-    private lateinit var imageURI : Uri
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

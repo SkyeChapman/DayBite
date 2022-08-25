@@ -12,17 +12,14 @@
         android:id="@+id/selectYourInterestHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="45dp"
-        android:layout_marginEnd="79dp"
+        android:layout_marginStart="103dp"
+        android:layout_marginTop="89dp"
+        android:layout_marginEnd="87dp"
         android:text="Select Your Interests"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.234"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.067" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:layout_width="351dp"
@@ -39,134 +36,135 @@
         android:id="@+id/Miscellaneous"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="74dp"
-        android:layout_marginEnd="162dp"
-        android:layout_marginBottom="525dp"
+        android:layout_marginStart="71dp"
+        android:layout_marginTop="140dp"
+        android:layout_marginEnd="218dp"
         android:backgroundTint="#EFE5E5"
         android:checked="false"
         android:text="@string/miscellaneousInterest"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.31"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/selectYourInterestHeader" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <CheckBox
         android:id="@+id/cbAssorted"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="76dp"
-        android:layout_marginEnd="100dp"
-        android:layout_marginBottom="525dp"
+        android:layout_marginStart="263dp"
+        android:layout_marginTop="140dp"
+        android:layout_marginEnd="59dp"
         android:text="@string/assortedInterest"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/Miscellaneous"
-        app:layout_constraintTop_toBottomOf="@+id/selectYourInterestHeader"
-        app:layout_constraintVertical_bias="0.513" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <CheckBox
         android:id="@+id/cbRandom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="71dp"
+        android:layout_marginTop="230dp"
+        android:layout_marginEnd="256dp"
         android:text="@string/randomInterest"
-        app:layout_constraintBottom_toTopOf="@+id/cbVaried"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.303"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Miscellaneous" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <CheckBox
         android:id="@+id/cbUnSorted"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginEnd="80dp"
+        android:layout_marginStart="263dp"
+        android:layout_marginTop="230dp"
+        android:layout_marginEnd="57dp"
         android:text="@string/unsortedInterest"
-        app:layout_constraintBottom_toTopOf="@+id/cbDisordered"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.56"
-        app:layout_constraintStart_toEndOf="@+id/cbRandom"
-        app:layout_constraintTop_toBottomOf="@+id/cbAssorted" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <CheckBox
         android:id="@+id/cbVaried"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="71dp"
+        android:layout_marginTop="320dp"
+        android:layout_marginEnd="267dp"
         android:text="@string/variedInterest"
-        app:layout_constraintBottom_toTopOf="@+id/cbConglomerate"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.323"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cbRandom" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <CheckBox
         android:id="@+id/cbDisordered"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="263dp"
+        android:layout_marginTop="320dp"
+        android:layout_marginEnd="47dp"
         android:text="@string/disorderedInterest"
-        app:layout_constraintBottom_toTopOf="@+id/cbDifferent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.417"
-        app:layout_constraintStart_toEndOf="@+id/cbVaried"
-        app:layout_constraintTop_toBottomOf="@+id/cbUnSorted" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <CheckBox
         android:id="@+id/cbScrambled"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="184dp"
+        android:layout_marginStart="263dp"
+        android:layout_marginTop="499dp"
+        android:layout_marginEnd="49dp"
         android:text="@string/scrambledInterest"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.741"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <CheckBox
         android:id="@+id/cbDifferent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="263dp"
+        android:layout_marginTop="410dp"
+        android:layout_marginEnd="61dp"
         android:text="@string/differentInterest"
-        app:layout_constraintBottom_toTopOf="@+id/cbScrambled"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.73"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cbDisordered" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <CheckBox
         android:id="@+id/cbConglomerate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="71dp"
+        android:layout_marginTop="410dp"
+        android:layout_marginEnd="219dp"
         android:text="@string/conglomerateInterest"
-        app:layout_constraintBottom_toTopOf="@+id/cbDiverse"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.32"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cbVaried" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <CheckBox
         android:id="@+id/cbDiverse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="184dp"
+        android:layout_marginStart="71dp"
+        android:layout_marginTop="499dp"
+        android:layout_marginEnd="261dp"
         android:text="@string/diverseInterest"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.341"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/createButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="168dp"
+        android:layout_marginTop="600dp"
+        android:layout_marginEnd="152dp"
         android:gravity="center"
         android:text="Create"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.525"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.878" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

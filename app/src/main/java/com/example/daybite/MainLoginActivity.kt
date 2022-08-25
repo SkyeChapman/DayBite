@@ -2,7 +2,6 @@ package com.example.daybite
 
 import android.app.Dialog
 import android.content.Intent
-import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
@@ -13,10 +12,6 @@ import androidx.fragment.app.Fragment
 import com.example.daybite.databinding.*
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.storage.FirebaseStorage
-import com.google.firebase.storage.StorageReference
 import kotlinx.android.synthetic.main.activity_main.*
 
 
@@ -24,10 +19,6 @@ class MainLoginActivity() : AppCompatActivity(), Navigator {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var bindFrag:FragmentRegisterBinding
-    private lateinit var auth: FirebaseAuth
-    private lateinit var databaseRef : DatabaseReference
-    private lateinit var storageRef : StorageReference
-    private lateinit var profilePic : Uri
     private lateinit var dialog : Dialog
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -73,10 +64,13 @@ class MainLoginActivity() : AppCompatActivity(), Navigator {
         {
             TextUtils.isEmpty(logNUSER.text.toString().trim())->
             {
+                hideProgressBar()
                 logNUSER.setError("Please enter Username/Email",warning)
+
             }
             TextUtils.isEmpty(logNPass.text.toString().trim())->
             {
+                hideProgressBar()
                 logNPass.setError("Please enter Password",warning)
             }
 
@@ -95,14 +89,14 @@ class MainLoginActivity() : AppCompatActivity(), Navigator {
                             .addOnCompleteListener { task ->
                                 if (task.isSuccessful) {
                                     //dismiss progress bar
-
+                                    hideProgressBar()
 
                                     val firebaseUser: FirebaseUser = task.result!!.user!!
                                     Toast.makeText(this,"Login Successful",
                                         Toast.LENGTH_SHORT)
                                         .show()
 
-                                    hideProgressBar()
+
 
                                     //switch to New Activity
                                     val intent = Intent(this,FeedActivity::class.java)
@@ -111,11 +105,12 @@ class MainLoginActivity() : AppCompatActivity(), Navigator {
                                 }
                                 else //Login Failure
                                 {
+                                    hideProgressBar()
                                     FirebaseAuth.getInstance().signInWithEmailAndPassword(email, password)
                                         .addOnFailureListener { e->
                                             Toast.makeText(this,"Login Failed!, ${e.message}",
                                                 Toast.LENGTH_SHORT).show()
-                                                hideProgressBar()
+
                                         }
                                 }
                             }
@@ -132,22 +127,6 @@ class MainLoginActivity() : AppCompatActivity(), Navigator {
                 }
             }
         }
-    }
-//method for uploading and changing profile pictures
-    private fun uploadPic(){
-
-        profilePic = Uri.parse("android.resource://$packageName/${R.drawable.profile_pic}")
-        storageRef = FirebaseStorage.getInstance().getReference("Users/"+auth.currentUser?.uid)
-        storageRef.putFile(profilePic).addOnCompleteListener {
-
-            Toast.makeText(this,"Profile pic added",Toast.LENGTH_SHORT).show()
-
-        }
-            .addOnFailureListener {
-
-            Toast.makeText(this, "Unable to add Picture!!",Toast.LENGTH_SHORT).show()
-        }
-
     }
 
 //show progress bar

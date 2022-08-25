@@ -22,6 +22,7 @@ class FeedActivity : AppCompatActivity(){
         setContentView(binding.root)
 
 
+
         //code by kris & Ap
         supportFragmentManager.beginTransaction().replace(R.id.frame_layout, FeedFragment())
             .commit()
