@@ -24,7 +24,7 @@ class BlurbAdapter (private val blurbs:MutableList<Blurb>) :RecyclerView.Adapter
 
         }
 
-        var checkBox = itemView.cbFavoriteButton
+        /*var checkBox = itemView.cbFavoriteButton
         init{
             checkBox.setOnClickListener{
                 if()
@@ -36,7 +36,7 @@ class BlurbAdapter (private val blurbs:MutableList<Blurb>) :RecyclerView.Adapter
 
                 }
             }
-        }
+        }*/
 
 
 
