@@ -2,6 +2,7 @@ package com.example.daybite
 
 
 import android.os.Bundle
+import android.widget.CheckBox
 
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -30,7 +31,8 @@ class FeedActivity : AppCompatActivity(){
 
         //Favorite Button
 
-        cbFavoriteButton.setOnCheckedChangeListener { checkBox, isChecked ->
+        val cbfav = findViewById<CheckBox>(R.id.cbFavoriteButton)
+        cbfav.setOnCheckedChangeListener {_, isChecked ->
             if(isChecked)
             {
                 showToast( "Added to Favorites")

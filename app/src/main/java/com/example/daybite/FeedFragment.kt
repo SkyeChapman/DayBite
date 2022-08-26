@@ -16,6 +16,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import kotlinx.android.synthetic.main.blurb_item.*
 
 /**
  * A simple [Fragment] subclass.
@@ -59,6 +60,7 @@ class FeedFragment : Fragment() {
             startActivity(intent)
             Toast.makeText(context, "LogOut Successful",Toast.LENGTH_SHORT).show()
         }
+
         return view
     }
 
