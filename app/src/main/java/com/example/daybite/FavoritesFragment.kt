@@ -26,15 +26,35 @@ class FavoritesFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
+<<<<<<< Updated upstream
        // val view = inflater.inflate(R.layout.fragment_favorites, container, false)
         val view = inflater.inflate(R.layout.fragment_favorite_search, container, false)
         val layoutManager = LinearLayoutManager(context)
         recyclerView= view.findViewById(R.id.Favorite_Feed)
         recyclerView.layoutManager = layoutManager
+=======
+        val view = inflater.inflate(R.layout.fragment_favorite_search, container,  false)
+
+        //code by tom and ap
+        //generate blurbs for feed
+        /*
+        val layoutManager = LinearLayoutManager(context)
+        recyclerView= view.findViewById(R.id.rvMainfeed2)
+        recyclerView.layoutManager = layoutManager
+        recyclerView.setHasFixedSize(true)
+
+        //generate adapter for blurbs
+
+        blurbAdapter = BlurbAdapter(mutableListOf())
+
+        //generate list of blurbs
+
+        blurbAdapter.GenerateBlurbs()
+        recyclerView.adapter = blurbAdapter*/
+>>>>>>> Stashed changes
 
 
         return view
     }
-
-
 }
+

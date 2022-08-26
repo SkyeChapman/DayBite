@@ -14,6 +14,7 @@ class FeedActivity : AppCompatActivity(){
 
     private lateinit var bottomNav: BottomNavigationView
     private lateinit var binding: ActivityFeedBinding
+    private lateinit var addedFavorites: FavoriteListActive
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -63,6 +64,26 @@ class FeedActivity : AppCompatActivity(){
     private fun showToast(str: String)
     {
         Toast.makeText(this, str , Toast.LENGTH_SHORT).show()
+    }
+
+    fun addingFavorite(favoriteListActive: FavoriteListActive)
+    {
+        val newAddFavorite: ArrayList<String>
+        newAddFavorite = addedFavorites.userFavoriteList
+
+        cbFavoriteButton.setOnCheckedChangeListener{ _, isChecked ->
+            if(isChecked)
+            {
+                showToast("Added to Favorites")
+                newAddFavorite.add(String())
+            }
+            else
+            {
+                showToast("Removed from Favorites")
+                newAddFavorite.remove(String())
+            }
+
+        }
     }
 
 
