@@ -20,7 +20,7 @@
         tools:listitem="@layout/blurb_item"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="83dp"
+        android:layout_marginTop="35dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

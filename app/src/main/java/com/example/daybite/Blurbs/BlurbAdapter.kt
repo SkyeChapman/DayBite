@@ -6,9 +6,6 @@ import android.view.ViewGroup
 import android.content.Context
 import android.util.SparseBooleanArray
 import android.widget.Toast
-import android.widget.TextView
-import android.widget.Toast
-import android.content.Context
 import androidx.recyclerview.widget.RecyclerView
 import com.example.daybite.R
 import kotlinx.android.synthetic.main.blurb_item.view.*
@@ -72,7 +69,7 @@ class BlurbAdapter (private val blurbs:MutableList<Blurb>) :RecyclerView.Adapter
         }
     }
 
-<<<<<<< Updated upstream
+
     //Kris Changes
 
     fun getItem(position: Int): Blurb {
@@ -133,7 +130,7 @@ class BlurbAdapter (private val blurbs:MutableList<Blurb>) :RecyclerView.Adapter
     {
         Toast.makeText(this, message , Toast.LENGTH_SHORT).show()
     }
-=======
+
 
     /*Favorite Checkbox and Message by Kris
 
@@ -157,7 +154,7 @@ class BlurbAdapter (private val blurbs:MutableList<Blurb>) :RecyclerView.Adapter
     {
         Toast.makeText(this, message , Toast.LENGTH_SHORT).show()
     }*/
->>>>>>> Stashed changes
+
 
 
 }
