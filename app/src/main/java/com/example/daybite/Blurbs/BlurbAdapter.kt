@@ -24,19 +24,21 @@ class BlurbAdapter (private val blurbs:MutableList<Blurb>) :RecyclerView.Adapter
 
         }
 
-        /*var checkBox = itemView.cbFavoriteButton
+        var checkBox = itemView.cbFavoriteButton
         init{
             checkBox.setOnClickListener{
-                if()
+                if(!checkBoxStateArray.get(adapterPosition,false))
                 {
-
+                    checkBox.isChecked = true
+                    checkBoxStateArray.put(adapterPosition, true)
                 }
                 else
                 {
-
+                    checkBox.isChecked = false
+                    checkBoxStateArray.put(adapterPosition, false)
                 }
             }
-        }*/
+        }
 
 
 
@@ -52,6 +54,7 @@ class BlurbAdapter (private val blurbs:MutableList<Blurb>) :RecyclerView.Adapter
     {
         val currBlurb = blurbs[position]
         holder.bind(currBlurb)
+        holder.checkBox.isChecked = checkBoxStateArray.get(position,false)
     }
 
     override fun getItemCount(): Int
