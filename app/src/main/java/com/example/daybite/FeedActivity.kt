@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.example.daybite.Blurbs.Blurb
 import com.example.daybite.databinding.ActivityFeedBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.blurb_item.*
@@ -61,26 +62,32 @@ class FeedActivity : AppCompatActivity(){
         transaction.commit()
     }
 
+
+
+
     private fun showToast(str: String)
     {
         Toast.makeText(this, str , Toast.LENGTH_SHORT).show()
+
     }
 
+
+    //Skye
     fun addingFavorite(favoriteListActive: FavoriteListActive)
     {
-        val newAddFavorite: ArrayList<String>
+        val newAddFavorite: MutableList<Blurb>
         newAddFavorite = addedFavorites.userFavoriteList
 
         cbFavoriteButton.setOnCheckedChangeListener{ _, isChecked ->
             if(isChecked)
             {
                 showToast("Added to Favorites")
-                newAddFavorite.add(String())
+                newAddFavorite.add(Blurb())
             }
             else
             {
                 showToast("Removed from Favorites")
-                newAddFavorite.remove(String())
+                newAddFavorite.remove(Blurb())
             }
 
         }

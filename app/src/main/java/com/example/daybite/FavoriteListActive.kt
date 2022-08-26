@@ -1,5 +1,7 @@
 package com.example.daybite
 
-data class FavoriteListActive (var userFavoriteList: ArrayList<String>){
+import com.example.daybite.Blurbs.Blurb
+
+data class FavoriteListActive (var userFavoriteList: MutableList<Blurb>){
 
 }

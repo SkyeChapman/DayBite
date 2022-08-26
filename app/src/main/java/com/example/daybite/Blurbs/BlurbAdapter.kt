@@ -7,6 +7,7 @@ import android.content.Context
 import android.util.SparseBooleanArray
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.example.daybite.FavoriteListActive
 import com.example.daybite.R
 import kotlinx.android.synthetic.main.blurb_item.view.*
 
@@ -37,6 +38,7 @@ class BlurbAdapter (private val blurbs:MutableList<Blurb>) :RecyclerView.Adapter
                     checkBox.isChecked = false
                     checkBoxStateArray.put(adapterPosition, false)
                 }
+                BlurbAdapter(blurbs).notifyDataSetChanged()
             }
         }
 

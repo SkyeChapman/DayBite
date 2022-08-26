@@ -21,6 +21,8 @@ class FavoritesFragment : Fragment() {
     private lateinit var blurbAdapter: BlurbAdapter
     private lateinit var recyclerView: RecyclerView
 
+
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -31,6 +33,7 @@ class FavoritesFragment : Fragment() {
         val layoutManager = LinearLayoutManager(context)
         recyclerView= view.findViewById(R.id.FavoriteFeed)
         recyclerView.layoutManager = layoutManager
+        recyclerView.setHasFixedSize(true)
 
         //code by tom and ap
         //generate blurbs for feed
