@@ -31,17 +31,7 @@ class FeedActivity : AppCompatActivity(){
 
         //Favorite Button
 
-        val cbfav = findViewById<CheckBox>(R.id.cbFavoriteButton)
-        cbfav.setOnCheckedChangeListener {_, isChecked ->
-            if(isChecked)
-            {
-                showToast( "Added to Favorites")
-            }
-            else
-            {
-                showToast( "Removed from Favorites")
-            }
-        }
+
     }
 
     val navListener = BottomNavigationView.OnNavigationItemSelectedListener {
