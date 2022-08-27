@@ -231,27 +231,26 @@ class AccountFragment : Fragment() {
                 userProfile = snapshot.getValue(UserProfile::class.java)!!
 
 
-                if(userProfile != null){
-                    bind.acctFname.setText(userProfile.firstName)
-                    bind.acctLname.setText(userProfile.lastName)
-                    bind.acctEmail.setText(userProfile.userEmail)
-                    bind.acctPass.setText(userProfile.userPassword)
+                bind.acctFname.setText(userProfile.firstName)
+                bind.acctLname.setText(userProfile.lastName)
+                bind.acctEmail.setText(userProfile.userEmail)
+                bind.acctPass.setText(userProfile.userPassword)
 
-                    //get profile picture
-                    val localFile = File.createTempFile("temp","jpg")
-                    val bitmap = BitmapFactory.decodeFile(localFile.path)
-                    val baos = ByteArrayOutputStream()
-                    storageRef = FirebaseStorage.getInstance().reference.child("img_User/${auth.currentUser?.uid}")
-                    storageRef.getFile(localFile)
+                //get profile picture
+                val localFile = File.createTempFile("temp", "jpg")
+                val bitmap = BitmapFactory.decodeFile(localFile.path)
+                val baos = ByteArrayOutputStream()
+                storageRef =
+                    FirebaseStorage.getInstance().reference.child("img_User/${auth.currentUser?.uid}")
+                storageRef.getFile(localFile)
 
-                    val img = baos.toByteArray()
-                    storageRef.putBytes(img).addOnCompleteListener{
-                        if(it.isSuccessful){
-                            storageRef.downloadUrl.addOnCompleteListener {
-                                it.result.let { Uri->
-                                    imageURI = Uri
-                                    bind.userPic.setImageBitmap(bitmap)
-                                }
+                val img = baos.toByteArray()
+                storageRef.putBytes(img).addOnCompleteListener {
+                    if (it.isSuccessful) {
+                        storageRef.downloadUrl.addOnCompleteListener {
+                            it.result.let { Uri ->
+                                imageURI = Uri
+                                bind.userPic.setImageBitmap(bitmap)
                             }
                         }
                     }
